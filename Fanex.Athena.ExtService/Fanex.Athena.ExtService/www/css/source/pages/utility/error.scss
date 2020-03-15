@@ -1,0 +1,40 @@
+﻿body {
+    background: #fff;
+}
+
+.error-content {
+    padding-top: 40px;
+
+    img {
+        margin: 10px auto;
+        display: block;
+    }
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .first-line {
+        color: #0b3d6b;
+        font-size: 45px;
+    }
+
+    .second-line {
+        color: #545454;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 3px;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .btn-submit {
+        background-color: #1C80F0;
+        color: #fff;
+    }
+}

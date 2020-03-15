@@ -1,0 +1,89 @@
+﻿@import "../../scss/abstracts/_variables";
+
+$colorBorderTable: #d6d6d6;
+$paddingRightContainer: 17px;
+
+.page-results .result-content {
+    border: solid 1px $colorBorderTable;
+}
+
+.header-content, .body-content, .footer-content {
+    .table {
+        border-right: 1px solid $colorBorderTable;
+
+        td {
+            &:first-child {
+                border-left: none;
+            }
+        }
+    }
+}
+
+.table {
+    > thead, > tbody {
+        tr {
+            td, th {
+                padding: 4px 5px;
+            }
+
+            > td {
+                background: $white;
+            }
+        }
+    }
+}
+
+.first-row {
+    height: auto;
+
+    > td {
+        height: 0;
+        border: none !important;
+        padding: 0 !important;
+        line-height: 0;
+    }
+}
+
+.body-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.noScroll{
+        padding-right: $paddingRightContainer;
+    }
+}
+
+.header-content {
+    .table {
+        th {
+            background: $bgHeaderTableLevel1;
+            color: $white;
+            border-top: none;
+
+            &:first-child {
+                border-left: none;
+            }
+        }
+
+        > thead > tr > th.col-last {
+            border-right-color: $colorBorderTable !important;
+        }
+    }
+}
+
+.header-content, .footer-content {
+    padding-right: $paddingRightContainer;
+}
+
+.footer-content .table {
+    border-top: 3px solid #a7a1a1;
+
+    > tbody {
+        .total-footer {
+            > td {
+                font-weight: bold;
+                border-bottom: none;
+            }
+        }
+    }
+}

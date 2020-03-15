@@ -1,0 +1,1 @@
+Dockerfile" -t fanexathenaextservice:dev --target base  --label "com.microsoft.created-by=visual-studio" "C:\Data\TeamProject\GIT_LAB\Sparta\LAP.EXT.SERVICE\Fanex.Athena.ExtService"

@@ -1,0 +1,63 @@
+﻿@import '../../pages/common';
+
+th {
+    line-height: 2rem;
+}
+
+.content-wrapper{
+    width: 100%;
+
+    &, .col-left, .col-right, .line-middle{
+        height: 100%;
+    }
+
+    .col-left{
+        width: 370px;
+        float: left;
+
+        iframe{
+            width: 100%;
+        }
+    }
+
+    .col-right{
+        width: 450px;
+        float: left;
+    }
+
+    .line-middle{
+        width: 1px;
+        background: #808080;
+        float: left;
+        margin: 0 10px;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.col-date {
+    width: 30%;
+    text-align: center !important;
+}
+
+.col-trans {
+    width: 30%;
+    text-align: left !important;
+}
+
+.col-winloss {
+    width: 20%;
+}
+
+.col-comm {
+    width: 20%;
+}
+
+.total-row {
+    background-color: #FFEFE3;
+    border-top: 3px solid #a7a1a1;
+    font-weight: bold;
+}

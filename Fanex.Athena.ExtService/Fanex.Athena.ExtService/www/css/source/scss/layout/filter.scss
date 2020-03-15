@@ -1,0 +1,97 @@
+﻿@import "../abstracts/_variables.scss";
+@import "../components/_button.scss";
+
+.icon-block {
+    position: absolute;
+    bottom: 6px;
+    right: 5px;
+
+    @media (max-width: 600px) {
+        margin-top: 1rem;
+    }
+}
+
+.page-form {
+    position: relative;
+    margin: 1.5rem 1.5rem 0;
+    padding: 1.5rem 0.5rem;
+    background: $white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.row {
+    margin-bottom: 0;
+
+    .col {
+        padding: 0 1rem;
+    }
+}
+
+.input-field {
+    font-size: 1.2rem;
+
+    label {
+        left: 0;
+        font-size: 1.1rem !important;
+        color: #808080;
+    }
+
+    input[type=text] {
+        height: 2.5rem;
+        line-height: 2.5rem;
+        border-color: #ccc;
+        font-size: 1.3rem;
+        color: $black;
+        margin-bottom: 10px;
+
+        &[readonly="readonly"] {
+            border-bottom: 1px solid #ccc;
+
+            + label {
+                color: #808080;
+            }
+        }
+
+        &:focus:not([readonly]) {
+            border-color: $blue-light;
+
+            + label {
+                color: $blue-light;
+            }
+        }
+    }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $black;
+    }
+
+    &.input {
+        label {
+            top: 8px;
+
+            &.active {
+                top: -10px;
+                transform: none;
+            }
+        }
+    }
+
+    .icon-calendar {
+        position: absolute;
+        right: 10px;
+        top: -1px;
+        font-size: 16px;
+        color: #4d6273;
+    }
+}
+
+.dropdown-content {
+    margin-top: 5px;
+}
+
+.dropdown-content li > {
+    a, span {
+        font-size: 1.3rem;
+        color: $black;
+    }
+}

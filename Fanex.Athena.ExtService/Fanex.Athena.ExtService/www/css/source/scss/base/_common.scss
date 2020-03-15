@@ -1,0 +1,137 @@
+﻿@import "../abstracts/variables";
+
+@import '../fonts/roboto/_style.scss';
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background: #f5f7fa;
+    font-size: $font-size;
+    color: $gray;
+    height: 100%;
+}
+
+iframe {
+    display: block; /* iframes are inline by default */
+    border: none; /* Reset default border */
+    height: 100%; /* Viewport-relative units */
+    width: 100%;
+}
+
+#mainFrame {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $colorHyperlink;
+    text-decoration: none;
+}
+
+main {
+    padding-left: 260px;
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    bottom: 18px;
+    transition: 0.3s ease all;
+
+    @media (max-width: 500px) {
+        top: 98px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+.circle {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f94a4a;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon-book {
+    font-size: 18px;
+    color: #066CC0;
+    cursor: pointer;
+
+    &.right {
+        margin-left: 10px;
+    }
+}
+
+.icon-pencil, .icon-edit {
+    color: #066CC0 !important;
+}
+
+.icon-bin, .icon-delete {
+    color: #d91a1a !important;
+}
+
+.icon-checkmark {
+    color: #4eb85e !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.dropdown-content > li > a, .dropdown-content > li > span {
+    color: rgba(0,0,0,0.6);
+    font-size: 13px;
+    padding: 10px 12px;
+    display: inline-block;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.dropdown-content li {
+    min-height: 30px;
+}
+
+.tipsy {
+    .tipsy-inner {
+        background-color: #000;
+    }
+
+    .tipsy-arrow-s {
+        border-top-color: #000;
+    }
+
+    .tipsy-arrow-n {
+        border-bottom-color: #000;
+    }
+
+    .tipsy-arrow-e {
+        border-left-color: #000;
+    }
+
+    .tipsy-arrow-w {
+        border-right-color: #000;
+    }
+}

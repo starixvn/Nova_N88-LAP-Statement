@@ -1,0 +1,134 @@
+﻿.pagingContainer {
+    padding: 3px;
+    font-size: 1.1rem;
+    background-color: $bgPaging;
+    border-left: 1px solid $colorBorderPaging;
+    border-right: 1px solid $colorBorderPaging;
+    border-bottom: 1px solid $colorBorderPaging;
+
+    .icon {
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1.2rem;
+        color: #4c6375;
+        cursor: pointer;
+    }
+
+    .pagingDisable {
+        color: $colorDisabledPgButton;
+        cursor: default;
+    }
+
+    .pagingFirst {
+        &:before {
+            content: "\ea21";
+        }
+    }
+
+    .pagingPrev {
+        &:before {
+            content: "\ea1f";
+        }
+    }
+
+    .pagingNext {
+        &:before {
+            content: "\ea20";
+        }
+    }
+
+    .pagingLast {
+        &:before {
+            content: "\ea22";
+        }
+    }
+
+    .pagingSelect-btn {
+        &:before {
+            content: "\e90e";
+        }
+    }
+
+    .paging-form {
+        width: auto;
+        height: auto;
+        font-size: inherit;
+        padding: 2px;
+        text-align: center;
+        margin: 0;
+
+        &, &:focus {
+            background: $white;
+            border: 1px solid #e2d6d6;
+            box-shadow: none;
+        }
+    }
+
+    .paging-info {
+        float: right;
+        padding: 3px;
+    }
+
+    .pagingSeperator {
+        width: 4px;
+        height: 18px;
+        margin: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .pagingSelect {
+        &:hover .pagingOption {
+            display: block;
+        }
+
+        button {
+            .icon:before {
+                font-size: 0.7em;
+            }
+
+            .icon {
+                float: right;
+            }
+
+            background-color: $white;
+            border: none;
+            width: 100%;
+        }
+
+        .pagingOption {
+            a:hover {
+                background-color: $colorHyperlink;
+            }
+
+            a {
+                text-decoration: none;
+                display: block;
+                min-width: 65px;
+                color: $black;
+            }
+
+            display: none;
+            position: absolute;
+            bottom: 1em;
+            border: 1px solid $colorHyperlink;
+            background-color: $white;
+            z-index: 1;
+        }
+
+        display: inline-block;
+        background-color: $white;
+        position: relative;
+        height: auto;
+        font-size: inherit;
+        padding: 2px;
+        min-width: 65px;
+        border: 1px solid #e2d6d6;
+        margin-left: 5px;
+    }
+}

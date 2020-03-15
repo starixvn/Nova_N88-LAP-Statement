@@ -1,0 +1,56 @@
+﻿@import "../../scss/abstracts/_variables.scss";
+@import "../common/reportcommon.main";
+
+body {
+    background: $white;
+}
+
+.system-parlay-detail-container {
+    padding: 15px;
+
+    .system-parlay-header th {
+        vertical-align: middle;
+        text-align: center;
+        background: $bgHeaderTableLevel1;
+        border: 1px solid $white;
+        color: $white;
+        padding: 2px 5px;
+
+        /*&:first-child {
+            border-left-color: #d1dae1 !important;
+        }
+
+        &:last-child {
+            border-right-color: #d1dae1 !important;
+        }*/
+    }
+
+    .system-parlay-detail {
+        td {
+            border: 1px solid #d6d6d6;
+            padding: 2px 5px;
+            background: $white;
+            text-align: right;
+        }
+    }
+
+    .system-parlay-outstanding td {
+        background-color: #FFB391;
+    }
+
+    .system-parlay-subtotal td {
+        background-color: #FFE7C5;
+    }
+
+    .system-parlay-total td {
+        background-color: #B1E0AC;
+    }
+}
+
+.note-block {
+    margin-top: 5px;
+
+    p {
+        margin: 0;
+    }
+}

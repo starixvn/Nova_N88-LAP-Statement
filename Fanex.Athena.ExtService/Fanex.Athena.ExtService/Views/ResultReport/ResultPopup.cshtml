@@ -1,0 +1,21 @@
+﻿@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@inject IConfiguration Configuration
+
+
+@{
+
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var langCode = System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag;
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+
+@section pagecss
+    {
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistResult.css")" rel="stylesheet" type="text/css" />
+}
+
+<div class="result-container">
+    @Html.Raw(ViewBag.Data)
+</div>

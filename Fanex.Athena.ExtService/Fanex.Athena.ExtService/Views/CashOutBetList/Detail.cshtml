@@ -1,0 +1,84 @@
+﻿@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@inject IConfiguration Configuration
+@using Fanex.Athena.ExtService.Resources
+@{
+
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var langCode = System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag;
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+
+@section pagecss{
+<link href="@Url.Content($"~/css/build/{env}/pages/betlist/cashouthistory.css")" rel="stylesheet" type="text/css" />
+
+}
+
+@model Fanex.Athena.ExtService.BetList.Models.ViewModel.CashOutBetListDetailViewModel
+
+<div class="page-results betlist-container">
+    <div class="table-content">
+        <p>
+            @(ViewResources.OriginalBetTicket):
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col-medium">@ViewResources.TransTime</th>
+                    <th class="col-large small">@ViewResources.Choice</th>
+                    <th>@ViewResources.Odds</th>
+                    <th>@ViewResources.Stake</th>
+                    <th>@(ViewResources.WinLoss)/@(ViewResources.Comm)</th>
+                    <th>@ViewResources.Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var tdClass = Model.IsHighlightOriginalTicket ? "highlight" : null;
+                    var ticket = Model.OriginalTicketText;
+                }
+                <tr>
+                    <td class="@tdClass center-align">@Html.Raw(ticket.TransTime)</td>
+                    <td class="@tdClass right-align">@Html.Raw(ticket.Choice)</td>
+                    <td class="@tdClass right-align">@Html.Raw(ticket.Odds)</td>
+                    <td class="@tdClass right-align">@Html.Raw(ticket.Stake)</td>
+                    <td class="@tdClass right-align">@Html.Raw(ticket.WinLoss)</td>
+                    <td class="@tdClass center-align">@Html.Raw(ticket.Status)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-content">
+        <p>
+            @(Model.IsCashOut ? ViewResources.CashOutTicketsList : ViewResources.BoughtTicketsList):
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col-medium">@ViewResources.TransTime</th>
+                    <th class="col-large small">@(Model.IsCashOut ? ViewResources.CashOutStake : ViewResources.BoughtStake )</th>
+                    <th>@(Model.IsCashOut ? ViewResources.CashOutAmount : ViewResources.BoughtAmount )</th>
+                    <th>@ViewResources.WinLoss</th>
+                    <th>@ViewResources.Status</th>
+                    <th style="visibility: hidden; border-top-style: none; border-right-style: none;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CashOutTicketTextList)
+                {
+                    tdClass = item.IsHighlight ? "highlight" : null;
+                    <tr>
+                        <td class="@tdClass center-align @tdClass">@Html.Raw(item.TransTime)</td>
+                        <td class="@tdClass right-align @tdClass">@Html.Raw(item.Stake)</td>
+                        <td class="@tdClass right-align @tdClass">@Html.Raw(item.Price)</td>
+                        <td class="@tdClass right-align @tdClass">@Html.Raw(item.WinLoss)</td>
+                        <td class="@tdClass center-align @tdClass">@Html.Raw(item.Status)</td>
+                        <td style="visibility: hidden; border-style: none;"></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

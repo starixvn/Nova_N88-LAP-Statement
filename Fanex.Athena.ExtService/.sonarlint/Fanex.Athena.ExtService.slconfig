@@ -1,0 +1,12 @@
+{
+  "ServerUri": "https://sonarqube.nexdev.net/",
+  "Organization": null,
+  "ProjectKey": "Sparta_LAP.EXT",
+  "ProjectName": "Sparta / LAP.EXT",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "cs-sonar-way-80515",
+      "ProfileTimestamp": "2019-03-19T14:46:51+07:00"
+    }
+  }
+}

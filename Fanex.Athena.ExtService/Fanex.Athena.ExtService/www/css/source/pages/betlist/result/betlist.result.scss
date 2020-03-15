@@ -1,0 +1,440 @@
+﻿@import '../../../scss/abstracts/variables';
+@import '../../../pages/common';
+@import 'result.happy5';
+
+$bgRowGroupLevel1: #D1DAE1;
+
+body {
+    background: #fff;
+}
+
+.result-container {
+    padding: 10px;
+    /* Fast Markets */
+    .fn-rs.popup .cl-league.sub {
+        text-align: center;
+    }
+
+    table {
+        a {
+            color: #1c5fc3;
+            text-decoration: none;
+
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+            }
+        }
+
+        > thead {
+            > tr {
+                > th {
+                    vertical-align: middle;
+                    text-align: center;
+                    background: $bgHeaderTableLevel1;
+                    border: 1px solid $colorBorderTable;
+                    color: $white !important;
+                    padding: 4px 5px;
+                    /*&:first-child {
+                        border-left-color: #d1dae1 !important;
+                    }
+
+                    &:last-child {
+                        border-right-color: #d1dae1 !important;
+                    }*/
+                }
+
+                &:nth-child(2) th {
+                    &:last-child {
+                        border-right-color: #fff !important;
+                    }
+                }
+            }
+            /*&:first-child {
+                > tr:first-child > th {
+                    border: 1px solid $colorBorderTable;
+                }
+            }*/
+        }
+
+        > tbody {
+            tr {
+                td {
+                    border: 1px solid #d6d6d6;
+                    color: #404040;
+                    padding: 4px 5px;
+                    background: #fff;
+                }
+
+                &:hover td {
+                    background: #fcf4df;
+                }
+
+                &.total td {
+                    background: #ffb391;
+                }
+
+                &.highlight td {
+                    background: #f7dbb6;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .fn-rs-content-header {
+        border: 1px solid #cbc9ca;
+        padding-right: 15px;
+    }
+
+    .fn-rs-content-scroll {
+        border: 1px solid #cbc9ca;
+        -ms-overflow-y: auto;
+        overflow-y: auto;
+        -ms-overflow-x: hidden;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .goal-record {
+        float: right;
+        padding: 5px 0px;
+    }
+
+    .goal-record table {
+        min-width: 180px;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    .goal-record table th {
+        border-right: 1px solid #cbc9ca;
+        font-weight: normal;
+        vertical-align: middle;
+        text-align: center;
+        color: #FFF !important;
+    }
+
+    .goal-record table .header {
+        color: #fff;
+        background-color: #295091;
+    }
+
+    .goal-record table tbody td {
+        border: solid 1px #cbc9ca;
+        padding: 1px;
+        vertical-align: middle;
+    }
+
+    .goal-record table tbody .cl-goal {
+        width: 50%;
+    }
+
+    table.popup {
+        min-width: 650px !important;
+    }
+
+    table.fn-rs {
+        &.number-game {
+            line-height: 15px;
+        }
+
+        thead {
+            th.cl-title {
+                background: #ccc;
+            }
+        }
+
+        tbody {
+            tr td {
+                text-align: center;
+            }
+
+            .cl-group-name {
+                color: #1d3968;
+                background: #ccc;
+                vertical-align: middle;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .cl-total {
+                td {
+                    background: $bgRowGroupLevel1;
+                }
+
+                .selection {
+                    font-size: 12px;
+                    text-align: left;
+                    padding-left: 3px;
+                }
+
+                .result {
+                    text-align: center;
+                }
+            }
+
+            .cl-league {
+                background: $bgRowGroupLevel1;
+                vertical-align: middle;
+                border: 0;
+                font-weight: bold;
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            .cl-team {
+                text-align: left;
+            }
+
+            .cl-match-mt {
+                text-align: left;
+                padding-left: 3px;
+
+                &.home {
+                    color: #c00;
+                }
+
+                &.away {
+                    color: #4169e1;
+                }
+
+                &.win {
+                    font-weight: bold;
+                }
+            }
+
+            .cl-match {
+                text-align: left;
+                padding-left: 3px;
+
+                &.home {
+                    color: rgb(69, 69, 69);
+                }
+
+                &.away {
+                    color: rgb(69, 69, 69);
+                }
+
+                &.win {
+                    font-weight: bold;
+                }
+
+                div {
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block;
+                    padding: 0 8px;
+                    vertical-align: middle;
+
+                    &.first-goal {
+                        background: url("images/goal-icon.png") no-repeat 0 0;
+                    }
+
+                    &.last-goal {
+                        background: url("images/goal-icon.png") no-repeat -18px 0;
+                    }
+
+                    &.first-half-first-goal {
+                        background: url("images/goal-icon.png") no-repeat -36px 0;
+                    }
+
+                    &.first-half-last-goal {
+                        background: url("images/goal-icon.png") no-repeat no-repeat -54px 0;
+                    }
+
+                    &.home, &.away {
+                        width: 100%;
+                        display: inline-block;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+
+        .cl-match {
+            min-width: 82px;
+        }
+
+        .header, .sub-header {
+            color: #024584;
+            background-color: #c7e9f5;
+            background-image: url("images/tab_topbg.gif");
+            background-position: center bottom;
+            background-repeat: repeat-x;
+        }
+
+        .cl-m-code {
+            width: 112px;
+
+            .m-code {
+                color: #599ced;
+            }
+        }
+
+        .cl-ko-time {
+            width: 100px;
+        }
+
+        .cl-s, .cl-ot, .cl-ei {
+            width: 7%;
+        }
+
+        .cl-totalgames, .cl-totalpoint {
+            width: 72px;
+            color: #0054ff;
+        }
+
+        .cl-totalset {
+            width: 68px;
+            color: #ff0000;
+        }
+
+        .cl-ht-score {
+            width: 90px;
+            color: #0054ff;
+        }
+
+        .cl-f-score {
+            width: 90px;
+            color: #ff0000;
+        }
+
+        .cl-status {
+            text-transform: capitalize;
+
+            & {
+                width: 110px;
+            }
+
+            .detail-link {
+                color: #0273FF;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:hover {
+                    color: #D2592D;
+                }
+            }
+
+            .ko {
+                color: #677AE0;
+                font-weight: bold;
+            }
+
+            .penalty-result {
+                color: inherit;
+                cursor: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+
+        .cl-bg-pending {
+            background: Yellow;
+        }
+
+        .cl-bg-postponed {
+            background: #fdfd87;
+        }
+    }
+
+    table.number-game {
+        .cl-result {
+            width: 150px;
+        }
+
+        .cl-warrior, .cl-lblOEFT, .cl-lbl1stball, .cl-lastball {
+            width: 70px;
+        }
+
+        span.ball {
+            padding: 5px 5px;
+            background: -moz-linear-gradient(top, #f2f2f2 0%, #fff 25%, #fff 50%, #fff 75%, #d1cdcd);
+            background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), color-stop(0.25, #fff), color-stop(0.5, #fff), color-stop(0.75, #fff), to(#d1cdcd));
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            border: 1px solid #5c5757;
+            text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.4),1px 1px 0px rgba(255, 255, 255, 0.4);
+            width: 27px !important;
+            display: inline-block;
+            text-align: center;
+            margin-left: 2px;
+        }
+    }
+
+    table.casino {
+        .cl-result {
+            width: 334px;
+        }
+    }
+
+    table.racing {
+        .cl-race {
+            width: 180px;
+        }
+
+        .cl-result {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .cl-win, .cl-place {
+            width: 100px;
+        }
+
+        .cl-status {
+            width: 150px;
+
+            .official {
+                color: red;
+                font-weight: bold;
+            }
+        }
+
+        .cl-race-name {
+            width: 83px;
+        }
+
+        .cl-placing {
+            width: 50px;
+        }
+
+        .cl-engine-no {
+            width: 48px;
+        }
+    }
+
+    table.badminton {
+        .cl-result {
+            &.home {
+                color: #6678e0;
+            }
+
+            &.away {
+                color: #008d95;
+            }
+        }
+    }
+
+    table .row-noinfo {
+        border-top: 0;
+        text-align: center;
+        padding: 4px;
+    }
+    // E-Sport2
+    .width-40 {
+        width: 40%;
+    }
+
+    .width-30 {
+        width: 30%;
+    }
+
+    .color-blue {
+        color: #4169E1;
+    }
+}

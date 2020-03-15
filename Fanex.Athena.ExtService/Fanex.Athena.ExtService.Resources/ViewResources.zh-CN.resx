@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGCasino" xml:space="preserve">
+    <value>AG Casino</value>
+  </data>
+  <data name="BoughtAmount" xml:space="preserve">
+    <value>买入金额</value>
+  </data>
+  <data name="BoughtStake" xml:space="preserve">
+    <value>买入本金</value>
+  </data>
+  <data name="BoughtTicketsList" xml:space="preserve">
+    <value>买入注单</value>
+  </data>
+  <data name="CashOutAmount" xml:space="preserve">
+    <value>预先兑现金额</value>
+  </data>
+  <data name="CashOutStake" xml:space="preserve">
+    <value>即时兑现本金</value>
+  </data>
+  <data name="CashOutTicketsList" xml:space="preserve">
+    <value>即时兑现注单</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="ColossusBetBetListDetailMsg" xml:space="preserve">
+    <value>Member owned {0}% of this ticket&lt;br/&gt;Member sold {1}% of this ticket for {2}</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>佣金</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>佣金</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>累计</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>承租公司輸贏</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>滚球</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>赔率</value>
+  </data>
+  <data name="OddsType" xml:space="preserve">
+    <value>赔率类型</value>
+  </data>
+  <data name="OriginalBetTicket" xml:space="preserve">
+    <value>原始注单</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>平台</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>注单号码</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>投注额</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>系统账号</value>
+  </data>
+  <data name="SystemParlay" xml:space="preserve">
+    <value>复式过关</value>
+  </data>
+  <data name="SystemParlayDetailNote" xml:space="preserve">
+    <value>输赢的进位值仅供参考。因此，所有输赢相加的总计有可能和小计有差数。</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>总和</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Transaction Type</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>交易时间</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>输赢</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>余额</value>
+  </data>
+  <data name="Credit_Debit" xml:space="preserve">
+    <value>贷记/借记</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="Statement" xml:space="preserve">
+    <value>账目</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>交易额</value>
+  </data>
+  <data name="ProductCC" xml:space="preserve">
+    <value>嘻嘻俱乐部</value>
+    <comment>115449</comment>
+  </data>
+  <data name="ProductCO" xml:space="preserve">
+    <value>即时兑现</value>
+    <comment>#71727</comment>
+  </data>
+  <data name="ProductCS" xml:space="preserve">
+    <value>娱乐城</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductKN" xml:space="preserve">
+    <value>快乐彩</value>
+    <comment>113398</comment>
+  </data>
+  <data name="ProductNG" xml:space="preserve">
+    <value>百练赛</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductSB" xml:space="preserve">
+    <value>体育博彩</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductVS" xml:space="preserve">
+    <value>虚拟运动</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductVS2" xml:space="preserve">
+    <value>虚拟运动2</value>
+    <comment>83759</comment>
+  </data>
+  <data name="BettingStatement" xml:space="preserve">
+    <value>投注详情</value>
+  </data>
+  <data name="OutstandingBet" xml:space="preserve">
+    <value>未完成交易</value>
+  </data>
+  <data name="Void_CancelledBet" xml:space="preserve">
+    <value>作废/取消注单</value>
+  </data>
+  <data name="Promotion_Prize" xml:space="preserve">
+    <value>促销活动</value>
+    <comment>120333</comment>
+  </data>
+  <data name="ProductSPR" xml:space="preserve">
+    <value>沙巴促销活动</value>
+    <comment>124612</comment>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>投注历史</value>
+  </data>
+</root>

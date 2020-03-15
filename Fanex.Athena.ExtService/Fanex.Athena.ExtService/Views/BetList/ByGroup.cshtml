@@ -1,0 +1,181 @@
+﻿@using Fanex.Athena.ExtService.Resources
+@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@using Fanex.Athena.ExtService.Common
+
+@inject IConfiguration Configuration
+
+@{
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+@section pagecss
+    {
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistLayout.css")" rel="stylesheet" />
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistRefno.css")" rel="stylesheet" />
+
+}
+@section Scripts
+{
+    <script src="@Url.Content($"~/js/build/{env}/pages/betlist/refno.chunk.js")"></script>
+    <script type="text/javascript">
+
+    </script>
+}
+@model Fanex.Athena.ExtService.BetList.Models.ViewModel.BetListByProductViewModel
+<div id="container" class="container-fluid">
+    <div>
+        @if(ViewBag.ShowBreadCrumb)
+        {
+            var breadcrumbItems = new List<SelectListItem>
+            {
+                new SelectListItem { Text = ViewResources.Statement, Value = Url.Action("Summary", "Statement", new {
+                            cid=Model.CustId,
+                            fd=ViewBag.FromDate.ToString("MM/dd/yyyy"),
+                            td=ViewBag.ToDate.ToString("MM/dd/yyyy"),
+                            bc=Model.BaseCurrency,
+                            lang=Model.Lang,
+                            ps=ViewBag.StatementPageSize,
+                            pi=ViewBag.StatementPageIndex,
+                            sb=ViewBag.ShowBreadCrumb,
+                            access_token=Model.AccessToken
+                        }
+                    )
+                },
+                new SelectListItem { Text = ViewResources.BettingStatement, Value = Url.Action("ByGroup", "Statement", new {
+                            cid=Model.CustId,
+                            wd=Model.WinlostDate.ToString("MM/dd/yyyy"),
+                            mv=Model.TransType,
+                            fd=ViewBag.FromDate.ToString("MM/dd/yyyy"),
+                            td=ViewBag.ToDate.ToString("MM/dd/yyyy"),
+                            bc=Model.BaseCurrency,
+                            lang=Model.Lang,
+                            ps=ViewBag.StatementPageSize,
+                            pi=ViewBag.StatementPageIndex,
+                            sb=ViewBag.ShowBreadCrumb,
+                            access_token=Model.AccessToken
+                        }
+                    )
+                },
+                new SelectListItem { Text = ViewResources.BetList, Selected = true, Value = "javascript:;" }
+            };
+            <breadcrumb items="@breadcrumbItems"></breadcrumb>
+        }
+        <div class="betlist-container result-content">
+            <div class="report-title-container">
+                <p class="report-title">
+                    @Model.TransDesc
+                </p>
+            </div>
+            <div>
+                <div class="table-container">
+                    <div class="header-content">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr class="first-row">
+                                        <td style="width:39px;"></td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td style="width:350px"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr style="height:32px;">
+                                        <th>#</th>
+                                        <th>@ViewResources.RefNo</th>
+                                        <th>@ViewResources.TransTime</th>
+                                        <th>@ViewResources.Choice</th>
+                                        <th>@ViewResources.Odds</th>
+                                        <th>@ViewResources.OddsType</th>
+                                        <th>@ViewResources.Stake</th>
+                                        <th>
+                                            @(Model.Info.IsAllowedCustomerComm ?
+                                            $"{ ViewResources.WinLoss}/{ ViewResources.Comm}" : @ViewResources.WinLoss)
+                                        </th>
+                                        <th>
+                                            @ViewResources.LicenseeWL/@ViewResources.Comm
+                                        </th>
+                                        <th>@ViewResources.Status</th>
+                                        <th>@ViewResources.Platform</th>
+                                        <th>
+                                            @ViewResources.Live
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="body-content">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="first-row">
+                                        <td style="width:39px;"></td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td style="width:350px"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    @foreach (var item in Model.Data)
+                                    {
+                                    <tr>
+                                        <td title="@item.Index" class="center-align">
+                                            @item.Index
+                                        </td>
+
+                                        <td class="center-align">@Html.Raw(item.RefNo)</td>
+                                        <td class="center-align">@Html.Raw(item.TransTime)</td>
+                                        <td class="right-align">@Html.Raw(item.Choice)</td>
+                                        <td class="right-align">@Html.Raw(item.Odds)</td>
+                                        <td class="right-align">@Html.Raw(item.OddsType)</td>
+                                        <td class="right-align"> @Html.Raw(item.Stake)</td>
+                                        <td class="right-align">@Html.Raw(item.WinLoss)</td>
+                                        <td class="right-align">@Html.Raw(item.LicenseeWL)</td>
+                                        <td class="center-align">@Html.Raw(item.Status)</td>
+                                        <td class="center-align">@Html.Raw(item.Platform)</td>
+                                        <td class="center-align">@Html.Raw(item.Live)</td>
+                                    </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <pager page-index="@Model.PageIndex"
+               page-size="@Model.PageSize"
+               total-items="@Model.TotalRows"
+               url-template="@Url.Action("ByGroup","BetList",new {
+               cid=Model.CustId,
+               lang=Model.Lang,
+               bc=Model.BaseCurrency,
+               wd=Model.WinlostDate.ToString("MM/dd/yyyy"),
+               pc=Model.ProductCode,
+               mv=Model.TransType,
+               s=Model.Sort,
+               fd=ViewBag.FromDate.ToString("MM/dd/yyyy"),
+               td=ViewBag.ToDate.ToString("MM/dd/yyyy"),
+               sb=ViewBag.ShowBreadCrumb,
+               spi=ViewBag.StatementPageIndex,
+               sps=ViewBag.StatementPageSize,
+               access_token=Model.AccessToken
+               })">
+        </pager>
+    </div>
+</div>

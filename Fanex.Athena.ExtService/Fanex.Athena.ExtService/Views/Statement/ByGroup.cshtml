@@ -1,0 +1,170 @@
+﻿@using Fanex.Athena.ExtService.Resources
+@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@using Fanex.Athena.ExtService.BetList.Helper
+@using Fanex.Athena.ExtService.BetList.Models.DataDomain
+@using Fanex.Athena.ExtService.Common
+@inject IConfiguration Configuration
+@{
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+}
+@section pagecss
+    {
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistLayout.css")" rel="stylesheet" />
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistRefno.css")" rel="stylesheet" />
+
+}
+@section Scripts
+    {
+    <script src="@Url.Content($"~/js/build/{env}/pages/betlist/refno.chunk.js")"></script>
+    <script type="text/javascript">
+
+    </script>
+}
+@model Fanex.Athena.ExtService.BetList.Models.ViewModel.StatementByGroupViewModel
+<div id="container" class="container-fluid">
+    <div>
+        @if(ViewBag.ShowBreadCrumb)
+        {
+            var breadcrumbItems = new List<SelectListItem>
+            {
+                new SelectListItem {
+                    Text = ViewResources.Statement,
+                    Value = Url.Action(
+                        "Summary",
+                        "Statement",
+                        new {
+                            cid=Model.CustId,
+                            fd=ViewBag.FromDate.ToString("MM/dd/yyyy"),
+                            td=ViewBag.ToDate.ToString("MM/dd/yyyy"),
+                            bc=Model.BaseCurrency,
+                            lang=Model.Lang,
+                            ps=ViewBag.PageSize,
+                            pi=ViewBag.PageIndex,
+                            sb=ViewBag.ShowBreadCrumb,
+                            access_token=Model.AccessToken
+                        }
+                    )
+                },
+                new SelectListItem { Text = ViewResources.BettingStatement, Selected = true, Value = "javascript:;" }
+            };
+            <breadcrumb items="@breadcrumbItems"></breadcrumb>
+        }
+        <div class="betlist-container result-content">
+            <div class="report-title-container">
+                <p class="report-title">
+                    @Model.TransDesc
+                </p>
+            </div>
+            <div>
+                <div class="table-container">
+                    <div class="header-content">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr class="first-row">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr style="height:32px;">
+                                        <th>@ViewResources.Date</th>
+                                        <th>@ViewResources.Remark</th>
+                                        <th>@ViewResources.Turnover</th>
+                                        <th>@ViewResources.Credit_Debit</th>
+                                        <th>@ViewResources.Commission</th>
+                                        <th>@ViewResources.Balance</th>
+
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="body-content">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="first-row">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    @if (Model.DataList != null && Model.DataList.Any())
+                                    {
+                                        decimal previousBalance = 0;
+                                        foreach (var item in Model.DataList)
+                                        {
+                                            previousBalance = StatementHelper.GetBettingBalance(previousBalance, item);
+                                            var transDescText = StatementHelper.GetTransDescText(item.TransDesc);
+                                            var remarkValue = StatementHelper.GetBetingStatementRemark(transDescText, item.ProductCode);
+                                            <tr>
+                                                <td class="left-align">
+                                                    @($"{item.WinLostDate:dddd}")
+                                                    <br />
+                                                    @($"{item.WinLostDate:MM/dd/yyyy}")
+                                                </td>
+                                                <td class="left-align">
+                                                    <span class='bl-underdog'>
+                                                        @if (StatementHelper.HideBetListLink(item.ProductCode))
+                                                        {
+                                                            @transDescText
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a class="detail-link" href="@Url.Action("ByGroup","BetList",new {
+                                                                                        bc = Model.BaseCurrency,
+                                                                                        lang = Model.Lang,
+                                                                                        wd = item.WinLostDate.ToString("MM/dd/yyyy"),
+                                                                                        cid = Model.CustId,
+                                                                                        pc = item.ProductCode,
+                                                                                        mv = Model.ModeView,
+                                                                                        pi = 1,
+                                                                                        ps = ViewBag.PageSize,
+                                                                                        spi = ViewBag.PageIndex,
+                                                                                        sps = ViewBag.PageSize,
+                                                                                        fd = ViewBag.FromDate.ToString("MM/dd/yyyy"),
+                                                                                        td = ViewBag.ToDate.ToString("MM/dd/yyyy"),
+                                                                                        sb = ViewBag.ShowBreadCrumb,
+                                                                                        access_token = Model.AccessToken,
+                                                                                    })">
+                                                                @remarkValue
+                                                            </a>
+                                                        }
+
+                                                    </span>
+                                                </td>
+                                                <td class="right-align">
+                                                    <money>@item.TurnOver</money>
+
+                                                </td>
+                                                <td class="right-align">
+                                                    <money>@StatementHelper.GetCreditDebit(item)</money>
+
+                                                </td>
+                                                <td class="right-align">
+                                                    <money>@item.Commission</money>
+
+                                                </td>
+                                                <td class="right-align">
+                                                    <money>@previousBalance</money>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

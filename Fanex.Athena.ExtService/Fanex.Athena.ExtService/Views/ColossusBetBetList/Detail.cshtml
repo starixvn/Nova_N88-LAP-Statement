@@ -1,0 +1,65 @@
+﻿@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@inject IConfiguration Configuration
+@using Fanex.Athena.ExtService.Resources
+
+@{
+
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var langCode = System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag;
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+
+@section pagecss{
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/colossusbetdetail.css")" rel="stylesheet" type="text/css" />
+}
+@model Fanex.Athena.ExtService.BetList.Models.ViewModel.ColossusBetDetailViewModel
+<div class="content-wrapper">
+    <div class="col-left">
+        @{var iframeUrl = @Model.IframeUrl ?? string.Empty; }
+        @if (appSettings.Environment.Equals("PROD")
+       && !iframeUrl.Contains("https://"))
+        {
+            iframeUrl = iframeUrl.Replace("http", "https");
+        }
+        <iframe src="@iframeUrl"></iframe>
+    </div>
+    <div class="line-middle"></div>
+    <div class="col-right">
+        @{
+            var ownPercent = 100 - Model.TotalSoldPercent;
+            var message = string.Format(ViewResources.ColossusBetBetListDetailMsg, ownPercent.ToString("#,##0.##"),
+                Model.TotalSoldPercent.ToString("#,##0.##"), Model.TotalSoldWinLoss.ToString("#,##0.00"));
+        }
+        <p>
+            @Html.Raw(message)
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@ViewResources.Date</th>
+                    <th>@ViewResources.TransactionType</th>
+                    <th>@ViewResources.WinLoss</th>
+                    <th>@ViewResources.Commission</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DataList)
+                {
+                    <tr>
+                        <td class="col-date">@item.TransDate</td>
+                        <td class="col-trans">@item.TransactionType</td>
+                        <td class="col-winloss">@Html.Raw(item.WinLoss)</td>
+                        <td class="col-comm">@item.Commission.ToString("#,##0.00")</td>
+                    </tr>
+                }
+                <tr class="total-row">
+                    <td colspan="2">@ViewResources.Total</td>
+                    <td>@Model.TotalWinLoss.ToString("#,##0.00")</td>
+                    <td>@Model.TotalComm.ToString("#,##0.00")</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

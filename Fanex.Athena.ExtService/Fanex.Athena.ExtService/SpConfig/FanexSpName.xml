@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions SiteId="31" SiteName="LRF">
+  <Function Name="Common">
+    <Setting Key="Lrf_SelBalanceUpDay" SpName="Lrf_SelBalanceUpDay" DbName="DBEXT.bodb02.bodbLicenseeNet" />
+    <Setting Key="Lrf_LicenseeSelExtInfo" SpName="Lrf_LicenseeSelExtInfo" DbName="DBEXT.bodb02.bodbLicenseeNet" />
+    <Setting Key="LAP_Statement_Mem" SpName="LAP_Statement_Mem" DbName="DBACC.bodb02.bodbLicenseeNet" />
+    <Setting Key="LAP_Statement_Mem_Product" SpName="LAP_Statement_Mem_Product" DbName="DBACC.bodb02.bodbLicenseeNet" />
+  </Function>
+</Functions>

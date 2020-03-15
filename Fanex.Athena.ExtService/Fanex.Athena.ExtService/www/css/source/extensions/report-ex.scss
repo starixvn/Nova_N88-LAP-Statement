@@ -1,0 +1,156 @@
+﻿@import "../scss/abstracts/_variables.scss";
+@import "../pages/common";
+@import "../scss/layout/filter";
+@import "../scss/layout/content";
+.page-form {
+    .input-field {
+        input[type=radio] + label {
+            left: 0;
+            padding-right: 10px;
+            padding-left: 25px;
+        }
+    }
+
+    input[type="radio"] + label {
+        margin: 0 0 10px 0;
+    }
+
+    .date-range {
+        min-width: 200px;
+    }
+
+    .button-block {
+        .btn {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media only screen and (min-width: 993px) {
+        .button-block {
+            width: 10% !important;
+        }
+    }
+}
+.page-filter {
+    position: relative;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background: $white;
+    border: 1px solid #d6d6d6;
+}
+.page-results {
+    .result-content {
+        box-shadow: none;
+        border: 0;
+        margin: 0.5rem 0 1rem 0;
+    }
+}
+
+.calendar .icon-calendar {
+    color: #4c6375;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.negative-number, .positive-number {
+    color: $colorPositiveNumber;
+}
+
+.highlight, .table > tbody > tr > td.highlight {
+    background-color: $colorHighlight;
+}
+
+//---------------------- Form input style customize ----------------------//
+
+table {
+    td, th {
+        border-radius: 0;
+    }
+
+    tbody {
+        tr {
+            &.row-group-level1 {
+                td {
+                    background: $bgRowGroupLevel1;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//----- Table Column Width -----//
+.col-small {
+    width: 5%;
+}
+
+.col-extra-small {
+    width: 2%;
+}
+
+.col-medium {
+    width: 15%;
+
+    &.small {
+        width: 10%;
+    }
+
+    &.large {
+        width: 20%;
+    }
+}
+
+.col-large {
+    width: 40%;
+
+    &.small {
+        width: 35%;
+    }
+}
+
+.col-child {
+    width: 10%;
+
+    &.small {
+        width: 6%;
+    }
+
+    &.medium {
+        width: 7.5%;
+    }
+}
+
+//----- User Guide -----//
+#UserGuidePopup {
+    ul li {
+        list-style-type: disc;
+
+        ul li {
+            list-style-type: circle;
+
+            ul li {
+                list-style-type: square;
+            }
+        }
+    }
+}
+
+.disabled {
+    pointer-events: none;
+}
+.report-title-container {
+    background: $bgHeaderTableLevel1;
+    padding: 4px 15px;
+    color: $white;
+    font-size: 12px;
+
+    .report-title {
+        margin: 0;
+    }
+}
+
+.no-info-row {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: $white;
+}

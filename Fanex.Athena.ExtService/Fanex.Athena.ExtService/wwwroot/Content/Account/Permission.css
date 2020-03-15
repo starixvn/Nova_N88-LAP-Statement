@@ -1,0 +1,47 @@
+﻿#permission-tabs
+{
+    width: 600px;
+}
+
+.permissionBox, .currencyBox
+{
+    max-height: 600px;
+    overflow-y: scroll;
+    width: 560px;
+    padding: 5px;
+}
+
+.masterItem
+{
+    width: 250px;
+}
+
+.groupStyle
+{
+    display: none;
+    padding-left: 25px;
+    padding-top: 0;
+}
+
+.funcItem
+{
+    background-image: url("../../Resources/Images/tree-branch.gif");
+    background-repeat: no-repeat;
+    height: 15px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 275px;
+}
+
+.masterItem img, .masterItem input, .masterItem label, .funcItem img, .funcItem input, .funcItem label
+{
+    cursor: pointer;
+}
+
+img.icon
+{
+    float: left;
+    height: 15px;
+    padding-top: 3px;
+    width: 15px;
+}

@@ -1,0 +1,25 @@
+﻿@using Microsoft.Extensions.Configuration
+
+@inject IConfiguration Configuration
+
+@section pagecss
+    {
+    <link href="@Url.Content("~/Content/Fanex.Result/Allbet/css/table_w.css")" rel="stylesheet" type="text/css" />
+}
+<style>
+
+    html, body, #BodyContent {
+        height: 96%;
+    }
+
+    .iframe-rs, .iframe-rs-wrap {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    table td, table th {
+        text-align: center;
+    }
+</style>
+@Html.Raw(ViewBag.Data)

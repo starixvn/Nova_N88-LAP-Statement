@@ -1,0 +1,327 @@
+/* z-index */
+/* z-index */
+.page-title .title {
+  font-size: 16px;
+  color: #4060a4;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem; }
+
+.page-title .sub-title {
+  font-size: 1.2rem; }
+
+.table {
+  table-layout: fixed; }
+
+.no-info-row {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #fff; }
+
+.filter-handle {
+  position: absolute;
+  background-color: #4C6375;
+  cursor: pointer;
+  width: 25px;
+  bottom: 0;
+  height: 12px;
+  text-align: center;
+  color: #fff;
+  left: 50%;
+  margin-left: -12.5px;
+  font-size: 9px; }
+  .filter-handle .icon-arrow {
+    transform: rotate(180deg);
+    display: inline-block; }
+
+.filter-collapse *:not(.filter-handle) {
+  display: none; }
+
+.filter-collapse .filter-handle .icon-arrow {
+  transform: rotate(0);
+  display: inline-block; }
+
+.lottoBall {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  color: #000;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 31px;
+  text-align: center;
+  background-image: url(images/lotto_ball.png);
+  background-repeat: no-repeat;
+  background-color: transparent !important;
+  /* custom */ }
+
+.lottoBall.red {
+  background-position: 0 0; }
+
+.lottoBall.blue {
+  background-position: 0 -30px; }
+
+.lottoBall.disable {
+  color: #999;
+  background-position: 0 -60px; }
+
+table.happy5 .cl-result {
+  width: 250px; }
+
+table.happy5 .cl-detail-result {
+  width: 70px; }
+
+body {
+  background: #fff; }
+
+.result-container {
+  padding: 10px;
+  /* Fast Markets */ }
+  .result-container .fn-rs.popup .cl-league.sub {
+    text-align: center; }
+  .result-container table a {
+    color: #1c5fc3;
+    text-decoration: none; }
+    .result-container table a:hover, .result-container table a:focus, .result-container table a:active {
+      text-decoration: none; }
+  .result-container table > thead {
+    /*&:first-child {
+                > tr:first-child > th {
+                    border: 1px solid $colorBorderTable;
+                }
+            }*/ }
+    .result-container table > thead > tr > th {
+      vertical-align: middle;
+      text-align: center;
+      background: #4C6375;
+      border: 1px solid #d1dae1;
+      color: #fff !important;
+      padding: 4px 5px;
+      /*&:first-child {
+                        border-left-color: #d1dae1 !important;
+                    }
+
+                    &:last-child {
+                        border-right-color: #d1dae1 !important;
+                    }*/ }
+    .result-container table > thead > tr:nth-child(2) th:last-child {
+      border-right-color: #fff !important; }
+  .result-container table > tbody tr td {
+    border: 1px solid #d6d6d6;
+    color: #404040;
+    padding: 4px 5px;
+    background: #fff; }
+  .result-container table > tbody tr:hover td {
+    background: #fcf4df; }
+  .result-container table > tbody tr.total td {
+    background: #ffb391; }
+  .result-container table > tbody tr.highlight td {
+    background: #f7dbb6;
+    text-transform: uppercase; }
+  .result-container .fn-rs-content-header {
+    border: 1px solid #cbc9ca;
+    padding-right: 15px; }
+  .result-container .fn-rs-content-scroll {
+    border: 1px solid #cbc9ca;
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    width: 100%; }
+  .result-container .goal-record {
+    float: right;
+    padding: 5px 0px; }
+  .result-container .goal-record table {
+    min-width: 180px;
+    border-collapse: collapse;
+    text-align: center; }
+  .result-container .goal-record table th {
+    border-right: 1px solid #cbc9ca;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFF !important; }
+  .result-container .goal-record table .header {
+    color: #fff;
+    background-color: #295091; }
+  .result-container .goal-record table tbody td {
+    border: solid 1px #cbc9ca;
+    padding: 1px;
+    vertical-align: middle; }
+  .result-container .goal-record table tbody .cl-goal {
+    width: 50%; }
+  .result-container table.popup {
+    min-width: 650px !important; }
+  .result-container table.fn-rs.number-game {
+    line-height: 15px; }
+  .result-container table.fn-rs thead th.cl-title {
+    background: #ccc; }
+  .result-container table.fn-rs tbody tr td {
+    text-align: center; }
+  .result-container table.fn-rs tbody .cl-group-name {
+    color: #1d3968;
+    background: #ccc;
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: center; }
+  .result-container table.fn-rs tbody .cl-total td {
+    background: #D1DAE1; }
+  .result-container table.fn-rs tbody .cl-total .selection {
+    font-size: 12px;
+    text-align: left;
+    padding-left: 3px; }
+  .result-container table.fn-rs tbody .cl-total .result {
+    text-align: center; }
+  .result-container table.fn-rs tbody .cl-league {
+    background: #D1DAE1;
+    vertical-align: middle;
+    border: 0;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px; }
+  .result-container table.fn-rs tbody .cl-team {
+    text-align: left; }
+  .result-container table.fn-rs tbody .cl-match-mt {
+    text-align: left;
+    padding-left: 3px; }
+    .result-container table.fn-rs tbody .cl-match-mt.home {
+      color: #c00; }
+    .result-container table.fn-rs tbody .cl-match-mt.away {
+      color: #4169e1; }
+    .result-container table.fn-rs tbody .cl-match-mt.win {
+      font-weight: bold; }
+  .result-container table.fn-rs tbody .cl-match {
+    text-align: left;
+    padding-left: 3px; }
+    .result-container table.fn-rs tbody .cl-match.home {
+      color: #454545; }
+    .result-container table.fn-rs tbody .cl-match.away {
+      color: #454545; }
+    .result-container table.fn-rs tbody .cl-match.win {
+      font-weight: bold; }
+    .result-container table.fn-rs tbody .cl-match div {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      padding: 0 8px;
+      vertical-align: middle; }
+      .result-container table.fn-rs tbody .cl-match div.first-goal {
+        background: url("images/goal-icon.png") no-repeat 0 0; }
+      .result-container table.fn-rs tbody .cl-match div.last-goal {
+        background: url("images/goal-icon.png") no-repeat -18px 0; }
+      .result-container table.fn-rs tbody .cl-match div.first-half-first-goal {
+        background: url("images/goal-icon.png") no-repeat -36px 0; }
+      .result-container table.fn-rs tbody .cl-match div.first-half-last-goal {
+        background: url("images/goal-icon.png") no-repeat no-repeat -54px 0; }
+      .result-container table.fn-rs tbody .cl-match div.home, .result-container table.fn-rs tbody .cl-match div.away {
+        width: 100%;
+        display: inline-block;
+        margin-top: 10px; }
+  .result-container table.fn-rs .cl-match {
+    min-width: 82px; }
+  .result-container table.fn-rs .header, .result-container table.fn-rs .sub-header {
+    color: #024584;
+    background-color: #c7e9f5;
+    background-image: url("images/tab_topbg.gif");
+    background-position: center bottom;
+    background-repeat: repeat-x; }
+  .result-container table.fn-rs .cl-m-code {
+    width: 112px; }
+    .result-container table.fn-rs .cl-m-code .m-code {
+      color: #599ced; }
+  .result-container table.fn-rs .cl-ko-time {
+    width: 100px; }
+  .result-container table.fn-rs .cl-s, .result-container table.fn-rs .cl-ot, .result-container table.fn-rs .cl-ei {
+    width: 7%; }
+  .result-container table.fn-rs .cl-totalgames, .result-container table.fn-rs .cl-totalpoint {
+    width: 72px;
+    color: #0054ff; }
+  .result-container table.fn-rs .cl-totalset {
+    width: 68px;
+    color: #ff0000; }
+  .result-container table.fn-rs .cl-ht-score {
+    width: 90px;
+    color: #0054ff; }
+  .result-container table.fn-rs .cl-f-score {
+    width: 90px;
+    color: #ff0000; }
+  .result-container table.fn-rs .cl-status {
+    text-transform: capitalize; }
+    .result-container table.fn-rs .cl-status {
+      width: 110px; }
+    .result-container table.fn-rs .cl-status .detail-link {
+      color: #0273FF;
+      cursor: pointer;
+      text-decoration: none; }
+      .result-container table.fn-rs .cl-status .detail-link:hover {
+        color: #D2592D; }
+    .result-container table.fn-rs .cl-status .ko {
+      color: #677AE0;
+      font-weight: bold; }
+    .result-container table.fn-rs .cl-status .penalty-result {
+      color: inherit;
+      cursor: inherit;
+      text-decoration: none; }
+      .result-container table.fn-rs .cl-status .penalty-result:hover {
+        color: inherit; }
+  .result-container table.fn-rs .cl-bg-pending {
+    background: Yellow; }
+  .result-container table.fn-rs .cl-bg-postponed {
+    background: #fdfd87; }
+  .result-container table.number-game .cl-result {
+    width: 150px; }
+  .result-container table.number-game .cl-warrior, .result-container table.number-game .cl-lblOEFT, .result-container table.number-game .cl-lbl1stball, .result-container table.number-game .cl-lastball {
+    width: 70px; }
+  .result-container table.number-game span.ball {
+    padding: 5px 5px;
+    background: -moz-linear-gradient(top, #f2f2f2 0%, #fff 25%, #fff 50%, #fff 75%, #d1cdcd);
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), color-stop(0.25, #fff), color-stop(0.5, #fff), color-stop(0.75, #fff), to(#d1cdcd));
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    border: 1px solid #5c5757;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.4), 1px 1px 0px rgba(255, 255, 255, 0.4);
+    width: 27px !important;
+    display: inline-block;
+    text-align: center;
+    margin-left: 2px; }
+  .result-container table.casino .cl-result {
+    width: 334px; }
+  .result-container table.racing .cl-race {
+    width: 180px; }
+  .result-container table.racing .cl-result {
+    font-weight: bold;
+    text-align: left; }
+  .result-container table.racing .cl-win, .result-container table.racing .cl-place {
+    width: 100px; }
+  .result-container table.racing .cl-status {
+    width: 150px; }
+    .result-container table.racing .cl-status .official {
+      color: red;
+      font-weight: bold; }
+  .result-container table.racing .cl-race-name {
+    width: 83px; }
+  .result-container table.racing .cl-placing {
+    width: 50px; }
+  .result-container table.racing .cl-engine-no {
+    width: 48px; }
+  .result-container table.badminton .cl-result.home {
+    color: #6678e0; }
+  .result-container table.badminton .cl-result.away {
+    color: #008d95; }
+  .result-container table .row-noinfo {
+    border-top: 0;
+    text-align: center;
+    padding: 4px; }
+  .result-container .width-40 {
+    width: 40%; }
+  .result-container .width-30 {
+    width: 30%; }
+  .result-container .color-blue {
+    color: #4169E1; }
+
+
+/*# sourceMappingURL=betlistResult.css.map*/

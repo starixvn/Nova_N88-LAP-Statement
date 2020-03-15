@@ -1,0 +1,32 @@
+﻿.lottoBall {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  color: #000;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 31px;
+  text-align: center;
+  background-image: url(images/lotto_ball.png);
+  background-repeat: no-repeat;
+  background-color: transparent !important; /* custom */
+}
+.lottoBall.red {
+  background-position: 0 0;
+}
+.lottoBall.blue {
+  background-position: 0 -30px;
+}
+.lottoBall.disable {
+  color: #999;
+  background-position: 0 -60px;
+}
+
+
+table.happy5 .cl-result {
+  width: 250px;
+}
+table.happy5 .cl-detail-result {
+  width: 70px;
+}

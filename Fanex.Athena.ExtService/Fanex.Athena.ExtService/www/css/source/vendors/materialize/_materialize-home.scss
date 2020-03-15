@@ -1,0 +1,21 @@
+﻿@charset "UTF-8";
+
+// Mixins
+@import "components/mixins";
+@import "components/color";
+
+// Variables;
+@import "components/variables";
+
+// Reset
+@import "components/normalize";
+
+// components
+@import "components/global";
+@import "components/navbar";
+@import "components/typography";
+@import "components/dropdown";
+@import "components/waves";
+@import "components/collapsible";
+@import "components/forms/forms";
+@import "components/sideNav";

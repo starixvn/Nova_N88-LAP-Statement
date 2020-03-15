@@ -1,0 +1,56 @@
+﻿@import '../../scss/abstracts/_variables';
+
+$colorDefault: $bgHeaderTableLevel1;
+$bgActive: $bgHeaderTableLevel1;
+$colorActiveText: $white;
+$bgActiveTab: $bgHeaderTableLevel1;
+
+$bgPrimary: $bgHeaderTableLevel1;
+$colorPrimary: $white;
+$bgPrimaryActive: $bgHeaderTableLevel2;
+$colorPrimaryActive: $white;
+
+.label {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    &-default {
+        border: 1px solid $colorDefault;
+        color: $colorDefault;
+        background: transparent;
+
+        &:hover {
+            color: $colorActiveText;
+            background: $bgActive;
+        }
+
+        &.active {
+            color: $colorActiveText;
+            background: $bgActive;
+        }
+    }
+
+    &-primary {
+        color: $colorPrimary;
+        background: $bgPrimary;
+        border: none;
+
+        &:hover {
+            color: $colorPrimaryActive;
+            background: $bgPrimaryActive;
+        }
+
+        &.active {
+            color: $colorPrimaryActive;
+            background: $bgPrimaryActive;
+        }
+    }
+}

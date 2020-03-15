@@ -1,0 +1,90 @@
+/* z-index */
+.page-title .title {
+  font-size: 16px;
+  color: #4060a4;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem; }
+
+.page-title .sub-title {
+  font-size: 1.2rem; }
+
+.table {
+  table-layout: fixed; }
+
+.no-info-row {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #fff; }
+
+.filter-handle {
+  position: absolute;
+  background-color: #4C6375;
+  cursor: pointer;
+  width: 25px;
+  bottom: 0;
+  height: 12px;
+  text-align: center;
+  color: #fff;
+  left: 50%;
+  margin-left: -12.5px;
+  font-size: 9px; }
+  .filter-handle .icon-arrow {
+    transform: rotate(180deg);
+    display: inline-block; }
+
+.filter-collapse *:not(.filter-handle) {
+  display: none; }
+
+.filter-collapse .filter-handle .icon-arrow {
+  transform: rotate(0);
+  display: inline-block; }
+
+th {
+  line-height: 2rem; }
+
+.content-wrapper {
+  width: 100%; }
+  .content-wrapper, .content-wrapper .col-left, .content-wrapper .col-right, .content-wrapper .line-middle {
+    height: 100%; }
+  .content-wrapper .col-left {
+    width: 370px;
+    float: left; }
+    .content-wrapper .col-left iframe {
+      width: 100%; }
+  .content-wrapper .col-right {
+    width: 450px;
+    float: left; }
+  .content-wrapper .line-middle {
+    width: 1px;
+    background: #808080;
+    float: left;
+    margin: 0 10px; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 5px; }
+
+.col-date {
+  width: 30%;
+  text-align: center !important; }
+
+.col-trans {
+  width: 30%;
+  text-align: left !important; }
+
+.col-winloss {
+  width: 20%; }
+
+.col-comm {
+  width: 20%; }
+
+.total-row {
+  background-color: #FFEFE3;
+  border-top: 3px solid #a7a1a1;
+  font-weight: bold; }
+
+
+/*# sourceMappingURL=colossusbetdetail.css.map*/

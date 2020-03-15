@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+    var msg = (int)ViewBag.Code == 500 ? "Sorry, an error occurred while processing your request!" : "Sorry, your session has expired!";
+}
+
+<h4>@msg</h4>
+

@@ -1,0 +1,149 @@
+﻿@using Fanex.Athena.ExtService.Resources
+@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@inject IConfiguration Configuration
+
+@{
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+@section pagecss
+    {
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistLayout.css")" rel="stylesheet" />
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/betlistRefno.css")" rel="stylesheet" />
+
+}
+@section Scripts
+    {
+    <script src="@Url.Content($"~/js/build/{env}/pages/betlist/refno.chunk.js")"></script>
+    <script type="text/javascript">
+
+    </script>
+}
+
+@Html.AntiForgeryToken()
+
+@model Fanex.Athena.ExtService.BetList.Models.ViewModel.BetListResultViewModel
+<div id="container" class="container-fluid">
+    <div>
+        <div class="betlist-container result-content">
+            <div>
+                <div class="table-container">
+                    <div class="header-content">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr class="first-row">
+                                        <td style="width:39px;"></td>
+                                        <td></td>
+                                        <td style="width:350px"></td>
+                                        <td></td>
+                                        <td></td>
+                                        @if (Model.HasLicWl)
+                                        {
+                                            <td></td>
+                                        }
+
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr style="height:32px;">
+                                        <th>#</th>
+                                        <th>@ViewResources.TransTime</th>
+                                        <th>@ViewResources.Choice</th>
+                                        <th>@ViewResources.Odds</th>
+                                        <th>@ViewResources.Stake</th>
+                                        <th>
+                                            @(Model.Info.IsAllowedCustomerComm ?
+                                                                                        $"{ ViewResources.WinLoss}/{ ViewResources.Comm}" : @ViewResources.WinLoss)
+                                        </th>
+                                        @if (Model.HasLicWl)
+                                        {
+                                            <th>@ViewResources.LicenseeWL/@ViewResources.Comm</th>
+                                        }
+                                        <th>@ViewResources.Status</th>
+
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="body-content">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="first-row">
+                                        <td style="width:39px;"></td>
+                                        <td></td>
+                                        <td style="width:350px"></td>
+                                        <td></td>
+                                        <td></td>
+                                        @if (Model.HasLicWl)
+                                        {
+                                            <td></td>
+                                        }
+                                        <td></td>
+                                        <td></td>
+
+                                    </tr>
+                                    @foreach (var item in Model.Main)
+                                    {
+                                        <tr>
+                                            <td title="@item.Index" class="center-align">
+                                                @item.Index
+                                            </td>
+                                            <td class="center-align">@Html.Raw(item.TransTime)</td>
+                                            <td class="right-align">@Html.Raw(item.Choice)</td>
+                                            <td class="right-align">@Html.Raw(item.Odds)</td>
+                                            <td class="right-align"> @Html.Raw(item.Stake)</td>
+                                            <td class="right-align">@Html.Raw(item.WinLoss)</td>
+                                            @if (Model.HasLicWl)
+                                            {
+                                                <td class="right-align">@Html.Raw(item.LicenseeWL)</td>
+                                            }
+                                            <td class="center-align">@Html.Raw(item.Status)</td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @if (Model.HasTotalRow)
+                    {
+
+                        <div class="footer-content">
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <tbody>
+                                        <tr class="first-row">
+                                            <td style="width:39px;"></td>
+                                            <td></td>
+                                            <td style="width:350px"></td>
+                                            <td></td>
+                                            <td></td>
+
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="fixed-table-grant-total">
+                                            <td class="right-align" colspan="5">@ViewResources.GrandTotal</td>
+                                            <td class="right-align">@Model.Total.SumWinLoss</td>
+                                            @if (Model.HasLicWl)
+                                            {
+                                                @Model.Total.SumLicenseeWl
+                                            }
+                                            <td class="right-align"></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

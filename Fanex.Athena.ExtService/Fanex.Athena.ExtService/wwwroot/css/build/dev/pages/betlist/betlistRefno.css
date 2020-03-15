@@ -1,0 +1,262 @@
+.pagingContainer {
+  padding: 3px;
+  font-size: 1.1rem;
+  background-color: #EFF3F8;
+  border-left: 1px solid #d1dae1;
+  border-right: 1px solid #d1dae1;
+  border-bottom: 1px solid #d1dae1; }
+  .pagingContainer .icon {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.2rem;
+    color: #4c6375;
+    cursor: pointer; }
+  .pagingContainer .pagingDisable {
+    color: #ccc;
+    cursor: default; }
+  .pagingContainer .pagingFirst:before {
+    content: "\EA21"; }
+  .pagingContainer .pagingPrev:before {
+    content: "\EA1F"; }
+  .pagingContainer .pagingNext:before {
+    content: "\EA20"; }
+  .pagingContainer .pagingLast:before {
+    content: "\EA22"; }
+  .pagingContainer .pagingSelect-btn:before {
+    content: "\E90E"; }
+  .pagingContainer .paging-form {
+    width: auto;
+    height: auto;
+    font-size: inherit;
+    padding: 2px;
+    text-align: center;
+    margin: 0; }
+    .pagingContainer .paging-form, .pagingContainer .paging-form:focus {
+      background: #fff;
+      border: 1px solid #e2d6d6;
+      box-shadow: none; }
+  .pagingContainer .paging-info {
+    float: right;
+    padding: 3px; }
+  .pagingContainer .pagingSeperator {
+    width: 4px;
+    height: 18px;
+    margin: 5px;
+    border: 1px solid #ccc; }
+  .pagingContainer .pagingSelect {
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    height: auto;
+    font-size: inherit;
+    padding: 2px;
+    min-width: 65px;
+    border: 1px solid #e2d6d6;
+    margin-left: 5px; }
+    .pagingContainer .pagingSelect:hover .pagingOption {
+      display: block; }
+    .pagingContainer .pagingSelect button {
+      background-color: #fff;
+      border: none;
+      width: 100%; }
+      .pagingContainer .pagingSelect button .icon:before {
+        font-size: 0.7em; }
+      .pagingContainer .pagingSelect button .icon {
+        float: right; }
+    .pagingContainer .pagingSelect .pagingOption {
+      display: none;
+      position: absolute;
+      bottom: 1em;
+      border: 1px solid #147ccc;
+      background-color: #fff;
+      z-index: 1; }
+      .pagingContainer .pagingSelect .pagingOption a:hover {
+        background-color: #147ccc; }
+      .pagingContainer .pagingSelect .pagingOption a {
+        text-decoration: none;
+        display: block;
+        min-width: 65px;
+        color: #2c2c2c; }
+
+.table {
+  line-height: 1.15;
+  table-layout: fixed;
+  border-collapse: collapse; }
+  .table a {
+    color: #147ccc;
+    text-decoration: none; }
+    .table a:hover, .table a:focus, .table a:active {
+      text-decoration: none; }
+  .table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center;
+    background: #9eb4c3;
+    border: 1px solid #fff;
+    border-top: 1px solid #d6d6d6;
+    color: #2c2c2c;
+    font-weight: bold;
+    padding: 4px 5px;
+    border-radius: 0;
+    /*&:first-child {
+                    border-left-color: $colorBorderTable;
+                }
+
+                &:last-child {
+                    border-right-color: $colorBorderTable;
+                }*/ }
+  .table > tbody tr td {
+    border: 1px solid #d6d6d6;
+    color: #2c2c2c;
+    padding: 4px 5px;
+    background: #fff;
+    vertical-align: middle; }
+  .table > tbody tr:hover td {
+    background: #fcf4df; }
+  .table > tbody tr.total td {
+    background: #B8C3C9; }
+  .table > tbody tr.highlight td {
+    background: #f7dbb6;
+    font-weight: bold; }
+
+.table-container {
+  overflow-x: auto; }
+
+.header-content,
+.body-content,
+.footer-content {
+  border: solid 1px #d6d6d6; }
+  .header-content .table,
+  .body-content .table,
+  .footer-content .table {
+    border-right: 1px solid #d6d6d6; }
+    .header-content .table td:first-child,
+    .body-content .table td:first-child,
+    .footer-content .table td:first-child {
+      border-left: none; }
+
+.table th,
+.table td {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 1px; }
+
+.header-content,
+.body-content,
+.footer-content,
+.table-wrapper {
+  position: relative; }
+
+.header-content,
+.footer-content {
+  padding-right: 0px; }
+
+.first-row {
+  height: auto; }
+  .first-row td {
+    height: 0;
+    border: none !important;
+    padding: 0 !important;
+    line-height: 0; }
+
+.body-content {
+  overflow-y: auto;
+  overflow-x: auto;
+  border-top: none; }
+  .body-content.hasScroll {
+    padding-right: 0; }
+  .body-content tr:last-child td {
+    border-bottom: none; }
+
+.header-content {
+  border-bottom: none; }
+  .header-content .table > thead > tr > th {
+    border: none;
+    border-left: 1px solid #fff; }
+    .header-content .table > thead > tr > th.sortable {
+      cursor: pointer; }
+      .header-content .table > thead > tr > th.sortable .asc, .header-content .table > thead > tr > th.sortable .desc {
+        display: inline-block;
+        margin-left: 4px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent; }
+      .header-content .table > thead > tr > th.sortable .asc {
+        border-bottom: 5px solid; }
+      .header-content .table > thead > tr > th.sortable .desc {
+        border-top: 5px solid; }
+  .header-content .table > thead > tr:nth-child(n + 3) {
+    border-top: 1px solid #fff; }
+
+.footer-content {
+  border-top: none; }
+  .footer-content .table {
+    font-weight: bold; }
+    .footer-content .table .fixed-table-total td {
+      border-bottom: none; }
+    .footer-content .table .fixed-table-grant-total td {
+      background: #b8c3c9; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+.breadcrumb {
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 5px;
+  border: 1px solid #ddd; }
+  .breadcrumb > a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    color: #fff;
+    padding: 0 10px 0 25px;
+    position: relative; }
+    .breadcrumb > a:first-child {
+      padding-left: 10px; }
+      .breadcrumb > a:first-child::before {
+        left: 14px; }
+    .breadcrumb > a:last-child {
+      padding-right: 20px; }
+      .breadcrumb > a:last-child::after {
+        content: none; }
+    .breadcrumb > a::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -16px;
+      width: 30px;
+      height: 30px;
+      transform: scale(0.8) rotate(45deg);
+      z-index: 1;
+      border-right: 3px solid #ca1e58;
+      border-top: 3px solid #ca1e58;
+      border-radius: 0 5px 0 50px; }
+    .breadcrumb > a, .breadcrumb > a::after {
+      background: #fff;
+      color: #4C6375; }
+    .breadcrumb > a::before {
+      background: #fff;
+      box-shadow: 0 0 0 1px #ec407a; }
+    .breadcrumb > a:hover, .breadcrumb > a.active {
+      color: #fff; }
+      .breadcrumb > a:hover, .breadcrumb > a:hover::after, .breadcrumb > a.active, .breadcrumb > a.active::after {
+        background: #4C6375; }
+      .breadcrumb > a:hover::before, .breadcrumb > a.active::before {
+        color: #4C6375; }
+    .breadcrumb > a.active:hover {
+      background: #4C6375; }
+
+
+/*# sourceMappingURL=betlistRefno.css.map*/

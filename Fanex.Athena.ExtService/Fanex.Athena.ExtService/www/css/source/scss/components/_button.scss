@@ -1,0 +1,144 @@
+﻿@import "../abstracts/variables";
+
+.button-block {
+    margin-top: 0.5rem;
+
+    @media (max-width: 600px) {
+        margin-top: 0;
+    }
+}
+
+.btn {
+    color: $black;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    height: 32px;
+    line-height: 32px;
+    transition: none;
+}
+
+.btn-primary {
+    background: #f05b1f;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#f05b1f, 10%);
+    }
+
+    &:focus {
+        background: #f05b1f;
+    }
+}
+
+.button-collapse {
+    .material-icons {
+        color: $white;
+        line-height: 56px;
+        padding-left: 15px;
+
+        @media only screen and (min-width: 601px) {
+            line-height: 64px;
+        }
+    }
+}
+
+.btn-back {
+    background: #4c6375;
+    color: #fff;
+    margin-top: -10px;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: lighten(#4c6375, 10%);
+    }
+
+    .icon-arrow {
+        font-size: 12px;
+        margin-right: 10px;
+        transform: rotate(90deg);
+        color: inherit;
+    }
+}
+
+.btn-primary {
+    background: #f05b1f;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#f05b1f, 10%);
+    }
+
+    &:focus {
+        background: #f05b1f;
+    }
+}
+
+.btn-add {
+    background: #4caf50;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#4caf50, 10%);
+    }
+
+    &:focus {
+        background: #4caf50;
+    }
+}
+
+.btn-cancel {
+    background: #757575;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#757575, 10%);
+    }
+
+    &:focus {
+        background: #757575;
+    }
+}
+
+.btn-submit {
+    background: #4e68b6;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#4e68b6, 10%);
+    }
+
+    &:focus {
+        background: #4e68b6;
+    }
+}
+
+.btn-nav {
+    background: #fff;
+    color: #4c6375;
+    border: 1px solid #4c6375;
+
+    &:hover {
+        background: lighten(#4c6375, 10%);
+        color: #fff;
+        border: 0;
+    }
+
+    &:focus {
+        background: #fff;
+        color: #4c6375;
+        border: 1px solid #4c6375;
+    }
+}
+
+.btn-close {
+    background: #4c6375;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#4c6375, 10%);
+    }
+
+    &:focus {
+        background: #4c6375;
+    }
+}

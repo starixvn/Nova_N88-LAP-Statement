@@ -1,0 +1,34 @@
+﻿
+@using Fanex.Athena.ExtService.BetList.Models.ViewModel
+@using Fanex.Athena.ExtService.Resources
+@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@inject IConfiguration Configuration
+
+
+@{
+    Layout = null;
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+@model SystemParlayDetailViewModel
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@string.Format("LAP - {0}", ViewResources.SystemParlay)</title>
+    <link href="@Url.Content($"~/css/build/{env}/main.css")" rel="stylesheet" />
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/systemparlaydetail.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="system-parlay-detail-container">
+        @Html.Raw(Model.DetailText)
+
+        <div class="note-block">
+            <p class="text-bold"><span class="red-text">* </span>@ViewResources.Note</p>
+            <p>@ViewResources.SystemParlayDetailNote</p>
+        </div>
+    </div>
+</body>
+</html>

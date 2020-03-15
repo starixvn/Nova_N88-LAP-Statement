@@ -1,0 +1,344 @@
+﻿@import "../../scss/abstracts/_variables.scss";
+@import '../../components/sortableheader/sortableheader';
+
+.betlist-popup {
+    padding: 5px 20px;
+}
+
+.betlist-container {
+    background: #fff;
+
+    .ui-jqgrid-hdiv table.ui-jqgrid-htable > thead > tr > th {
+        &, &.ui-th-column {
+            color: $white;
+        }
+    }
+
+    .content-title {
+        font-weight: bold;
+        font-size: 15px;
+        padding: 5px 0 10px 0;
+        min-height: 30px;
+        min-width: 650px;
+        color: #D2592D;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .mx-parlay .void, .mx-parlay .refund {
+        text-decoration: line-through;
+    }
+
+    .line {
+        border-bottom: 1px solid #A0A0A0;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        overflow: hidden;
+        text-align: left;
+        width: 100%;
+    }
+
+    .underdog {
+        color: #01122B;
+        font-weight: bold !important;
+        white-space: normal;
+    }
+
+    .stake {
+        font-weight: bold !important;
+    }
+
+    .favorite {
+        color: #B50000;
+        font-weight: bold !important;
+
+        .excluding-choices {
+            white-space: normal;
+            color: #484848;
+            font-weight: normal;
+        }
+    }
+
+    .handicap {
+        .odds {
+            color: #003399;
+            font-size: 8pt;
+        }
+
+        &.custom {
+            font-weight: bold;
+        }
+    }
+
+    div.match + div.league {
+        color: #666666;
+        line-height: 15px;
+        margin-top: 1px;
+        background: none repeat scroll 0 0 transparent;
+        font-weight: normal;
+        text-align: right;
+        text-transform: none;
+    }
+
+    .bettype {
+        color: #003399;
+        font-weight: 600;
+        text-align: right;
+    }
+
+    .firstGoal, .lastGoal, .fhFirstGoal, .fhLastGoal {
+        display: inline;
+        height: 10px;
+        padding: 0 6px;
+        width: 14px;
+        vertical-align: middle;
+    }
+
+    .firstGoal {
+        background: url("images/goal-icon.png") no-repeat 0 0;
+    }
+
+    .lastGoal {
+        background: url("images/goal-icon.png") no-repeat -18px 0;
+    }
+
+    .fhFirstGoal {
+        background: url("images/goal-icon.png") no-repeat -36px 0;
+    }
+
+    .fhLastGoal {
+        background: url("images/goal-icon.png") no-repeat no-repeat -54px 0;
+    }
+
+    .match {
+        color: #000000;
+        font-weight: normal;
+        line-height: 15px;
+        text-align: right;
+        white-space: normal;
+    }
+
+    .leagueName {
+        white-space: normal;
+    }
+
+    .oddstype {
+        color: #586985;
+        font-weight: bold;
+    }
+
+    .colorHandicap, .handicap {
+        color: #606060;
+    }
+
+    .sport {
+        color: #0066CC;
+    }
+
+    .lic-win-loss {
+        background-color: #F5E3E3;
+        font-weight: bold;
+    }
+
+    .negative-number {
+        color: #b50000;
+    }
+
+    .detail {
+        background: url("images/q_Icon2_1.png") no-repeat scroll left center transparent;
+        color: #755200;
+        display: inline;
+        font-weight: bold;
+        height: 10px;
+        line-height: 20px;
+        padding: 0 1px 0 18px;
+        width: 14px;
+
+        &:hover {
+            background: url("images/q_Icon_2.png") no-repeat scroll left center transparent;
+            color: #755200;
+            cursor: pointer;
+            display: inline;
+            font-weight: bold;
+            height: 10px;
+            padding: 0 1px 0 18px;
+            width: 14px;
+        }
+    }
+
+    .combinationLink {
+        line-height: 20px;
+    }
+
+    .scoremap {
+        float: left;
+    }
+
+    .scoremapIcon {
+        background: url("Images/ScoreMapWL.png") no-repeat scroll 0 0 transparent;
+        height: 18px;
+        margin: 3px;
+        width: 18px;
+    }
+
+    .gamegroupname {
+        color: #008000;
+    }
+
+    .light-blue {
+        color: #0017CD;
+        background-color: transparent !important;
+    }
+    /* Trans */
+    .iplink, .betsliplink {
+        cursor: pointer;
+        color: #1E1EEB;
+        font-size: 11px;
+    }
+
+    .time {
+        color: #434343;
+        font-size: 7pt;
+        font-weight: normal;
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
+
+    .status {
+        color: #606060;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .result {
+        color: #1BA4ED;
+        cursor: pointer;
+    }
+
+    .ip {
+        display: none;
+    }
+    /*ul.h-list li a*/
+    .selected {
+        color: Gray !important;
+    }
+
+    .base-currency {
+        font-size: 14px;
+        color: rgb(2, 69, 132);
+    }
+
+    .icon-back {
+        color: #555;
+        font-size: 1.8rem;
+    }
+    /* Link */
+    span.inactive-switch-link {
+        font-size: 16px;
+        font-weight: bold;
+        cursor: default;
+        text-decoration: none;
+        color: #88003E;
+    }
+
+    span.active-switch-link {
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: underline;
+        color: #3547E3;
+    }
+
+    .blue {
+        color: #2673CE;
+    }
+
+    td .detail > .detail-link {
+        color: #755200;
+        font-weight: bold;
+    }
+    /*to make line-through for void-parlay-ticket*/
+    div.mx-parlay {
+        div.void {
+            span, div {
+                text-decoration: line-through;
+            }
+
+            > div.match, div.firstGoal, div.lastGoal {
+                text-decoration: none;
+            }
+        }
+
+        .system-parlay-ticket-infor {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 15px;
+            color: #000000;
+            font-weight: bold;
+
+            .system-parlay-unit-stake {
+                color: #003399;
+            }
+        }
+    }
+
+
+    .offer-name-list {
+        font-weight: bold;
+    }
+
+    .bonus-icon {
+        background: url(images/bonus.png) no-repeat scroll center center transparent;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+    }
+
+    .bonus-icon:hover {
+        cursor: pointer;
+    }
+
+    .bettype-description {
+        color: #003399;
+        font-weight: normal;
+    }
+
+    .rebate-bonus-icon {
+        background: url(images/rebateBonus.png) no-repeat scroll center center transparent;
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        position: relative;
+        top: 2px;
+    }
+
+    .nph-promotion-icon {
+        background: url(images/nphPromotion.png) no-repeat scroll center center transparent;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        position: relative;
+        top: 4px;
+        margin-right: 2px;
+    }
+
+    .single-match-parlay-detail {
+        border-right: solid 2px #666666;
+        margin: 0 8px 3px 0;
+        padding-right: 5px;
+
+        .single-match-parlay-selection {
+            .selection {
+                font-weight: normal;
+                color: #000000;
+            }
+
+            .status {
+                color: #003399;
+            }
+        }
+    }
+}

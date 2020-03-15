@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGCasino" xml:space="preserve">
+    <value>AG Casino</value>
+  </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>Base Currency</value>
+    <comment>84932</comment>
+  </data>
+  <data name="BettingTicketCenter" xml:space="preserve">
+    <value>Betting Ticket Center</value>
+    <comment>80941</comment>
+  </data>
+  <data name="BettingTicketCenter_RefnoTabNote1" xml:space="preserve">
+    <value>For Sportsbook, the search result includes the related Bonus/Cash tickets.</value>
+    <comment>80941</comment>
+  </data>
+  <data name="BoughtAmount" xml:space="preserve">
+    <value>Bought Amount</value>
+  </data>
+  <data name="BoughtStake" xml:space="preserve">
+    <value>Bought Stake</value>
+  </data>
+  <data name="BoughtTicketsList" xml:space="preserve">
+    <value>Bought Ticket[s]</value>
+  </data>
+  <data name="CashOutAmount" xml:space="preserve">
+    <value>Cash Out Amount</value>
+  </data>
+  <data name="CashOutStake" xml:space="preserve">
+    <value>Cash Out Stake</value>
+  </data>
+  <data name="CashOutTicketsList" xml:space="preserve">
+    <value>Cash Out Ticket[s]</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>Choice</value>
+  </data>
+  <data name="ColossusBetBetListDetailMsg" xml:space="preserve">
+    <value>Member owned {0}% of this ticket&lt;br/&gt;Member sold {1}% of this ticket for {2}</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>External ID</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Licensee WL</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>Odds</value>
+  </data>
+  <data name="OddsType" xml:space="preserve">
+    <value>Odds Type</value>
+  </data>
+  <data name="OriginalBetTicket" xml:space="preserve">
+    <value>Original Bet Ticket</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>Ref No</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>Stake</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>System ID</value>
+  </data>
+  <data name="SystemParlay" xml:space="preserve">
+    <value>System Parlay</value>
+  </data>
+  <data name="SystemParlayDetailNote" xml:space="preserve">
+    <value>Win Loss is rounded for reference only. Therefore, Sub Total amount may be different from the sum of Win Loss when it sums all the actual Win Loss amounts.</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Transaction Type</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>Trans.Time</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>Win Loss</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="Credit_Debit" xml:space="preserve">
+    <value>Credit/Debit</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="Statement" xml:space="preserve">
+    <value>Statement</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>Turnover</value>
+  </data>
+  <data name="BettingStatement" xml:space="preserve">
+    <value>Betting Statement</value>
+  </data>
+  <data name="GrandPrize" xml:space="preserve">
+    <value>Grand Prize</value>
+  </data>
+  <data name="OPENINGBALANCE" xml:space="preserve">
+    <value>OPENING BALANCE</value>
+  </data>
+  <data name="OutstandingBet" xml:space="preserve">
+    <value>Outstanding Bet</value>
+  </data>
+  <data name="Void_CancelledBet" xml:space="preserve">
+    <value>Void/Cancelled Bet</value>
+  </data>
+  <data name="ProductAB" xml:space="preserve">
+    <value>AllBet</value>
+    <comment>#61066</comment>
+  </data>
+  <data name="ProductAGC" xml:space="preserve">
+    <value>AG Casino</value>
+    <comment>#19458, #49196</comment>
+  </data>
+  <data name="ProductBA" xml:space="preserve">
+    <value>BA</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductBT" xml:space="preserve">
+    <value>Bet Trade</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductBX" xml:space="preserve">
+    <value>Exchange</value>
+    <comment>88192</comment>
+  </data>
+  <data name="ProductCB" xml:space="preserve">
+    <value>Colossus Bets</value>
+    <comment>#63785</comment>
+  </data>
+  <data name="ProductCC" xml:space="preserve">
+    <value>Card Club</value>
+    <comment>115449</comment>
+  </data>
+  <data name="ProductCO" xml:space="preserve">
+    <value>Cash Out</value>
+  </data>
+  <data name="ProductCS" xml:space="preserve">
+    <value>RNG Casino</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductFW" xml:space="preserve">
+    <value>Fishing World</value>
+    <comment>#66737</comment>
+  </data>
+  <data name="ProductGD" xml:space="preserve">
+    <value>Gold Deluxe</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductKN" xml:space="preserve">
+    <value>RNG Keno</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductLC" xml:space="preserve">
+    <value>Live Casino</value>
+    <comment>117900</comment>
+  </data>
+  <data name="ProductLT" xml:space="preserve">
+    <value>Lottery</value>
+    <comment>79997</comment>
+  </data>
+  <data name="ProductNG" xml:space="preserve">
+    <value>Number Game</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductPP" xml:space="preserve">
+    <value>PP</value>
+    <comment>92318</comment>
+  </data>
+  <data name="ProductPTCS" xml:space="preserve">
+    <value>Playtech Casino</value>
+    <comment>14488, #49196</comment>
+  </data>
+  <data name="ProductSB" xml:space="preserve">
+    <value>Sportsbook</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductVB" xml:space="preserve">
+    <value>Macau Games</value>
+    <comment>#55057</comment>
+  </data>
+  <data name="ProductVG" xml:space="preserve">
+    <value>Macau</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductVS" xml:space="preserve">
+    <value>Virtual Sports</value>
+    <comment>#49196</comment>
+  </data>
+  <data name="ProductVS2" xml:space="preserve">
+    <value>Virtual Sports 2</value>
+    <comment>#78241</comment>
+  </data>
+  <data name="Promotion_Prize" xml:space="preserve">
+    <value>Promotion</value>
+    <comment>120333</comment>
+  </data>
+  <data name="ProductSPR" xml:space="preserve">
+    <value>Saba Promotion</value>
+    <comment>124612</comment>
+  </data>
+  <data name="ProductSG" xml:space="preserve">
+    <value>SG</value>
+    <comment>124103</comment>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>Bet List</value>
+  </data>
+</root>

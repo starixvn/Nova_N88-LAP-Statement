@@ -1,0 +1,99 @@
+﻿@import "../../scss/abstracts/_variables.scss";
+
+$colorTextForRule: #515151;
+$colorTextTitle: $white;
+$bgTitlebar: $bgHeaderTableLevel1;
+
+.popup-block-body {
+    background: transparent;
+    border: none;
+    background: rgba(0, 0, 0, 0.7) no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.flat-popup {
+    background: $white;
+    position: absolute;
+    z-index: 101;
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    .title-bar {
+        background-color: $bgTitlebar;
+        padding: 8.5px 15px;
+        position: relative;
+
+        .txt-title {
+            color: $colorTextTitle;
+            font-size: 14px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .popup-close {
+            color: #BFBDBF;
+            float: right;
+
+            .icon-close {
+                font-size: 18px;
+            }
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .wrapContent {
+        overflow-y: auto;
+        height: calc(100% - 38px); // 38 is height of title bar
+        .popup-button {
+            .btn {
+                margin: 15px 0 0 15px;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+        }
+
+        .rule {
+            padding: 8px 10px;
+
+            ul, div {
+                color: $colorTextForRule;
+                font-size: 12px;
+                line-height: 20px;
+                margin: 0;
+                padding-left: 15px;
+            }
+
+            h4 {
+                color: $colorTextForRule;
+                font-size: 12px;
+                margin: 0 0 5px;
+            }
+
+            .newline {
+                padding-top: 12px;
+            }
+
+            &:last-child {
+                border-bottom: medium none;
+            }
+        }
+
+        .line {
+            border: none;
+            overflow: auto;
+            width: auto;
+            background-color: #ebeaea;
+            height: 1px;
+            margin: 0 10px;
+        }
+    }
+}

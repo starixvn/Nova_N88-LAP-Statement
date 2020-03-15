@@ -1,0 +1,30 @@
+﻿@import '../../extensions/report-ex';
+@import 'betlist';
+
+.table {
+    > thead {
+        > tr {
+            > th {
+                background: $bgHeaderTableLevel1;
+                color: $white;
+            }
+        }
+    }
+
+    > tbody {
+        tr {
+            > td {
+                background: $white;
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+.table-content{
+    padding-bottom: 15px;
+
+    .table{
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,29 @@
+body {
+  background: #fff; }
+
+.error-content {
+  padding-top: 40px; }
+  .error-content img {
+    margin: 10px auto;
+    display: block; }
+  .error-content p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px; }
+  .error-content .first-line {
+    color: #0b3d6b;
+    font-size: 45px; }
+  .error-content .second-line {
+    color: #545454; }
+  .error-content .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 18px;
+    text-decoration: none; }
+  .error-content .btn-submit {
+    background-color: #1C80F0;
+    color: #fff; }
+
+
+/*# sourceMappingURL=error.css.map*/

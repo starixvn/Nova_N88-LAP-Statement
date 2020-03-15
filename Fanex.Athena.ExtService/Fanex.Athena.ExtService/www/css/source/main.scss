@@ -1,0 +1,35 @@
+﻿@import 'vendors/materialize/_materialize-content.scss';
+
+@import 'scss/fonts/font-icon/style.scss';
+@import 'scss/fonts/montserrat/style.scss';
+@import 'scss/fonts/flags/flags-icon';
+
+@import 'scss/base/common';
+
+/*@import 'scss/components/button';
+@import 'scss/components/table';*/
+
+.wrapper {
+    position: relative;
+    overflow-y: auto;
+}
+
+.collapsible-body {
+    border-bottom: none;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.icon-excel {
+    background: url("../images/excel-icon.svg") no-repeat;
+    width: 18px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 3px;
+}

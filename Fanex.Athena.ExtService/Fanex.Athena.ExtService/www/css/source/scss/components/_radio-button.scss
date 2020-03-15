@@ -1,0 +1,26 @@
+﻿input[type="radio"] + label {
+    padding-left: 20px !important;
+}
+
+[type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border-color: #6790b0;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border-color: #6790b0;
+}
+
+[type="radio"].with-gap:checked + label:after {
+    background-color: #6790b0;
+}
+
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  height: 20px;
+  line-height: 20px;
+}
+
+[type="radio"] + label:before,
+[type="radio"] + label:after {
+  margin: 0;
+}

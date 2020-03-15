@@ -1,0 +1,79 @@
+﻿div.message
+{
+    clear: both;
+}
+
+.message
+{
+    margin: 10px 0;
+    padding: 10px;
+    font-weight: bold;
+}
+
+a:link, a:visited, .link
+{
+    font-weight: normal;
+    text-decoration: none;
+}
+
+input[type="text"], input[type="password"]
+{
+    border: 1px solid #A3D1E1;
+    width: 160px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus
+{
+    background: none repeat scroll 0 0 #FCFAAA;
+    border: 1px solid #68A4D8;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"]
+{
+    width: 60px;
+}
+
+.err
+{
+    background: none repeat scroll 0 0 #FFD4D4;
+    border: 1px solid #FF0000;
+    color: #FF0000;
+}
+
+.warn
+{
+    background: none repeat scroll 0 0 #FDF5BC;
+    border: 1px solid #FFEA9B;
+    color: #D07C2A;
+}
+
+.info
+{
+    background: none repeat scroll 0 0 #E6F1C9;
+    border: 1px solid #CFE493;
+    color: #61AA12;
+}
+
+.response-area
+{
+    border: 2px solid #A3D1E1;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 20px;
+    margin: 5px 0;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 598px;
+    display: none;
+}
+
+.field-validation-success
+{
+    color: green;
+}
+
+.field-validation-error
+{
+    color: red;
+}

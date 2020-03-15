@@ -1,0 +1,644 @@
+/* z-index */
+/* z-index */
+.page-title .title {
+  font-size: 16px;
+  color: #4060a4;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem; }
+
+.page-title .sub-title {
+  font-size: 1.2rem; }
+
+.table {
+  table-layout: fixed; }
+
+.no-info-row {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #fff; }
+
+.filter-handle {
+  position: absolute;
+  background-color: #4C6375;
+  cursor: pointer;
+  width: 25px;
+  bottom: 0;
+  height: 12px;
+  text-align: center;
+  color: #fff;
+  left: 50%;
+  margin-left: -12.5px;
+  font-size: 9px; }
+  .filter-handle .icon-arrow {
+    transform: rotate(180deg);
+    display: inline-block; }
+
+.filter-collapse *:not(.filter-handle) {
+  display: none; }
+
+.filter-collapse .filter-handle .icon-arrow {
+  transform: rotate(0);
+  display: inline-block; }
+
+/* z-index */
+/* z-index */
+.button-block {
+  margin-top: 0.5rem; }
+  @media (max-width: 600px) {
+    .button-block {
+      margin-top: 0; } }
+
+.btn {
+  color: #2c2c2c;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 32px;
+  line-height: 32px;
+  transition: none; }
+
+.btn-primary {
+  background: #f05b1f;
+  color: #fff; }
+  .btn-primary:hover {
+    background: #f37e4f; }
+  .btn-primary:focus {
+    background: #f05b1f; }
+
+.button-collapse .material-icons {
+  color: #fff;
+  line-height: 56px;
+  padding-left: 15px; }
+  @media only screen and (min-width: 601px) {
+    .button-collapse .material-icons {
+      line-height: 64px; } }
+
+.btn-back {
+  background: #4c6375;
+  color: #fff;
+  margin-top: -10px;
+  margin-bottom: 5px; }
+  .btn-back:hover {
+    background: #607d94; }
+  .btn-back .icon-arrow {
+    font-size: 12px;
+    margin-right: 10px;
+    transform: rotate(90deg);
+    color: inherit; }
+
+.btn-primary {
+  background: #f05b1f;
+  color: #fff; }
+  .btn-primary:hover {
+    background: #f37e4f; }
+  .btn-primary:focus {
+    background: #f05b1f; }
+
+.btn-add {
+  background: #4caf50;
+  color: #fff; }
+  .btn-add:hover {
+    background: #6ec071; }
+  .btn-add:focus {
+    background: #4caf50; }
+
+.btn-cancel {
+  background: #757575;
+  color: #fff; }
+  .btn-cancel:hover {
+    background: #8f8f8f; }
+  .btn-cancel:focus {
+    background: #757575; }
+
+.btn-submit {
+  background: #4e68b6;
+  color: #fff; }
+  .btn-submit:hover {
+    background: #7287c5; }
+  .btn-submit:focus {
+    background: #4e68b6; }
+
+.btn-nav {
+  background: #fff;
+  color: #4c6375;
+  border: 1px solid #4c6375; }
+  .btn-nav:hover {
+    background: #607d94;
+    color: #fff;
+    border: 0; }
+  .btn-nav:focus {
+    background: #fff;
+    color: #4c6375;
+    border: 1px solid #4c6375; }
+
+.btn-close {
+  background: #4c6375;
+  color: #fff; }
+  .btn-close:hover {
+    background: #607d94; }
+  .btn-close:focus {
+    background: #4c6375; }
+
+.icon-block {
+  position: absolute;
+  bottom: 6px;
+  right: 5px; }
+  @media (max-width: 600px) {
+    .icon-block {
+      margin-top: 1rem; } }
+
+.page-form {
+  position: relative;
+  margin: 1.5rem 1.5rem 0;
+  padding: 1.5rem 0.5rem;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+.row {
+  margin-bottom: 0; }
+  .row .col {
+    padding: 0 1rem; }
+
+.input-field {
+  font-size: 1.2rem; }
+  .input-field label {
+    left: 0;
+    font-size: 1.1rem !important;
+    color: #808080; }
+  .input-field input[type=text] {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-color: #ccc;
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 10px; }
+    .input-field input[type=text][readonly="readonly"] {
+      border-bottom: 1px solid #ccc; }
+      .input-field input[type=text][readonly="readonly"] + label {
+        color: #808080; }
+    .input-field input[type=text]:focus:not([readonly]) {
+      border-color: #549cba; }
+      .input-field input[type=text]:focus:not([readonly]) + label {
+        color: #549cba; }
+  .input-field ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #2c2c2c; }
+  .input-field.input label {
+    top: 8px; }
+    .input-field.input label.active {
+      top: -10px;
+      transform: none; }
+  .input-field .icon-calendar {
+    position: absolute;
+    right: 10px;
+    top: -1px;
+    font-size: 16px;
+    color: #4d6273; }
+
+.dropdown-content {
+  margin-top: 5px; }
+
+.dropdown-content li > a, .dropdown-content li > span {
+  font-size: 1.3rem;
+  color: #2c2c2c; }
+
+/* z-index */
+/* z-index */
+.table a {
+  color: #147ccc;
+  text-decoration: none; }
+  .table a:hover, .table a:focus, .table a:active {
+    text-decoration: none; }
+
+.table > thead > tr > th {
+  vertical-align: middle;
+  text-align: center;
+  background: #d1dae1;
+  border: 1px solid #ffffff;
+  border-top: 1px solid #d1dae1;
+  color: #314453;
+  font-weight: 500;
+  padding: 2px 5px;
+  border-radius: 0;
+  /*&:first-child {
+                    border-left-color: $colorBorderTable !important;
+                }
+
+                &:last-child {
+                    border-right-color: $colorBorderTable !important;
+                }*/ }
+
+.table > tbody tr td {
+  border: 1px solid #d6d6d6;
+  color: #404040;
+  padding: 2px 5px;
+  background: #fff; }
+
+.table > tbody tr:hover td {
+  background: #fcf4df; }
+
+.table > tbody tr.total td {
+  background: #B8C3C9; }
+
+.table > tbody tr.highlight td {
+  background: #f7dbb6;
+  font-weight: bold; }
+
+.page-results {
+  margin: 1.5rem 1.5rem 0; }
+
+.table-title {
+  background: #8aa4b8;
+  padding: 4px 15px;
+  color: #fff;
+  text-transform: uppercase; }
+
+.panel-heading {
+  position: relative;
+  background: #4C6375;
+  border-radius: 0;
+  padding: 0; }
+  .panel-heading .panel-title {
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 13px; }
+    .panel-heading .panel-title .icon-arrow {
+      margin: 0;
+      font-size: 13px;
+      transform: rotate(-90deg);
+      transition: 0.3s ease all; }
+    .panel-heading .panel-title:hover, .panel-heading .panel-title:active, .panel-heading .panel-title:focus {
+      color: #fff; }
+  .panel-heading + .panel-collapse > .panel-body {
+    border-top: none !important; }
+  .panel-heading.active .panel-title .icon-arrow {
+    transform: rotate(0); }
+  .panel-heading .excel-container {
+    background: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 27px;
+    text-align: center;
+    position: absolute;
+    top: 1px;
+    right: 1px; }
+    .panel-heading .excel-container .icon-excel {
+      display: inline-block;
+      margin-top: 4px; }
+
+.page-form .input-field input[type=radio] + label {
+  left: 0;
+  padding-right: 10px;
+  padding-left: 25px; }
+
+.page-form input[type="radio"] + label {
+  margin: 0 0 10px 0; }
+
+.page-form .date-range {
+  min-width: 200px; }
+
+.page-form .button-block .btn {
+  margin-bottom: 10px; }
+
+@media only screen and (min-width: 993px) {
+  .page-form .button-block {
+    width: 10% !important; } }
+
+.page-filter {
+  position: relative;
+  margin: 15px 0;
+  padding: 10px 15px;
+  background: #fff;
+  border: 1px solid #d6d6d6; }
+
+.page-results .result-content {
+  box-shadow: none;
+  border: 0;
+  margin: 0.5rem 0 1rem 0; }
+
+.calendar .icon-calendar {
+  color: #4c6375;
+  font-size: 17px;
+  cursor: pointer; }
+
+.negative-number, .positive-number {
+  color: #d91a1a; }
+
+.highlight, .table > tbody > tr > td.highlight {
+  background-color: #F8F1A0; }
+
+table td, table th {
+  border-radius: 0; }
+
+table tbody tr.row-group-level1 td {
+  background: #D1DAE1;
+  font-weight: bold; }
+
+.col-small {
+  width: 5%; }
+
+.col-extra-small {
+  width: 2%; }
+
+.col-medium {
+  width: 15%; }
+  .col-medium.small {
+    width: 10%; }
+  .col-medium.large {
+    width: 20%; }
+
+.col-large {
+  width: 40%; }
+  .col-large.small {
+    width: 35%; }
+
+.col-child {
+  width: 10%; }
+  .col-child.small {
+    width: 6%; }
+  .col-child.medium {
+    width: 7.5%; }
+
+#UserGuidePopup ul li {
+  list-style-type: disc; }
+  #UserGuidePopup ul li ul li {
+    list-style-type: circle; }
+    #UserGuidePopup ul li ul li ul li {
+      list-style-type: square; }
+
+.disabled {
+  pointer-events: none; }
+
+.report-title-container {
+  background: #4C6375;
+  padding: 4px 15px;
+  color: #fff;
+  font-size: 12px; }
+  .report-title-container .report-title {
+    margin: 0; }
+
+.no-info-row {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #fff; }
+
+/* z-index */
+.sortable {
+  cursor: pointer; }
+  .sortable:hover .sort-heading {
+    text-decoration: underline; }
+
+.sorted-heading {
+  text-decoration: underline; }
+
+.sort-icon {
+  display: inline-block;
+  margin-left: 4px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent; }
+  .sort-icon-asc {
+    border-bottom: 5px solid; }
+    .sort-icon-asc.light {
+      border-bottom-color: #fff; }
+  .sort-icon-desc {
+    border-top: 5px solid; }
+    .sort-icon-desc.light {
+      border-top-color: #fff; }
+
+.betlist-popup {
+  padding: 5px 20px; }
+
+.betlist-container {
+  background: #fff;
+  /* Trans */
+  /*ul.h-list li a*/
+  /* Link */
+  /*to make line-through for void-parlay-ticket*/ }
+  .betlist-container .ui-jqgrid-hdiv table.ui-jqgrid-htable > thead > tr > th, .betlist-container .ui-jqgrid-hdiv table.ui-jqgrid-htable > thead > tr > th.ui-th-column {
+    color: #fff; }
+  .betlist-container .content-title {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0 10px 0;
+    min-height: 30px;
+    min-width: 650px;
+    color: #D2592D; }
+  .betlist-container a {
+    text-decoration: none; }
+  .betlist-container .mx-parlay .void, .betlist-container .mx-parlay .refund {
+    text-decoration: line-through; }
+  .betlist-container .line {
+    border-bottom: 1px solid #A0A0A0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-align: left;
+    width: 100%; }
+  .betlist-container .underdog {
+    color: #01122B;
+    font-weight: bold !important;
+    white-space: normal; }
+  .betlist-container .stake {
+    font-weight: bold !important; }
+  .betlist-container .favorite {
+    color: #B50000;
+    font-weight: bold !important; }
+    .betlist-container .favorite .excluding-choices {
+      white-space: normal;
+      color: #484848;
+      font-weight: normal; }
+  .betlist-container .handicap .odds {
+    color: #003399;
+    font-size: 8pt; }
+  .betlist-container .handicap.custom {
+    font-weight: bold; }
+  .betlist-container div.match + div.league {
+    color: #666666;
+    line-height: 15px;
+    margin-top: 1px;
+    background: none repeat scroll 0 0 transparent;
+    font-weight: normal;
+    text-align: right;
+    text-transform: none; }
+  .betlist-container .bettype {
+    color: #003399;
+    font-weight: 600;
+    text-align: right; }
+  .betlist-container .firstGoal, .betlist-container .lastGoal, .betlist-container .fhFirstGoal, .betlist-container .fhLastGoal {
+    display: inline;
+    height: 10px;
+    padding: 0 6px;
+    width: 14px;
+    vertical-align: middle; }
+  .betlist-container .firstGoal {
+    background: url("images/goal-icon.png") no-repeat 0 0; }
+  .betlist-container .lastGoal {
+    background: url("images/goal-icon.png") no-repeat -18px 0; }
+  .betlist-container .fhFirstGoal {
+    background: url("images/goal-icon.png") no-repeat -36px 0; }
+  .betlist-container .fhLastGoal {
+    background: url("images/goal-icon.png") no-repeat no-repeat -54px 0; }
+  .betlist-container .match {
+    color: #000000;
+    font-weight: normal;
+    line-height: 15px;
+    text-align: right;
+    white-space: normal; }
+  .betlist-container .leagueName {
+    white-space: normal; }
+  .betlist-container .oddstype {
+    color: #586985;
+    font-weight: bold; }
+  .betlist-container .colorHandicap, .betlist-container .handicap {
+    color: #606060; }
+  .betlist-container .sport {
+    color: #0066CC; }
+  .betlist-container .lic-win-loss {
+    background-color: #F5E3E3;
+    font-weight: bold; }
+  .betlist-container .negative-number {
+    color: #b50000; }
+  .betlist-container .detail {
+    background: url("images/q_Icon2_1.png") no-repeat scroll left center transparent;
+    color: #755200;
+    display: inline;
+    font-weight: bold;
+    height: 10px;
+    line-height: 20px;
+    padding: 0 1px 0 18px;
+    width: 14px; }
+    .betlist-container .detail:hover {
+      background: url("images/q_Icon_2.png") no-repeat scroll left center transparent;
+      color: #755200;
+      cursor: pointer;
+      display: inline;
+      font-weight: bold;
+      height: 10px;
+      padding: 0 1px 0 18px;
+      width: 14px; }
+  .betlist-container .combinationLink {
+    line-height: 20px; }
+  .betlist-container .scoremap {
+    float: left; }
+  .betlist-container .scoremapIcon {
+    background: url("Images/ScoreMapWL.png") no-repeat scroll 0 0 transparent;
+    height: 18px;
+    margin: 3px;
+    width: 18px; }
+  .betlist-container .gamegroupname {
+    color: #008000; }
+  .betlist-container .light-blue {
+    color: #0017CD;
+    background-color: transparent !important; }
+  .betlist-container .iplink, .betlist-container .betsliplink {
+    cursor: pointer;
+    color: #1E1EEB;
+    font-size: 11px; }
+  .betlist-container .time {
+    color: #434343;
+    font-size: 7pt;
+    font-weight: normal;
+    text-align: center;
+    margin: 10px 0 0 0; }
+  .betlist-container .status {
+    color: #606060;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: capitalize; }
+  .betlist-container .result {
+    color: #1BA4ED;
+    cursor: pointer; }
+  .betlist-container .ip {
+    display: none; }
+  .betlist-container .selected {
+    color: Gray !important; }
+  .betlist-container .base-currency {
+    font-size: 14px;
+    color: #024584; }
+  .betlist-container .icon-back {
+    color: #555;
+    font-size: 1.8rem; }
+  .betlist-container span.inactive-switch-link {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: default;
+    text-decoration: none;
+    color: #88003E; }
+  .betlist-container span.active-switch-link {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #3547E3; }
+  .betlist-container .blue {
+    color: #2673CE; }
+  .betlist-container td .detail > .detail-link {
+    color: #755200;
+    font-weight: bold; }
+  .betlist-container div.mx-parlay div.void span, .betlist-container div.mx-parlay div.void div {
+    text-decoration: line-through; }
+  .betlist-container div.mx-parlay div.void > div.match, .betlist-container div.mx-parlay div.void div.firstGoal, .betlist-container div.mx-parlay div.void div.lastGoal {
+    text-decoration: none; }
+  .betlist-container div.mx-parlay .system-parlay-ticket-infor {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 15px;
+    color: #000000;
+    font-weight: bold; }
+    .betlist-container div.mx-parlay .system-parlay-ticket-infor .system-parlay-unit-stake {
+      color: #003399; }
+  .betlist-container .offer-name-list {
+    font-weight: bold; }
+  .betlist-container .bonus-icon {
+    background: url(images/bonus.png) no-repeat scroll center center transparent;
+    display: inline-block;
+    height: 18px;
+    width: 18px; }
+  .betlist-container .bonus-icon:hover {
+    cursor: pointer; }
+  .betlist-container .bettype-description {
+    color: #003399;
+    font-weight: normal; }
+  .betlist-container .rebate-bonus-icon {
+    background: url(images/rebateBonus.png) no-repeat scroll center center transparent;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    position: relative;
+    top: 2px; }
+  .betlist-container .nph-promotion-icon {
+    background: url(images/nphPromotion.png) no-repeat scroll center center transparent;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    top: 4px;
+    margin-right: 2px; }
+  .betlist-container .single-match-parlay-detail {
+    border-right: solid 2px #666666;
+    margin: 0 8px 3px 0;
+    padding-right: 5px; }
+    .betlist-container .single-match-parlay-detail .single-match-parlay-selection .selection {
+      font-weight: normal;
+      color: #000000; }
+    .betlist-container .single-match-parlay-detail .single-match-parlay-selection .status {
+      color: #003399; }
+
+.table > thead > tr > th {
+  background: #4C6375;
+  color: #fff; }
+
+.table > tbody tr > td {
+  background: #fff;
+  vertical-align: top; }
+
+.table-content {
+  padding-bottom: 15px; }
+  .table-content .table {
+    margin-top: 5px; }
+
+body {
+  background: #fff; }
+

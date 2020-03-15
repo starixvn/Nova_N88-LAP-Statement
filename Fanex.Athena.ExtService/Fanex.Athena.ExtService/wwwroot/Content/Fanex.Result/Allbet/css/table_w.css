@@ -1,0 +1,131 @@
+﻿@charset "utf-8";
+
+/*Odds Table list*/
+.oddsTable {
+	font-size:11px;
+	line-height: 16px;
+	border-collapse: separate;
+	margin-bottom:8px;
+}
+.oddsTable th {
+	background-image:url(images/layout/oddsTable_th.png);
+	background-repeat:repeat-y;
+	background-position: right bottom;
+	background-color: #6787bb;
+	font-weight: normal;
+	color:#FFFFFF;
+	height: 18px;
+	border-color:#476596;
+	border-bottom: #3b598d 1px solid;
+	border-right-width: 1px;
+	border-right-style:solid;
+	padding:3px 5px;
+	white-space: nowrap;
+}
+.oddsTable th.even {
+	background-position: left bottom;
+}
+.oddsTable th:first-child {
+	border-top-left-radius:  3px;
+}
+.oddsTable th:last-child {
+	border-right-style: none;
+	border-top-right-radius:  3px;
+}
+
+
+.oddsTable tbody+tbody th, .oddsTable tr+tr>th, .oddsTable thead+tbody td {border-radius: 0 !important;}
+.oddsTable td {
+	padding: 1px 3px;
+	border-color:#b1b1b1;	
+	border-bottom-width: 1px;
+	border-bottom-style:solid;
+	border-right-width: 1px;
+	border-right-style:solid;
+}
+.oddsTable td:first-child {
+	border-left-width: 1px;
+	border-left-style:solid;
+}
+
+.oddsTable td.tabtitle {
+	background-color: #b1b1b1;
+	border-left-style:none;
+	border-right-style:none;
+	height:16px;
+	border-radius:3px 3px 0 0;
+	padding-left: 4px;
+}
+
+.bgcpe {
+	background-color: #c6d4f1;
+}
+.bgcpelight {
+	background-color: #e4e4e4;
+}
+.popWTableArea{
+	padding: 10px;
+	border: 1px solid #ffffff;
+	border-radius: 0 0 2px 2px;
+	background: #f5f3f2;
+}
+
+
+
+
+ .popWTitleContain{
+	float: left;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;	
+	white-space: nowrap;
+}
+
+.popupWTitle{
+	background: url(images/layout/popup.png) no-repeat 0 0;
+	margin: 0 2px 0 0;
+}
+
+
+.popupWTitle > span{
+	background: url(images/layout/popup.png) no-repeat right 0;
+	margin: 0 -2px 0 2px;
+	display: block;
+	padding: 5px;
+	height: 17px;
+	overflow:hidden\0;
+}
+
+.popWContain{
+	margin: -1px 0px 0 0;
+	border: 1px solid #363636;
+	border-radius: 0 0 2px 2px;
+}
+
+.popWClose{
+	float: right;
+	cursor: pointer;
+	background: url(images/layout/btn_UI04.png) no-repeat 0 0;
+	width: 16px;
+	height: 16px;
+	margin-left: 2px;
+}
+.popWClose:hover{
+	background-position: 0 -20px;
+}
+.popWIcon{
+	background: url(images/layout/icon_UI02.png) no-repeat -96px 0;
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-right: 5px;
+    display: none;
+}
+.popupW{
+	border-radius: 2px;
+	-webkit-box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+	min-width: 350px;
+	max-width:680px;
+}
