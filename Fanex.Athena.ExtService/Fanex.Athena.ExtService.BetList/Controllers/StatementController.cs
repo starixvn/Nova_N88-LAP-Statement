@@ -48,7 +48,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
 
             viewModel.TransDesc = TransDescValue.GetTransactionDescription(metalModel.ModeView);
             viewModel.CustId = metalModel.CustId;
-            viewModel.ModeView = metalModel.ModeView == TransDescValue.ModeViewPromotion ? 0 : metalModel.ModeView;
+            viewModel.ModeView = metalModel.ModeView;
 
             ViewBag.PageSize = metalModel.PageSize;
             ViewBag.PageIndex = metalModel.PageIndex;

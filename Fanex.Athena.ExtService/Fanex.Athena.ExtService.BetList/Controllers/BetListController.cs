@@ -78,6 +78,7 @@
                 CustId = metaModel.CustId
             };
 
+            metaModel.TransType = metaModel.ModeView == TransDescValue.ModeViewPromotion ? 0 : metaModel.ModeView;
             if (metaModel.IsValid)
             {
                 AssignCommonMetaModelValue(metaModel, licenseeInfo);
