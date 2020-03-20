@@ -41,9 +41,20 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
 
             ViewBag.Title = "Result";
 
-            return View(viewModel);
+            return View(viewModel);     
+        }
 
-
+        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "gameId", "platform", "lang" })]
+        [HttpGet]
+        public async Task<string> VirtualGamesResultPopup(string gameId, string platform, string lang)
+        {
+            var model = new
+            {
+                gamePlayId = gameId,
+                languageCode = lang,
+                platform,
+            };
+            return await _betListApiClient.PostAsyncString("/VirtualGamesResultPopup/GetDetailResult", model, lang).ConfigureAwait(false);
         }
 
         [HttpPost]

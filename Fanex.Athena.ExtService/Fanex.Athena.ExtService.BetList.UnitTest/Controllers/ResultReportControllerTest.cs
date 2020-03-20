@@ -162,6 +162,33 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
         }
 
         [Fact]
+        public async Task VRGResultPopup_WhenCall_RetrunStringResult()
+        {
+            //Arrange
+            const string platfrom = "Any";
+            const string lang = "en-US";
+            const string gamePlayId = "Any VRG";
+            const string fakeResult = "Any VRG result data";
+            string result = null;
+            _betListApiClient.Setup(x => x.PostAsyncString(
+                "/VirtualGamesResultPopup/Index", It.IsAny<object>(),
+                It.IsAny<string>()))
+                .Returns(Task.FromResult(fakeResult));
+
+            //Action
+            using (var controller = new ResultReportController(_betListApiClient.Object))
+            {
+                controller.ControllerContext = _controllerContext.Object;
+                result = await controller.VirtualGamesResultPopup(gamePlayId, platfrom, lang).ConfigureAwait(false);
+            }
+
+            //Assert
+            var viewResult = Assert.IsType<string>(result);
+            Assert.Equal(fakeResult, viewResult);
+
+        }
+
+        [Fact]
         public async Task CCResultPopup_WhenCall_RetrunStringResult()
         {
             //Arrange
