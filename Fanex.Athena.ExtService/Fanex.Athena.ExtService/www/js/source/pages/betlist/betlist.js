@@ -15,6 +15,7 @@
         const SPORT_GLOBALGAMING = 219;
         const SPORT_CARDCLUB = 165;
         const SPORT_SG = 247;
+        const SPORT_VRG = 245;
 
         let _sortColumnName, _sortOrder;
 
