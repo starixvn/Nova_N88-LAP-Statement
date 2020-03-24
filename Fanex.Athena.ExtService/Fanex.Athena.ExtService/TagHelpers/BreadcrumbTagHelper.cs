@@ -16,7 +16,11 @@
 
             foreach (var item in Items)
             {
-                output.Content.AppendHtml($"<a class=\"{(item.Selected ? "active" : string.Empty)}\" href=\"{item.Value}\" >{item.Text}</a>");
+                output.Content.AppendHtml($"<a class=\"level {(!item.Selected ? "level-link" : string.Empty)}\" href=\"{item.Value}\" >{item.Text}</a>");
+                if (!item.Selected)
+                {
+                    output.Content.AppendHtml("<i class=\"icon-arrow\"></i>");
+                }
             }
         }
     }

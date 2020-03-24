@@ -1,7 +1,7 @@
 ﻿.pagingContainer {
     padding: 3px;
     font-size: 1.1rem;
-    background-color: $bgPaging;
+    background-color: #e6e6e6;
     border-left: 1px solid $colorBorderPaging;
     border-right: 1px solid $colorBorderPaging;
     border-bottom: 1px solid $colorBorderPaging;
@@ -16,12 +16,13 @@
         line-height: 1;
         -webkit-font-smoothing: antialiased;
         font-size: 1.2rem;
-        color: #4c6375;
+        color: #545454;
         cursor: pointer;
+        margin: 0 5px;
     }
 
     .pagingDisable {
-        color: $colorDisabledPgButton;
+        color: #8e8e8e;
         cursor: default;
     }
 

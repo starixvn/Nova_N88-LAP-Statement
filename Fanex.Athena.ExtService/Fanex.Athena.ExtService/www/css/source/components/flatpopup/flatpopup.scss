@@ -1,8 +1,6 @@
 ﻿@import "../../scss/abstracts/_variables.scss";
 
 $colorTextForRule: #515151;
-$colorTextTitle: $white;
-$bgTitlebar: $bgHeaderTableLevel1;
 
 .popup-block-body {
     background: transparent;
@@ -23,12 +21,12 @@ $bgTitlebar: $bgHeaderTableLevel1;
     -webkit-background-clip: padding-box; /* for Safari */
     background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
     .title-bar {
-        background-color: $bgTitlebar;
+        background-color: #0F3630;
         padding: 8.5px 15px;
         position: relative;
 
         .txt-title {
-            color: $colorTextTitle;
+            color: $white;
             font-size: 14px;
             text-transform: uppercase;
             display: inline-block;

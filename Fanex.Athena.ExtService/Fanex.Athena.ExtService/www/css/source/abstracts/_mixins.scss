@@ -1,0 +1,68 @@
+﻿@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin border-radius($radius: 4px) {
+    @include css3-prefix('border-radius', $radius);
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+    -webkit-box-sizing: $boxmodel;
+    -moz-box-sizing: $boxmodel;
+    box-sizing: $boxmodel;
+}
+
+// Drop shadows
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+    box-shadow: $shadow;
+}
+
+// Transitions
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -o-transition: $transition;
+    -moz-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-property($transition-property...) {
+    -webkit-transition-property: $transition-property;
+    -moz-transition-property: $transition-property;
+    -o-transition-property: $transition-property;
+    transition-property: $transition-property;
+}
+
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+    -moz-transition-delay: $transition-delay;
+    -o-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
+}
+
+@mixin transition-duration($transition-duration...) {
+    -webkit-transition-duration: $transition-duration;
+    -moz-transition-duration: $transition-duration;
+    -o-transition-duration: $transition-duration;
+    transition-duration: $transition-duration;
+}
+
+@mixin transition-timing-function($timing-function) {
+    -webkit-transition-timing-function: $timing-function;
+    -moz-transition-timing-function: $timing-function;
+    -o-transition-timing-function: $timing-function;
+    transition-timing-function: $timing-function;
+}
+
+@mixin transition-transform($transition...) {
+    -webkit-transition: -webkit-transform $transition;
+    -moz-transition: -moz-transform $transition;
+    -o-transition: -o-transform $transition;
+    transition: transform $transition;
+}
