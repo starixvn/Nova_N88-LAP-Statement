@@ -17,14 +17,13 @@
             > th {
                 vertical-align: middle;
                 text-align: center;
-                background: $bgHeaderTableLevel2;
+                background: #a2beba;
                 border: 1px solid $white;
                 border-top: 1px solid $colorBorderTable;
-                color: $colorTableHeader;
-                font-weight: bold;
+                color: #222;
+                font-weight: normal;
                 padding: 4px 5px;
                 border-radius: 0;
-
                 /*&:first-child {
                     border-left-color: $colorBorderTable;
                 }

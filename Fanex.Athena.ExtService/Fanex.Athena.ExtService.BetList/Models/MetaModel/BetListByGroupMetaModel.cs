@@ -23,7 +23,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
         public string ProductCode { get; set; }
 
         [FromQuery(Name = "s")]
-        public string Sort { get; set; } = "Transid ASC";
+        public string Sort { get; set; } = "TransDate ASC";
 
         [FromQuery(Name = "spi")]
         public int StatementPageIndex { get; set; }
@@ -31,7 +31,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
         [FromQuery(Name = "sps")]
         public int StatementPageSize { get; set; }
 
-        public int TransType { get { return ModeView; } }
+        public int TransType { get { return ModeView; } set { ModeView = value; } }
 
         public bool HasPlayerCom { get; set; }
 

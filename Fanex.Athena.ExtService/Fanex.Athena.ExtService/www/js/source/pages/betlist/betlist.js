@@ -15,6 +15,7 @@
         const SPORT_GLOBALGAMING = 219;
         const SPORT_CARDCLUB = 165;
         const SPORT_SG = 247;
+        const SPORT_VRG = 245;
 
         let _sortColumnName, _sortOrder;
 
@@ -169,6 +170,20 @@
                 });
             },
 
+            viewVRGResult: function (gameId, platform, title) {
+                let url = Site.resolveClientUrl('ResultReport/VirtualGamesResultPopup') + '?gameId=' + gameId + '&platform=' + platform;
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+
+                Site.blockUI();
+                $.get(url, function (result) {
+                    if (result !== '') {
+                        showResultPopUp(result, { width: 800, height: 380, title: title });
+                        Site.unBlockUI();
+                    }
+                });
+            },
+
             viewCardClubResult: function (custId, gameTypeId, transId3rd, title) {
                 let url = Site.resolveClientUrl('ResultReport/CCResultPopup') + '?custId=' + custId + '&gameTypeId=' + gameTypeId + '&transId3rd=' + transId3rd;
                 url = QueryString.setParam(url, 'lang', $("#lang").val());
@@ -211,6 +226,7 @@
             viewResult: function (matchid, raceNo, bettype, sporttype, refno,
                 username, winlostdate, refnoMixParlay, league, isOutright, extension1, extension2, custid, transdecs) {
                 const title = Site.getSingleResource('Result');
+                const defaultPlatform = 'd';
 
                 if (sporttype === SPORT_RNG_GAME || sporttype === SPORT_RNG_MINIGAME || sporttype === SPORT_RNG_MOBILE) {
                     _me.viewRngCasinoResult(title, refno);
@@ -226,6 +242,9 @@
                 }
                 else if (sporttype === SPORT_SG) {
                     _me.viewSGResult(custid, extension2, title);
+                }
+                else if (sporttype === SPORT_VRG) {
+                    _me.viewVRGResult(refno, defaultPlatform, title);
                 }
                 else if (sporttype === SPORT_ALLBET) {
                     _me.viewAllBetResult(transdecs, extension2, bettype, title);

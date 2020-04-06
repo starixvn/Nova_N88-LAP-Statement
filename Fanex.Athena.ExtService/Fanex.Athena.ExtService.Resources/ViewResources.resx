@@ -354,4 +354,7 @@
   <data name="BetList" xml:space="preserve">
     <value>Bet List</value>
   </data>
+  <data name="ProductVRG" xml:space="preserve">
+    <value>Virtual Games</value>
+  </data>
 </root>

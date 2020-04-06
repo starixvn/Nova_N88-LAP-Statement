@@ -10,15 +10,11 @@
     ProductFW: "Fishing World",
     ProductPP: "PP",
     ProductSG: "SG",
+    ProductVRG: "虚拟娱乐城",
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
     Result: "赛果",
     ProductCC: "嘻嘻俱乐部",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied"
-
-
-
-
-
 };
