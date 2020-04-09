@@ -360,4 +360,7 @@
   <data name="ProductTG" xml:space="preserve">
     <value>Table Game</value>
   </data>
+  <data name="ProductI4D" xml:space="preserve">
+    <value>Indo 4D</value>
+  </data>
 </root>
