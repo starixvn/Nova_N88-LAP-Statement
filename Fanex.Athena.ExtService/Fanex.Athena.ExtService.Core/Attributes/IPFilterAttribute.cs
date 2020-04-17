@@ -7,6 +7,7 @@ using Fanex.Athena.ExtService.Core.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
+using NetTools;
 
 namespace Fanex.Athena.ExtService.Core.Attributes
 {
@@ -25,7 +26,7 @@ namespace Fanex.Athena.ExtService.Core.Attributes
             var ipAddress = context.HttpContext.Connection.RemoteIpAddress;
             var whiteListIPList = _applicationOptions.WhiteList;
 
-            var isInWhiteListIPList = !whiteListIPList.Any() || whiteListIPList.Any(x => IPAddress.Parse(x).Equals(ipAddress));
+            var isInWhiteListIPList = !whiteListIPList.Any() || whiteListIPList.Any(_ => IsInRangeIP(_, ipAddress));
             if (!isInWhiteListIPList)
             {
                 var result = new ContentResult
@@ -36,5 +37,14 @@ namespace Fanex.Athena.ExtService.Core.Attributes
                 context.Result = result;
             }
         }
+
+        private static Func<string, IPAddress, bool> IsInRangeIP = (ipRangeString, ipAddress) =>
+        {
+            if (!IPAddressRange.TryParse(ipRangeString, out IPAddressRange ipRange))
+            {
+                throw new Exception($"The WhiteList IP: {ipRangeString} was invalid - client IP: ${ipAddress}");
+            }
+            return ipRange.Contains(ipAddress);
+        };
     }
 }
