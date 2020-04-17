@@ -283,4 +283,7 @@
   <data name="ProductVRG" xml:space="preserve">
     <value>虛擬娛樂城</value>
   </data>
+  <data name="ProductTG" xml:space="preserve">
+    <value>桌面遊戲</value>
+  </data>
 </root>

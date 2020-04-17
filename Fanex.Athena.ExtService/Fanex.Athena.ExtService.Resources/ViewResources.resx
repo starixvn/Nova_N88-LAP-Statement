@@ -357,4 +357,7 @@
   <data name="ProductVRG" xml:space="preserve">
     <value>Virtual Games</value>
   </data>
+  <data name="ProductTG" xml:space="preserve">
+    <value>Table Game</value>
+  </data>
 </root>
