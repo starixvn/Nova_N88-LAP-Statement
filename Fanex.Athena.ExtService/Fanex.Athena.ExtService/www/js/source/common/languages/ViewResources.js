@@ -11,6 +11,7 @@
     ProductCC:"Card Club",
     ProductPP: "PP",
     ProductSG: "SG",
+    ProductTG:: "Table game",
     ProductVRG: "Virtual Games",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",

@@ -10,6 +10,7 @@
     ProductFW: "Fishing World",
     ProductPP: "PP",
     ProductSG: "SG",
+    ProductTG:  "桌面遊戲",
     ProductVRG: "虛擬娛樂城",
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "對不起，處理您的請求時有錯誤發生。",
