@@ -13,7 +13,7 @@
     ProductSG: "SG",
     ProductTG: "Table game",
     ProductVRG: "Virtual Games",
-    ProductSBC: "Saba club",
+    ProductSBC: "Saba.club",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",

@@ -511,7 +511,7 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saba Club.
+        ///   Looks up a localized string similar to Saba.club.
         /// </summary>
         public static string ProductSBC {
             get {
