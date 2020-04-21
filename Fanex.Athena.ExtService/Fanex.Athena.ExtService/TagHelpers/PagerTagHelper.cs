@@ -32,7 +32,8 @@
                 AddPageButton(output, "pagingLast", PageIndex == noOfPage, noOfPage, PageSize);
                 AddPageSizeOption(output);
 
-                output.Content.AppendHtml($"<span class=\"paging-info\">View {(PageIndex - 1) * PageSize + 1}-{PageIndex * PageSize} of {TotalItems}</span>");
+                var totalItemPerPage = TotalItems < PageIndex * PageSize ? TotalItems : PageIndex * PageSize;
+                output.Content.AppendHtml($"<span class=\"paging-info\">View {(PageIndex - 1) * PageSize + 1}-{totalItemPerPage} of {TotalItems}</span>");
             }
         }
 

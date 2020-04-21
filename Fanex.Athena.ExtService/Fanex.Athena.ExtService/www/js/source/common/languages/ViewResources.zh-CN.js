@@ -13,6 +13,7 @@
     ProductTG: "桌面游戏	",
     ProductVRG: "虚拟娱乐城",
     ProductI4D: "Indo 4D",
+    ProductSBC: "Saba.club",
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
     Result: "赛果",
