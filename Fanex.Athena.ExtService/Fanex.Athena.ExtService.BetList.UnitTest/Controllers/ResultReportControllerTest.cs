@@ -171,7 +171,7 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
             const string fakeResult = "Any VRG result data";
             string result = null;
             _betListApiClient.Setup(x => x.PostAsyncString(
-                "/VirtualGamesResultPopup/Index", It.IsAny<object>(),
+                "/VirtualGamesResultPopup/GetDetailResult", It.IsAny<object>(),
                 It.IsAny<string>()))
                 .Returns(Task.FromResult(fakeResult));
 
