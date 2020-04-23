@@ -439,6 +439,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Indo 4D.
+        /// </summary>
+        public static string ProductI4D {
+            get {
+                return ResourceManager.GetString("ProductI4D", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RNG Keno.
         /// </summary>
         public static string ProductKN {

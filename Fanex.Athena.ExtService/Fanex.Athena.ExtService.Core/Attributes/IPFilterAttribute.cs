@@ -42,7 +42,9 @@ namespace Fanex.Athena.ExtService.Core.Attributes
         {
             if (!IPAddressRange.TryParse(ipRangeString, out IPAddressRange ipRange))
             {
+#pragma warning disable S112 // General exceptions should never be thrown
                 throw new Exception($"The WhiteList IP: {ipRangeString} was invalid - client IP: ${ipAddress}");
+#pragma warning restore S112 // General exceptions should never be thrown
             }
             return ipRange.Contains(ipAddress);
         };
