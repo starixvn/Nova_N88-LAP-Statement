@@ -529,6 +529,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sexy Gaming.
+        /// </summary>
+        public static string ProductSXG {
+            get {
+                return ResourceManager.GetString("ProductSXG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Table Game.
         /// </summary>
         public static string ProductTG {
