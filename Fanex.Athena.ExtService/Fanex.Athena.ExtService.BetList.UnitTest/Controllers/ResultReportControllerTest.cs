@@ -47,8 +47,8 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
             Assert.Equal(title, Title);
             Assert.Equal(viewModel.Lang, metalModel.Lang);
             Assert.Equal(viewModel.AccessToken, AccessToken);
-            _betListApiClient.Verify(x => 
-            x.PostAsyncString("/ResultReport/ResultPopup", metalModel, 
+            _betListApiClient.Verify(x =>
+            x.PostAsyncString("/ResultReport/ResultPopup", metalModel,
             metalModel.Lang), Times.Once);
         }
 
@@ -244,6 +244,47 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
                 controller.ControllerContext = _controllerContext.Object;
                 controller.Url = mockUrl.Object;
                 result = await controller.AllBetResult(transDesc, betCheck, betType, lang).ConfigureAwait(false);
+            }
+
+            //Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewModel = Assert.IsType<BaseViewModel>(viewResult.Model);
+
+            var title = Assert.IsAssignableFrom<string>(viewResult.ViewData["Title"]);
+            var actualResult = Assert.IsAssignableFrom<string>(viewResult.ViewData["Data"]);
+            Assert.Contains(fakeRootUrl, actualResult);
+            Assert.Equal(title, Title);
+            Assert.Equal(viewModel.Lang, lang);
+            Assert.Equal(viewModel.AccessToken, AccessToken);
+        }
+
+        [Fact]
+        public async Task SexyGamingResult_WhenCall_RetrunCorrectViewModelAsync()
+        {
+            //Arrange
+            const string Title = "Result";
+
+            const string transDesc = "Any";
+            const string lang = "en-US";
+            const string betCheck = "Any";
+            const string betType = "Any";
+
+            const string fakeResult = "Any result data{rootUrl}/";
+            const string fakeRootUrl = "RootURL";
+            IActionResult result = null;
+            _betListApiClient.Setup(x => x.PostAsyncString(
+                "/SexyGamingResultPopup/Index", It.IsAny<object>(),
+                It.IsAny<string>()))
+                .Returns(Task.FromResult(fakeResult));
+            var mockUrl = new Mock<IUrlHelper>();
+            mockUrl.Setup(x => x.Content(It.IsAny<string>())).Returns(fakeRootUrl);
+
+            //Action
+            using (var controller = new ResultReportController(_betListApiClient.Object))
+            {
+                controller.ControllerContext = _controllerContext.Object;
+                controller.Url = mockUrl.Object;
+                result = await controller.SexyGamingResult(transDesc, betCheck, betType, lang).ConfigureAwait(false);
             }
 
             //Assert
