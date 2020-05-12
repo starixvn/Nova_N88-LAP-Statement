@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* z-index */
 /* z-index */
 .page-title .title {
@@ -406,6 +407,18 @@ table tbody tr.row-group-level1 td {
     border-top: 5px solid; }
     .sort-icon-desc.light {
       border-top-color: #fff; }
+
+.allbet-bet-id {
+  color: #bbb; }
+
+.allbet-bet-type-name {
+  color: #696969; }
+
+﻿.sexygaming-bet-id {
+  color: #bbb; }
+
+.sexygaming-bet-type-name {
+  color: #696969; }
 
 .betlist-popup {
   padding: 5px 20px; }
