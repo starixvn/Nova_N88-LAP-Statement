@@ -10,6 +10,7 @@
     ProductFW: "Fishing World",
     ProductPP: "PP",
     ProductSG: "SG",
+    ProductSBC: "Saba.club",
     ProductVRG: "虚拟娱乐城",
     ProductI4D: "Indo 4D",
     ProductSXG: "Sexy Gaming",

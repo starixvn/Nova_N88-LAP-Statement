@@ -14,6 +14,7 @@
     ProductTG: "Table game",
     ProductVRG: "Virtual Games",
     ProductSXG: "Sexy Gaming",
+    ProductSBC: "Saba.club",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",

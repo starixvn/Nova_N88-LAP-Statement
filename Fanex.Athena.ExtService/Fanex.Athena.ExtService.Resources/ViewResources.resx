@@ -366,4 +366,7 @@
   <data name="ProductSXG" xml:space="preserve">
     <value>Sexy Gaming</value>
   </data>
+  <data name="ProductSBC" xml:space="preserve">
+    <value>Saba.club</value>
+  </data>
 </root>
