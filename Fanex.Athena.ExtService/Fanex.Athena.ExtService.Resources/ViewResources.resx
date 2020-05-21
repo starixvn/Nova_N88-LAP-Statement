@@ -363,4 +363,10 @@
   <data name="ProductI4D" xml:space="preserve">
     <value>Indo 4D</value>
   </data>
+  <data name="ProductSXG" xml:space="preserve">
+    <value>Sexy Gaming</value>
+  </data>
+  <data name="ProductSBC" xml:space="preserve">
+    <value>Saba.club</value>
+  </data>
 </root>
