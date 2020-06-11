@@ -6,7 +6,10 @@ namespace Fanex.Athena.ExtService
 {
     public class Program
     {
-        protected Program() { }
+        protected Program()
+        {
+        }
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
@@ -23,12 +26,7 @@ namespace Fanex.Athena.ExtService
                  config.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                  config.AddEnvironmentVariables();
              })
-             .UseKestrel(x =>
-             {
-                 x.AddServerHeader = false;
-
-             })
-             .UseStartup<Startup>().UseSentry();
-
+             .UseStartup<Startup>()
+             .UseSentry();
     }
 }
