@@ -256,16 +256,19 @@ namespace Fanex.Athena.ExtService
                 app.UseErrorHandler();
                 app.UseHsts();
             }
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
             CustomizeCultureSupport(app);
             ConfigCacheForStaticResource(app, env);
             app.UseCustomHealthCheck();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseUMHandler();
             app.UseJWTokenOnPage();
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-            });
+
             app.UseAuthentication();
             app.UseResponseCaching();
             app.UseStatusCodePagesWithReExecute("/Error", "?code={0}");
