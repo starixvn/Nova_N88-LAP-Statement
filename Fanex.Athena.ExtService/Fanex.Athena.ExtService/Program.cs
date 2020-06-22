@@ -27,7 +27,6 @@ namespace Fanex.Athena.ExtService
                  config.AddEnvironmentVariables();
              })
              .UseStartup<Startup>()
-             .UseUrls("http://*:5053")
              .UseSentry();
     }
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Fanex.Athena.ExtService.Core.Services;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,11 +10,11 @@ namespace Fanex.Athena.ExtService.Core.Middleware
 {
     public class WhoAmIHealthCheck : IHealthCheck
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IClientService _clientService;
 
-        public WhoAmIHealthCheck(IHttpContextAccessor httpContextAccessor)
+        public WhoAmIHealthCheck(IClientService clientService)
         {
-            _httpContextAccessor = httpContextAccessor;
+            _clientService = clientService;
         }
 
         public async Task<HealthCheckResult> CheckHealthAsync(
@@ -24,7 +24,7 @@ namespace Fanex.Athena.ExtService.Core.Middleware
             IDictionary<string, object> result = new Dictionary<string, object>();
 
             await AddServerIPInfo(result);
-            AddExtraServerInfo(result, _httpContextAccessor.HttpContext.Connection);
+            AddExtraServerInfo(result);
 
             return HealthCheckResult.Healthy("Server Info", new ReadOnlyDictionary<string, object>(result));
         }
@@ -44,11 +44,11 @@ namespace Fanex.Athena.ExtService.Core.Middleware
             }
         }
 
-        private static void AddExtraServerInfo(IDictionary<string, object> result, ConnectionInfo connectionInfo)
+        private void AddExtraServerInfo(IDictionary<string, object> result)
         {
-            result.Add("Local Ip", connectionInfo.LocalIpAddress.ToString());
-            result.Add("Local Port", connectionInfo.LocalPort);
-            result.Add("Client Ip", connectionInfo.RemoteIpAddress.ToString());
+            result.Add("Local Ip", _clientService.Context.Connection.LocalIpAddress.ToString());
+            result.Add("Local Port", _clientService.Context.Connection.LocalPort);
+            result.Add("Client Ip", _clientService.RealClientIP.ToString());
         }
     }
 }

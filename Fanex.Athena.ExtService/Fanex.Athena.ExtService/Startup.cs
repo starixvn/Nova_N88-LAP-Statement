@@ -120,12 +120,12 @@ namespace Fanex.Athena.ExtService
             services.AddScoped<IPFilterAttribute>();
             services.AddScoped<CheckCustomerAttribute>();
             services.AddSingleton<ICommonService, CommonService>();
+            services.AddSingleton<IClientService, ClientService>();
 
             ConfigBetListApiClient(services);
 
             services.AddTransient<ISummaryStatementService, SummaryStatementService>();
             services.AddTransient<IStatementByGroupService, StatementByGroupService>();
-            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddUMService(Configuration.GetSection("ONEbook.UM").Get<UMClientConfiguration>());
 
             services.AddSingleton<IUMRestClient, ONEbook.UM.Transport.UMRestClient>();
