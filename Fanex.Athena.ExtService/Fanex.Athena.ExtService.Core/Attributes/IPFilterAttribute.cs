@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Net;
-
-using Fanex.Athena.ExtService.Core.Models.DTO;
-
+﻿using Fanex.Athena.ExtService.Core.Models.DTO;
+using Fanex.Athena.ExtService.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
 using NetTools;
+using System;
+using System.Linq;
+using System.Net;
 
 namespace Fanex.Athena.ExtService.Core.Attributes
 {
@@ -15,15 +14,18 @@ namespace Fanex.Athena.ExtService.Core.Attributes
     public sealed class IPFilterAttribute : ActionFilterAttribute
     {
         private readonly ApplicationOptions _applicationOptions;
+        private readonly IClientService _clientService;
 
-        public IPFilterAttribute(IOptions<ApplicationOptions> applicationOptionAccessor)
+        public IPFilterAttribute(IOptions<ApplicationOptions> applicationOptionAccessor,
+            IClientService clientService)
         {
             _applicationOptions = applicationOptionAccessor.Value;
-
+            _clientService = clientService;
         }
+
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            var ipAddress = context.HttpContext.Connection.RemoteIpAddress;
+            var ipAddress = _clientService.RealClientIP;
             var whiteListIPList = _applicationOptions.WhiteList;
 
             var isInWhiteListIPList = !whiteListIPList.Any() || whiteListIPList.Any(_ => IsInRangeIP(_, ipAddress));

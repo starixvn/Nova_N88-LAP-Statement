@@ -7,12 +7,13 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Fanex.Athena.ExtService.Core.UnitTest.Services
+namespace Fanex.Athena.ExtService.Core.UnitTests.Services
 {
     public class UserManagementServiceTest
     {
         private readonly IUserManagementService _userManagementService;
         private readonly List<User> users = new List<User> { new User { UserName = "alex", Password = "1234" } };
+
         public UserManagementServiceTest()
         {
             var mock = new Mock<IOptions<List<User>>>();
@@ -36,7 +37,5 @@ namespace Fanex.Athena.ExtService.Core.UnitTest.Services
 
             Assert.Equal(expectedResult, result);
         }
-
-
     }
 }

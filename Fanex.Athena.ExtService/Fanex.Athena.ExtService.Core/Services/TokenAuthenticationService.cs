@@ -14,12 +14,14 @@ namespace Fanex.Athena.ExtService.Core.Services
     {
         private readonly IUserManagementService _userManagementService;
         private readonly TokenManagement _tokenManagement;
+
         public TokenAuthenticationService(IUserManagementService service,
             IOptions<TokenManagement> tokenManagementAccessor)
         {
             _userManagementService = service;
             _tokenManagement = tokenManagementAccessor.Value;
         }
+
         public Tuple<bool, Token> IsAuthenticated(TokenRequest request)
         {
             var token = new Token();

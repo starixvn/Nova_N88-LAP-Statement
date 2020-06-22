@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using Fanex.Athena.ExtService.Core.Attributes;
+﻿using Fanex.Athena.ExtService.Core.Attributes;
 using Fanex.Athena.ExtService.Core.Models.DTO;
-
+using Fanex.Athena.ExtService.Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
@@ -11,9 +8,10 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Options;
-
 using Moq;
-
+using System;
+using System.Collections.Generic;
+using System.Net;
 using Xunit;
 
 namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
@@ -21,15 +19,16 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
     public class IPFilterAttributeTest
     {
         private readonly Mock<IOptions<ApplicationOptions>> _options;
+        private readonly Mock<IClientService> _clientService;
         private readonly ActionExecutingContext _actionExecutingContext;
-        private readonly Mock<HttpContext> _mockHttpContext;
+
         public IPFilterAttributeTest()
         {
             var modelState = new ModelStateDictionary();
-            _mockHttpContext = new Mock<HttpContext>();
+            var mockHttpContext = Mock.Of<HttpContext>();
 
             var actionContext = new ActionContext(
-                  _mockHttpContext.Object,
+                  mockHttpContext,
                   Mock.Of<RouteData>(),
                   Mock.Of<ActionDescriptor>(),
                   modelState
@@ -40,6 +39,7 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
            new Dictionary<string, object>(),
            Mock.Of<Controller>());
             _options = new Mock<IOptions<ApplicationOptions>>();
+            _clientService = new Mock<IClientService>();
         }
 
         [Fact]
@@ -50,11 +50,10 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
             var fakeResult = new ContentResult { Content = fakeContent };
             _options.Setup(x => x.Value).Returns(new ApplicationOptions { WhiteList = new List<string>() });
             _actionExecutingContext.Result = fakeResult;
-            var connectionInfo = new Mock<ConnectionInfo>();
-            connectionInfo.Setup(x => x.RemoteIpAddress).Returns(new IPAddress(0x2414188f));
-            _mockHttpContext.Setup(x => x.Connection).Returns(connectionInfo.Object);
+            _clientService.Setup(x => x.RealClientIP).Returns(new IPAddress(0x2414188f));
+
             //Action
-            var filter = new IPFilterAttribute(_options.Object);
+            var filter = new IPFilterAttribute(_options.Object, _clientService.Object);
 
             filter.OnActionExecuting(_actionExecutingContext);
 
@@ -75,11 +74,10 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
             var fakeResult = new ContentResult { Content = fakeContent };
             _options.Setup(x => x.Value).Returns(new ApplicationOptions { WhiteList = new List<string> { WhitelistIP } });
             _actionExecutingContext.Result = fakeResult;
-            var connectionInfo = new Mock<ConnectionInfo>();
-            connectionInfo.Setup(x => x.RemoteIpAddress).Returns(new IPAddress(requestIP));
-            _mockHttpContext.Setup(x => x.Connection).Returns(connectionInfo.Object);
+            _clientService.Setup(x => x.RealClientIP).Returns(new IPAddress(requestIP));
+
             //Action
-            var filter = new IPFilterAttribute(_options.Object);
+            var filter = new IPFilterAttribute(_options.Object, _clientService.Object);
 
             filter.OnActionExecuting(_actionExecutingContext);
 
@@ -99,15 +97,10 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
 
             var expectedResult = $"The IP Address: {requestIP} was blocked";
             _options.Setup(x => x.Value).Returns(new ApplicationOptions { WhiteList = new List<string> { WhitelistIP } });
-
-            var connectionInfo = new Mock<ConnectionInfo>();
-            connectionInfo.Setup(x => x.RemoteIpAddress).Returns(new IPAddress(requestIPNumber));
-
-            _mockHttpContext.Setup(x => x.Connection).Returns(connectionInfo.Object);
-
+            _clientService.Setup(x => x.RealClientIP).Returns(new IPAddress(requestIPNumber));
 
             //Action
-            var filter = new IPFilterAttribute(_options.Object);
+            var filter = new IPFilterAttribute(_options.Object, _clientService.Object);
 
             filter.OnActionExecuting(_actionExecutingContext);
 
@@ -134,11 +127,9 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
             var fakeResult = new ContentResult { Content = fakeContent };
             _options.Setup(x => x.Value).Returns(new ApplicationOptions { WhiteList = new List<string> { WhitelistIP } });
             _actionExecutingContext.Result = fakeResult;
-            var connectionInfo = new Mock<ConnectionInfo>();
-            connectionInfo.Setup(x => x.RemoteIpAddress).Returns(IPAddress.Parse(requestIP));
-            _mockHttpContext.Setup(x => x.Connection).Returns(connectionInfo.Object);
+            _clientService.Setup(x => x.RealClientIP).Returns(IPAddress.Parse(requestIP));
             //Action
-            var filter = new IPFilterAttribute(_options.Object);
+            var filter = new IPFilterAttribute(_options.Object, _clientService.Object);
 
             filter.OnActionExecuting(_actionExecutingContext);
 
@@ -158,15 +149,10 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
 
             var expectedResult = $"The IP Address: {requestIP} was blocked";
             _options.Setup(x => x.Value).Returns(new ApplicationOptions { WhiteList = new List<string> { WhitelistIP } });
-
-            var connectionInfo = new Mock<ConnectionInfo>();
-            connectionInfo.Setup(x => x.RemoteIpAddress).Returns(IPAddress.Parse(requestIP));
-
-            _mockHttpContext.Setup(x => x.Connection).Returns(connectionInfo.Object);
-
+            _clientService.Setup(x => x.RealClientIP).Returns(IPAddress.Parse(requestIP));
 
             //Action
-            var filter = new IPFilterAttribute(_options.Object);
+            var filter = new IPFilterAttribute(_options.Object, _clientService.Object);
 
             filter.OnActionExecuting(_actionExecutingContext);
 
@@ -186,14 +172,10 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Attributes
 
             var expectedResult = $"The WhiteList IP: {whiteListIP} was invalid - client IP: ${requestIP}";
             _options.Setup(x => x.Value).Returns(new ApplicationOptions { WhiteList = new List<string> { whiteListIP } });
-
-            var connectionInfo = new Mock<ConnectionInfo>();
-            connectionInfo.Setup(x => x.RemoteIpAddress).Returns(IPAddress.Parse(requestIP));
-
-            _mockHttpContext.Setup(x => x.Connection).Returns(connectionInfo.Object);
+            _clientService.Setup(x => x.RealClientIP).Returns(IPAddress.Parse(requestIP));
 
             //Action
-            var filter = new IPFilterAttribute(_options.Object);
+            var filter = new IPFilterAttribute(_options.Object, _clientService.Object);
 
             var ex = Assert.Throws<Exception>(() => filter.OnActionExecuting(_actionExecutingContext));
 
