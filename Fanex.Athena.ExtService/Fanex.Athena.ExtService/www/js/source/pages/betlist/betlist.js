@@ -17,6 +17,7 @@
         const SPORT_SG = 247;
         const SPORT_VRG = 245;
         const SPORT_SXG = 243;
+        const SPORT_SBC = 200;
 
         let _sortColumnName, _sortOrder;
 
@@ -34,7 +35,6 @@
             return bettype >= MIN_BETTYPE_FASTMARKET && bettype <= MAX_BETTYPE_FASTMARKET;
         }
         function getBaseCurrency() {
-
             return $('#baseCurrency').val();
         }
 
@@ -194,6 +194,20 @@
                 $.get(url, function (result) {
                     if (result !== '') {
                         showResultPopUp(result, { width: 800, height: 380, title: title });
+                        Site.unBlockUI();
+                    }
+                });
+            },
+
+            viewSabaClubResult: function (custId, gameId, gameRoundId, title) {
+                let url = Site.resolveClientUrl('ResultReport/SBCResultPopup') + '?custId=' + custId + '&gameId=' + gameId + '&gameRoundId=' + gameRoundId;
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+
+                Site.blockUI();
+                $.get(url, function (result) {
+                    if (result !== '') {
+                        showResultPopUp(result, { width: DetailsWidth, height: 380, title: title });
                         Site.unBlockUI();
                     }
                 });
@@ -699,7 +713,6 @@
                 };
                 window.BetList = betList;
             }
-
         };
 
         return _me;
