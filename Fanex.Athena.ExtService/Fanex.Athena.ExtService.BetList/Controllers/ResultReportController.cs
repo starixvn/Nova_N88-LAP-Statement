@@ -112,13 +112,14 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
 
         [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gameId", "gameRoundId" })]
         [HttpGet]
-        public async Task<string> SBCResultPopup(string custId, string gameId, string gameRoundId, string lang)
+        public async Task<string> SBCResultPopup(string custId, string gameId, string gameRoundId, string siteId, string lang)
         {
             var model = new
             {
                 custId,
-                gameId,
                 gameRoundId,
+                gameId,
+                siteId,
                 languageCode = lang
             };
             return await _betListApiClient.PostAsyncString("/SabaClubResultPopup/Index", model, lang).ConfigureAwait(false);
