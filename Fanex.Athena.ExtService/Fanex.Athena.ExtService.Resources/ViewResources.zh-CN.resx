@@ -283,10 +283,11 @@
   <data name="ProductTG" xml:space="preserve">
     <value>桌面游戏</value>
   </data>
-  <data name="ProductSXG" xml:space="preserve">
-    <value>性感百家</value>
-  </data>
   <data name="DetailedBetlist" xml:space="preserve">
     <value>投注明细历史</value>
+  </data>
+  <data name="ProductSXG" xml:space="preserve">
+    <value>AE 真人</value>
+    <comment>#141118</comment>
   </data>
 </root>

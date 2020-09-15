@@ -280,4 +280,8 @@
   <data name="ProductVRG" xml:space="preserve">
     <value>虚拟娱乐城</value>
   </data>
+  <data name="ProductSXG" xml:space="preserve">
+    <value>AE 真人</value>
+    <comment>#141118</comment>
+  </data>
 </root>
