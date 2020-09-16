@@ -13,7 +13,7 @@
     ProductTG: "桌面游戏	",
     ProductVRG: "虚拟娱乐城",
     ProductI4D: "Indo 4D",
-    ProductSXG: "性感百家",
+    ProductSXG: "AE 真人",
     ProductSBC: "Saba.club",
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",

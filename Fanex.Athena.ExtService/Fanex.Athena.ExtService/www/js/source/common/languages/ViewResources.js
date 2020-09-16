@@ -8,16 +8,16 @@
     ProductAB: "AllBet",
     AGCasino: "AG Casino",
     ProductFW: "Fishing World",
-    ProductCC:"Card Club",
+    ProductCC: "Card Club",
     ProductPP: "PP",
     ProductSG: "SG",
     ProductTG: "Table game",
     ProductVRG: "Virtual Games",
-    ProductSXG: "Sexy Gaming",
+    ProductSXG: "AE Casino",
     ProductSBC: "Saba.club",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",
     InvalidRequestMsg: "Request is not valid",
-    HttpError_403:	"Access denied"
+    HttpError_403: "Access denied"
 };
