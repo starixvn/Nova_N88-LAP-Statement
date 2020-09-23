@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using Fanex.Athena.ExtService.Core.Helper;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-
 using System;
 using System.Threading.Tasks;
 
@@ -42,8 +42,8 @@ namespace Fanex.Athena.ExtService.Core.Middleware
         {
             context.Response.StatusCode = ServerErrorCode;
             context.Response.ContentType = "application/json";
-            var errorMsg = $"Msg={error.Message}\n Stacktrace={error.StackTrace}" +
-                $"\n Path={context.Request.Path}\n Query={context.Request.QueryString}";
+
+            var errorMsg = ErrorMessageHelper.GenerateMessage(context, error);
             _logger.LogCritical(error, errorMsg);
             await context.Response.WriteAsync(JsonConvert.SerializeObject(new
             {
@@ -52,6 +52,4 @@ namespace Fanex.Athena.ExtService.Core.Middleware
             }));
         }
     }
-
-
 }
