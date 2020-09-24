@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Fanex.Athena.ExtService.Core.Middleware;
+using Fanex.Data;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -154,6 +157,60 @@ namespace Fanex.Athena.ExtService.Core.UnitTests.Middleware
             {
                 await Task.CompletedTask;
                 throw new Exception();
+            }, mockLogger.Object);
+
+            //Action
+            await errorHandler.Invoke(_mockHttpContext.Object).ConfigureAwait(false);
+
+            //Assert
+            mockLogger.Verify(r =>
+            r.Log(LogLevel.Critical, It.IsAny<EventId>(), It.IsAny<object>(), It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()),
+            Times.Once);
+        }
+
+        [Fact]
+        public async Task Invoke_SqlException_WriteLog()
+        {
+            //Arrange
+            _mockResponse.SetupGet(x => x.Body).Returns(Stream.Null);
+            _mockHttpContext.Setup(x => x.Features[typeof(IExceptionHandlerFeature)])
+                .Returns(new List<IExceptionHandlerFeature>());
+
+            var mockLogger = new Mock<ILogger<ErrorHandler>>();
+            var exception = FormatterServices.GetUninitializedObject(typeof(SqlException))
+                as SqlException;
+
+            var errorHandler = new ErrorHandler(async (x) =>
+            {
+                await Task.CompletedTask;
+                throw (exception);
+            }, mockLogger.Object);
+
+            //Action
+            await errorHandler.Invoke(_mockHttpContext.Object).ConfigureAwait(false);
+
+            //Assert
+            mockLogger.Verify(r =>
+            r.Log(LogLevel.Critical, It.IsAny<EventId>(), It.IsAny<object>(), It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()),
+            Times.Once);
+        }
+
+        [Fact]
+        public async Task Invoke_FanexDataException_WriteLog()
+        {
+            //Arrange
+            _mockResponse.SetupGet(x => x.Body).Returns(Stream.Null);
+            _mockHttpContext.Setup(x => x.Features[typeof(IExceptionHandlerFeature)])
+                .Returns(new List<IExceptionHandlerFeature>());
+
+            var mockLogger = new Mock<ILogger<ErrorHandler>>();
+            var exception = FormatterServices.GetUninitializedObject(typeof(ObjectDbException))
+                as ObjectDbException;
+
+            var errorHandler = new ErrorHandler(async (x) =>
+            {
+                await Task.CompletedTask;
+                throw (exception);
             }, mockLogger.Object);
 
             //Action
