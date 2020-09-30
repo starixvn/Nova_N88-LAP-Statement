@@ -17,18 +17,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="deploy.bat" />
-    <None Remove="deploy.LOCAL.bat" />
     <None Remove="SpConfig\FanexSpName.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="deploy.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="deploy.LOCAL.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="SpConfig\FanexSpName.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
