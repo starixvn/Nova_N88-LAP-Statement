@@ -8,7 +8,7 @@
     ProductAB: "AllBet",
     AGCasino: "AG Casino",
     ProductFW: "Fishing World",
-    ProductCC: "Card Club",
+    ProductCC: "Arcadia Gaming",
     ProductPP: "PP",
     ProductSG: "SG",
     ProductTG: "Table game",

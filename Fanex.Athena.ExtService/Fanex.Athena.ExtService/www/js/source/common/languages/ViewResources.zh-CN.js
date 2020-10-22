@@ -18,7 +18,7 @@
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
     Result: "赛果",
-    ProductCC: "嘻嘻俱乐部",
+    ProductCC: "乐卡迪亚",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied"
 };

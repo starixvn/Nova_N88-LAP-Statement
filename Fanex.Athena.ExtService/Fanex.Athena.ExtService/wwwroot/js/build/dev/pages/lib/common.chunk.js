@@ -10956,7 +10956,7 @@ module.exports = g;
     ProductAB: "AllBet",
     AGCasino: "AG Casino",
     ProductFW: "Fishing World",
-    ProductCC: "Card Club",
+    ProductCC: "Arcadia Gaming",
     ProductPP: "PP",
     ProductSG: "SG",
     ProductTG: "Table game",
@@ -10999,7 +10999,7 @@ module.exports = g;
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
     Result: "赛果",
-    ProductCC: "嘻嘻俱乐部",
+    ProductCC: "乐卡迪亚",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied"
 };
@@ -11032,7 +11032,7 @@ module.exports = g;
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
     Result: "赛果",
-    ProductCC: "嘻嘻俱乐部",
+    ProductCC: "乐卡迪亚",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied"
 };
@@ -11066,7 +11066,7 @@ module.exports = g;
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "對不起，處理您的請求時有錯誤發生。",
     Result: "賽果",
-    ProductCC: "嘻嘻俱樂部",
+    ProductCC: "樂卡迪亞",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied"
 };
