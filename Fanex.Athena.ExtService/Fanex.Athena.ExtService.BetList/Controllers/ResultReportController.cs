@@ -199,5 +199,20 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
 
             return View("~/Views/ResultReport/AllBetResult.cshtml", viewModel);
         }
+
+        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "transId3rd", "platform" })]
+        [HttpGet]
+        public async Task<string> Happy5LinkedGamesResultPopup(string custId, string transId3rd, string platform, string lang)
+        {
+            var model = new
+            {
+                custId,
+                transId3rd,
+                platform,
+                languageCode = lang
+            };
+
+            return await _betListApiClient.PostAsyncString("/Happy5LinkedGamesResultPopup/Index", model, lang).ConfigureAwait(false);
+        }
     }
 }
