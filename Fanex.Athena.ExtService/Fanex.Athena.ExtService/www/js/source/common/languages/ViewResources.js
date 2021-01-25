@@ -19,5 +19,6 @@
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",
     InvalidRequestMsg: "Request is not valid",
-    HttpError_403: "Access denied"
+    HttpError_403: "Access denied",
+    JackpotWonDetails: "Jackpot Won Details"
 };

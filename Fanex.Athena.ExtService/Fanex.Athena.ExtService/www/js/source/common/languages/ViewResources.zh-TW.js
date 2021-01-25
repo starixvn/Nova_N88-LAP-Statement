@@ -20,5 +20,6 @@
     Result: "賽果",
     ProductCC: "樂卡迪亞",
     InvalidRequestMsg: "Request is not valid",
-    HttpError_403: "Access denied"
+    HttpError_403: "Access denied",
+    JackpotWonDetails: "積寶頭獎詳情"
 };

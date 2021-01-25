@@ -284,4 +284,7 @@
     <value>AE 真人</value>
     <comment>#141118</comment>
   </data>
+  <data name="JackpotWonDetails" xml:space="preserve">
+    <value>积宝头奖详情</value>
+  </data>
 </root>

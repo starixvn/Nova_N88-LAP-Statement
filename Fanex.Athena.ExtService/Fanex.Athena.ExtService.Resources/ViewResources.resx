@@ -370,4 +370,7 @@
   <data name="ProductSBC" xml:space="preserve">
     <value>Saba.club</value>
   </data>
+  <data name="JackpotWonDetails" xml:space="preserve">
+    <value>Jackpot Won Details</value>
+  </data>
 </root>
