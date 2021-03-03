@@ -286,4 +286,7 @@
   <data name="ProductTG" xml:space="preserve">
     <value>桌面遊戲</value>
   </data>
+  <data name="JackpotWonDetails" xml:space="preserve">
+    <value>積寶頭獎詳情</value>
+  </data>
 </root>

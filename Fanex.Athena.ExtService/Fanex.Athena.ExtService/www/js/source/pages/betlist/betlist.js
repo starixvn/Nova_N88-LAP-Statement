@@ -679,6 +679,25 @@
                 showDetailPopUp(url, { width: popW + 50, height: popH + 50, title: title });
             },
 
+            showSabaClubJackpotWonDetails: function (transId, custId, betTypeId) {
+                let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
+                url = QueryString.setParam(url, 'transId', transId);
+                url = QueryString.setParam(url, 'custId', custId);
+                url = QueryString.setParam(url, 'betType', betTypeId);
+                url = QueryString.setParam(url, 'BaseCurrency', getBaseCurrency());
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+                url = QueryString.setParam(url, 'uspkey', 'Lrf_BetList_Jackpot_Detail');
+                url = QueryString.setParam(url, 'hastotal', 1);
+                url = QueryString.setParam(url, 'isDesktopViewOnly', $("#isDesktopViewOnly").val() === "1");
+
+                const popH = Math.min($(window).height() - 100, 550);
+                const title = Site.getSingleResource('ProductSBC') + ' - ' +
+                    Site.getSingleResource('JackpotWonDetails');
+
+                showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
+            },
+
             showVideoPokerGameDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transId', transId);
@@ -728,6 +747,7 @@
                 window.showSGDetails = _me.showSGDetails;
                 window.showSexyGamingBetDetails = _me.showSexyGamingBetDetails;
                 window.showSabaClubDetails = _me.showSabaClubDetails;
+                window.showSabaClubJackpotWonDetails = _me.showSabaClubJackpotWonDetails;
 
                 const betList = {
                     ViewCasinoHandHistory: _me.ViewCasinoHandHistory
