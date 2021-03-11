@@ -12,7 +12,7 @@
     ProductSG: "SG",
     ProductTG: "桌面遊戲",
     ProductVRG: "虛擬娛樂城",
-    ProductI4D: "Indo 4D",
+    ProductI4D: "Togel 4D",
     ProductSXG: "AE Casino",
     ProductSBC: "Saba.club",
     TransactionDetail: "Transaction Detail",
