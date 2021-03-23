@@ -373,4 +373,7 @@
   <data name="JackpotWonDetails" xml:space="preserve">
     <value>Jackpot Won Details</value>
   </data>
+  <data name="ProductSLT" xml:space="preserve">
+    <value>Sports Lottery</value>
+  </data>
 </root>

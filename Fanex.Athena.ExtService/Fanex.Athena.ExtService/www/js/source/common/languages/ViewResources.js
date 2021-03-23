@@ -15,6 +15,7 @@
     ProductVRG: "Virtual Games",
     ProductSXG: "AE Casino",
     ProductSBC: "Saba.club",
+    ProductSLT: "Sports Lottery",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",
