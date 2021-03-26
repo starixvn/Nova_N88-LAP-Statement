@@ -39,5 +39,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
         public bool HasPlayerCom { get; set; }
 
         public string AgentListXml { get; set; }
+
+        public bool IsShowIpvn { get; set; }
     }
 }

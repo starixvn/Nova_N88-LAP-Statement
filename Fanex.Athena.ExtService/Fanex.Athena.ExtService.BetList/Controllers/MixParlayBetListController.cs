@@ -1,5 +1,6 @@
 ﻿namespace Fanex.Athena.ExtService.BetList.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@
     using Fanex.Athena.ExtService.Common.Attributes;
     using Fanex.Athena.ExtService.Common.Models.DataDomain;
     using Fanex.Athena.ExtService.Common.Services;
-
+    using Fanex.Athena.ExtService.Core.Constant;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
@@ -27,6 +28,7 @@
         [HttpGet]
         public async Task<IActionResult> Detail(MixParlayDetailMetaModel metaModel)
         {
+            metaModel.IsShowIpvn = IsShowIpvn();
             var result = await _betListApiClient.PostAsync<IList<TicketText>>("/MixParlayBetList/Detail",
                 metaModel,
                 metaModel.Lang).ConfigureAwait(false);
@@ -39,9 +41,19 @@
         public async Task<IActionResult> NewParlayDetail(
             NewParlayDetailMetaModel metaModel)
         {
+            metaModel.IsShowIpvn = IsShowIpvn();
             var result = await _betListApiClient.PostAsync<NewParlayDetailViewModel>("/MixParlayBetList/NewParlayDetail",
                 metaModel, metaModel.Lang).ConfigureAwait(false);
             return Json(result);
+        }
+
+        private bool IsShowIpvn()
+        {
+            if (string.IsNullOrEmpty(HttpContext.User.FindFirst(CustomClaimType.IsShowIPVN)?.Value))
+            {
+                return true;
+            }
+            return Convert.ToBoolean(HttpContext.User.FindFirst(CustomClaimType.IsShowIPVN).Value);
         }
     }
 }

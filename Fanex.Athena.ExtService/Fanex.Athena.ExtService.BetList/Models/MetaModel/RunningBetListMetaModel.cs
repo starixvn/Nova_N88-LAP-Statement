@@ -33,5 +33,7 @@
         public string AgentListXml { get; set; }
 
         public string BaseCurrency { get; set; } = SystemConstants.DefaultBaseCurrency;
+
+        public bool IsShowIpvn { get; set; }
     }
 }

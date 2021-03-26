@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fanex.Athena.ExtService.Common\Fanex.Athena.ExtService.Common.csproj" />
+    <ProjectReference Include="..\Fanex.Athena.ExtService.Core\Fanex.Athena.ExtService.Core.csproj" />
     <ProjectReference Include="..\Fanex.Athena.ExtService.Resources\Fanex.Athena.ExtService.Resources.csproj" />
   </ItemGroup>
 
