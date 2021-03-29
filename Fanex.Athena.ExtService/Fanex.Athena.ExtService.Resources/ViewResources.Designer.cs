@@ -538,6 +538,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sports Lottery.
+        /// </summary>
+        public static string ProductSLT {
+            get {
+                return ResourceManager.GetString("ProductSLT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saba Promotion.
         /// </summary>
         public static string ProductSPR {

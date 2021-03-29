@@ -425,6 +425,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
         const SPORT_SXG = 243;
         const SPORT_SBC = 200;
         const SPORT_HAPPY5LINKEDGAMES = 168;
+        const SPORT_SPORTSLOTTERY = 169;
 
         let _sortColumnName, _sortOrder;
 
@@ -642,6 +643,21 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 Site.unBlockUI();
             },
 
+            viewSportsLotteryResult: function (custId, transId3rd, platform, title) {
+                let url = Site.resolveClientUrl('ResultReport/SportsLotteryResult?custId=' + custId +
+                    '&transId3rd=' + transId3rd + '&platform=' + platform);
+                url += "&lang=" + $("#lang").val();
+                url += "&access_token=" + $("#access_token").val();
+
+                Site.blockUI();
+                $.get(url, function (result) {
+                    if (result !== '') {
+                        showResultPopUp(result, { width: 800, height: 380, title: title });
+                        Site.unBlockUI();
+                    }
+                });
+            },
+
             viewGlobalGamingResult: function (custId, gameId, title) {
                 let url = Site.resolveClientUrl('ResultReport/GlobalGamingResult') + '?custid=' + custId + '&gameId=' + gameId;
                 url = QueryString.setParam(url, 'lang', $("#lang").val());
@@ -706,6 +722,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 }
                 else if (sporttype === SPORT_HAPPY5LINKEDGAMES) {
                     _me.ViewHappy5LinkedGamesResult(extension1, refno, defaultPlatform, title);
+                }
+                else if (sporttype === SPORT_SPORTSLOTTERY) {
+                    _me.viewSportsLotteryResult(custid, transdecs, defaultPlatform, title);
                 }
                 else {
                     const numberBettype = Number(bettype);
