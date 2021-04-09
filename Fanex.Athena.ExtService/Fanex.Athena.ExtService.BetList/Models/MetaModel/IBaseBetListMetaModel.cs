@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Fanex.Athena.ExtService.BetList.Models.MetaModel
 {
-    public interface IBaseBetListMetaModel : IBaseMetaModel
+    public interface IBaseBetListMetaModel : IBaseMetaModel, IMetaModelShowIPVN
     {
         bool HasPlayerCom { get; set; }
         string AgentListXml { get; set; }

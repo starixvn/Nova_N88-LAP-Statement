@@ -1,4 +1,5 @@
-﻿using Fanex.Athena.ExtService.Core.Models;
+﻿using Fanex.Athena.ExtService.Core.Constant;
+using Fanex.Athena.ExtService.Core.Models;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -41,6 +42,7 @@ namespace Fanex.Athena.ExtService.Core.Services
             var claim = new[]
             {
                 new Claim(ClaimTypes.Name, siteName),
+                new Claim(CustomClaimType.IsShowIPVN, request.IsShowIpvn.ToString(), ClaimValueTypes.Boolean)
              };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.Secret));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

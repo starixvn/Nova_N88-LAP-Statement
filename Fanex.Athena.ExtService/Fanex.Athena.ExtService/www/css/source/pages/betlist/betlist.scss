@@ -210,7 +210,7 @@
     /* Trans */
     .iplink, .betsliplink {
         cursor: pointer;
-        color: #1E1EEB;
+        color: #000000;
         font-size: 11px;
     }
 
@@ -235,7 +235,7 @@
     }
 
     .ip {
-        display: none;
+        pointer-events: none;
     }
     /*ul.h-list li a*/
     .selected {
