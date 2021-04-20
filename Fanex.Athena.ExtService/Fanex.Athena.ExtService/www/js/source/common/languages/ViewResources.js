@@ -13,7 +13,7 @@
     ProductSG: "SG",
     ProductTG: "Table game",
     ProductVRG: "Virtual Games",
-    ProductSXG: "AE Casino",
+    ProductSXG: "AE Sexy",
     ProductSBC: "Saba.club",
     ProductSLT: "Sports Lottery",
     TransactionDetail: "",
