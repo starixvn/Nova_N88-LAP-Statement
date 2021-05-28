@@ -376,4 +376,7 @@
   <data name="ProductSLT" xml:space="preserve">
     <value>Sports Lottery</value>
   </data>
+  <data name="ProductVGA" xml:space="preserve">
+    <value>Vgaming</value>
+  </data>
 </root>

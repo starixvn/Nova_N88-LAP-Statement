@@ -215,6 +215,22 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
             return await _betListApiClient.PostAsyncString("/SportsLotteryResultPopup/Index", model, lang).ConfigureAwait(false);
         }
 
+        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gameId", "gameRoundId" })]
+        [HttpGet]
+        public async Task<string> VGamingResultPopup(string custId, string gameId, string gameRoundId, int sportType, string siteId, string lang)
+        {
+            var model = new
+            {
+                custId,
+                gameRoundId,
+                gameId,
+                siteId,
+                sportType,
+                languageCode = lang
+            };
+            return await _betListApiClient.PostAsyncString("/VGamingResultPopup/Index", model, lang).ConfigureAwait(false);
+        }
+
         [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "transId3rd", "platform" })]
         [HttpGet]
         public async Task<string> Happy5LinkedGamesResultPopup(string custId, string transId3rd, string platform, string lang)

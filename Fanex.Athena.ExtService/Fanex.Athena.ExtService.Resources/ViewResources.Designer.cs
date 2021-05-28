@@ -592,6 +592,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vgaming.
+        /// </summary>
+        public static string ProductVGA {
+            get {
+                return ResourceManager.GetString("ProductVGA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Virtual Games.
         /// </summary>
         public static string ProductVRG {

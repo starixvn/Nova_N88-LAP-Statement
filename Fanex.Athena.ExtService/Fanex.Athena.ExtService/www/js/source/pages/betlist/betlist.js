@@ -20,6 +20,8 @@
         const SPORT_SBC = 200;
         const SPORT_HAPPY5LINKEDGAMES = 168;
         const SPORT_SPORTSLOTTERY = 169;
+        const SPORT_VGA = 171;
+        const SPORT_VGA_FreeBets = 173;
 
         let _sortColumnName, _sortOrder;
 
@@ -265,6 +267,7 @@
                     }
                 });
             },
+
             ViewHappy5LinkedGamesResult: function (custId, transId3rd, platform, title) {
                 let url = Site.resolveClientUrl('ResultReport/Happy5LinkedGamesResultPopup?custId=' + custId +
                     '&transId3rd=' + transId3rd + '&platform=' + platform);
@@ -279,6 +282,21 @@
                     }
                 });
             },
+
+            viewVGamingResult: function (custId, gameId, siteId, gameRoundId, title, sporttype) {
+                let url = Site.resolveClientUrl('ResultReport/VGamingResultPopup') + '?custId=' + custId + '&gameId=' + gameId + '&siteId=' + siteId + '&gameRoundId=' + gameRoundId + '&sportType=' + sporttype;
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+
+                Site.blockUI();
+                $.get(url, function (result) {
+                    if (result !== '') {
+                        showResultPopUp(result, { width: DetailsWidth, height: 380, title: title });
+                        Site.unBlockUI();
+                    }
+                });
+            },
+
             viewResult: function (matchid, raceNo, bettype, sporttype, refno,
                 username, winlostdate, refnoMixParlay, league, isOutright, extension1, extension2, custid, transdecs) {
                 const title = Site.getSingleResource('Result');
@@ -319,6 +337,9 @@
                 }
                 else if (sporttype === SPORT_SPORTSLOTTERY) {
                     _me.viewSportsLotteryResult(custid, transdecs, defaultPlatform, title);
+                }
+                else if (sporttype === SPORT_VGA || sporttype === SPORT_VGA_FreeBets) {
+                    _me.viewVGamingResult(custid, bettype, extension2, transdecs, title, sporttype);
                 }
                 else {
                     const numberBettype = Number(bettype);
@@ -534,6 +555,7 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             showAllBetDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transid', transId);
@@ -550,6 +572,7 @@
 
                 showDetailPopUp(url, { width: 870, height: popH + 50, title: title });
             },
+
             showColossusBetsDetails: function (refNo, winlostDate, transId, custId, betCheck) {
                 let url = Site.resolveClientUrl('ColossusBetBetList/Detail');
                 url = QueryString.setParam(url, 'refNo', refNo);
@@ -566,6 +589,7 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             showGlobalGamingDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transId', transId);
@@ -585,6 +609,7 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             showPPDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transId', transId);
@@ -602,6 +627,7 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             showSGDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transId', transId);
@@ -619,6 +645,7 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             showSexyGamingBetDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transId', transId);
@@ -636,6 +663,7 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             showSabaClubDetails: function (transId, winlostDate, custId, transType) {
                 let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
                 url = QueryString.setParam(url, 'transId', transId);
@@ -653,12 +681,51 @@
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
             ViewCasinoHandHistory: function (refNo) {
                 let url = Site.resolveClientUrl('HandHistory/RNGCasino');
                 const urlParam = $('#casino-hand-history-' + refNo).attr('url-param');
 
                 url += urlParam;
                 Site.redirect(url);
+            },
+
+            showVGamingJackpotWonDetails: function (transId, custId, betTypeId) {
+                let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
+                url = QueryString.setParam(url, 'transId', transId);
+                url = QueryString.setParam(url, 'custId', custId);
+                url = QueryString.setParam(url, 'betType', betTypeId);
+                url = QueryString.setParam(url, 'BaseCurrency', getBaseCurrency());
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+                url = QueryString.setParam(url, 'uspkey', 'Lrf_BetList_Jackpot_Detail');
+                url = QueryString.setParam(url, 'hastotal', 1);
+                url = QueryString.setParam(url, 'isDesktopViewOnly', $("#isDesktopViewOnly").val() === "1");
+
+                const popH = Math.min($(window).height() - 100, 550);
+                const title = Site.getSingleResource('ProductVGA') + ' - ' +
+                    Site.getSingleResource('JackpotWonDetails');
+
+                showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
+            },
+
+            showVGamingDetails: function (transId, winlostDate, custId, transType) {
+                let url = Site.resolveClientUrl('BetListDetailByProduct/Detail');
+                url = QueryString.setParam(url, 'transId', transId);
+                url = QueryString.setParam(url, 'date', winlostDate);
+                url = QueryString.setParam(url, 'custId', custId);
+                url = QueryString.setParam(url, 'transType', transType);
+                url = QueryString.setParam(url, 'BaseCurrency', getBaseCurrency());
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+                url = QueryString.setParam(url, 'uspkey', 'Lrf_BetList_RNG_Detail');
+                url = QueryString.setParam(url, 'hastotal', 1);
+                url = QueryString.setParam(url, 'isDesktopViewOnly', $("#isDesktopViewOnly").val() === "1");
+                const popH = Math.min($(window).height() - 100, 550);
+                const title = Site.getSingleResource('ProductVGA') + ' - ' +
+                    Site.getSingleResource('DetailedBetlist');
+
+                showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
 
             viewCashOutHistory: function (transId, refNo, betType, betdaqId) {
@@ -767,6 +834,8 @@
                 window.showSexyGamingBetDetails = _me.showSexyGamingBetDetails;
                 window.showSabaClubDetails = _me.showSabaClubDetails;
                 window.showSabaClubJackpotWonDetails = _me.showSabaClubJackpotWonDetails;
+                window.showVGamingDetails = _me.showVGamingDetails;
+                window.showVGamingJackpotWonDetails = _me.showVGamingJackpotWonDetails;
 
                 const betList = {
                     ViewCasinoHandHistory: _me.ViewCasinoHandHistory
