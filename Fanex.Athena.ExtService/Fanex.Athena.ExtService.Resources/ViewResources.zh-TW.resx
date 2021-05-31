@@ -289,4 +289,7 @@
   <data name="JackpotWonDetails" xml:space="preserve">
     <value>積寶頭獎詳情</value>
   </data>
+  <data name="ProductVGA" xml:space="preserve">
+    <value>Vgaming</value>
+  </data>
 </root>

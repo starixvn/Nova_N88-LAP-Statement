@@ -15,6 +15,7 @@
     ProductI4D: "Togel 4D",
     ProductSXG: "AE性感真人",
     ProductSBC: "Saba.club",
+    ProductVGA: "Vgaming",
     TransactionDetail: "Transaction Detail",
     ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
     Result: "赛果",
