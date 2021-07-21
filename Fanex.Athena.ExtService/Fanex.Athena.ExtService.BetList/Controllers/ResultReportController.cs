@@ -217,7 +217,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
 
         [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gameId", "gameRoundId" })]
         [HttpGet]
-        public async Task<string> VGamingResultPopup(string custId, string gameId, string gameRoundId, int sportType, string siteId, string lang)
+        public async Task<string> VGamingResultPopup(string custId, string gameId, string gameRoundId, int sportType, string siteId, string currencyName, string lang)
         {
             var model = new
             {
@@ -226,6 +226,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
                 gameId,
                 siteId,
                 sportType,
+                currencyName,
                 languageCode = lang
             };
             return await _betListApiClient.PostAsyncString("/VGamingResultPopup/Index", model, lang).ConfigureAwait(false);
