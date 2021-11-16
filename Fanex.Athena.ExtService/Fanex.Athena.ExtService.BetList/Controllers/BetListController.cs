@@ -72,7 +72,7 @@
         [HttpGet]
         [ServiceFilter(typeof(CheckCustomerAttribute))]
         [ResponseCache(Duration = SystemConstants.ThirtySecond, NoStore = false,
-            VaryByQueryKeys = new[] { "cid", "lang", "bc", "wd", "pc", "ps", "pi", "mv", "s", "fd", "td", "sb" , "spi", "sps" })]
+            VaryByQueryKeys = new[] { "cid", "lang", "bc", "wd", "pc", "ps", "pi", "mv", "s", "fd", "td", "sb", "spi", "sps" })]
         public async Task<IActionResult> ByGroup(BetListByGroupMetaModel metaModel)
         {
             var siteName = HttpContext.User.Identity.Name;
@@ -95,6 +95,7 @@
             {
                 AssignCommonMetaModelValue(metaModel, licenseeInfo);
                 metaModel.IsShowIpvn = IsShowIpvn();
+                metaModel.ProductCode = GetSubProductCode(metaModel.ProductCode);
                 var result = await _betListApiClient.PostAsync<RefNoDataResult>(
                     "/BetListByProduct/Index",
                     metaModel,
@@ -147,6 +148,13 @@
             AssignCommonViewModelData(metaModel, viewModel);
 
             return View(viewModel);
+        }
+
+        private static string GetSubProductCode(string ProductCode)
+        {
+            var subProductList = new List<string> { Product.SLT };
+
+            return ProductCode.Contains(Product.SB, StringComparison.OrdinalIgnoreCase) ? ProductCode + "," + string.Join(',', subProductList) : ProductCode;
         }
     }
 }
