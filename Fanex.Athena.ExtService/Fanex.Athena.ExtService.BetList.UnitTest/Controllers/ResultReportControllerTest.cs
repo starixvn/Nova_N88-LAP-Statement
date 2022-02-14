@@ -83,84 +83,6 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
         }
 
         [Fact]
-        public async Task VoidbridgeResult_WhenCall_RetrunStringResult()
-        {
-            //Arrange
-            const string custId = "Any";
-            const string lang = "en-US";
-            const string gamePlayId = "Any";
-            var fakeResult = "Any result data";
-            string result = null;
-            _betListApiClient.Setup(x => x.PostAsyncString(
-                "/VoidbridgeResultPopup/Index", It.IsAny<object>(),
-                It.IsAny<string>()))
-                .Returns(Task.FromResult(fakeResult));
-
-            //Action
-            using (var controller = new ResultReportController(_betListApiClient.Object))
-            {
-                controller.ControllerContext = _controllerContext.Object;
-                result = await controller.VoidbridgeResult(custId, gamePlayId, lang).ConfigureAwait(false);
-            }
-
-            //Assert
-            var viewResult = Assert.IsType<string>(result);
-            Assert.Equal(fakeResult, viewResult);
-        }
-
-        [Fact]
-        public async Task PPResultPopup_WhenCall_RetrunStringResult()
-        {
-            //Arrange
-            const string custId = "Any";
-            const string lang = "en-US";
-            const string gamePlayId = "Any";
-            const string fakeResult = "Any result data";
-            string result = null;
-            _betListApiClient.Setup(x => x.PostAsyncString(
-                "/PPResultPopup/Index", It.IsAny<object>(),
-                It.IsAny<string>()))
-                .Returns(Task.FromResult(fakeResult));
-
-            //Action
-            using (var controller = new ResultReportController(_betListApiClient.Object))
-            {
-                controller.ControllerContext = _controllerContext.Object;
-                result = await controller.PPResultPopup(custId, gamePlayId, lang).ConfigureAwait(false);
-            }
-
-            //Assert
-            var viewResult = Assert.IsType<string>(result);
-            Assert.Equal(fakeResult, viewResult);
-        }
-
-        [Fact]
-        public async Task SGResultPopup_WhenCall_RetrunStringResult()
-        {
-            //Arrange
-            const string custId = "Any";
-            const string lang = "en-US";
-            const string gamePlayId = "Any SG";
-            const string fakeResult = "Any SG result data";
-            string result = null;
-            _betListApiClient.Setup(x => x.PostAsyncString(
-                "/SGResultPopup/Index", It.IsAny<object>(),
-                It.IsAny<string>()))
-                .Returns(Task.FromResult(fakeResult));
-
-            //Action
-            using (var controller = new ResultReportController(_betListApiClient.Object))
-            {
-                controller.ControllerContext = _controllerContext.Object;
-                result = await controller.SGResultPopup(custId, gamePlayId, lang).ConfigureAwait(false);
-            }
-
-            //Assert
-            var viewResult = Assert.IsType<string>(result);
-            Assert.Equal(fakeResult, viewResult);
-        }
-
-        [Fact]
         public async Task VRGResultPopup_WhenCall_RetrunStringResult()
         {
             //Arrange
@@ -179,35 +101,6 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
             {
                 controller.ControllerContext = _controllerContext.Object;
                 result = await controller.VirtualGamesResultPopup(gamePlayId, platfrom, lang).ConfigureAwait(false);
-            }
-
-            //Assert
-            var viewResult = Assert.IsType<string>(result);
-            Assert.Equal(fakeResult, viewResult);
-        }
-
-        [Fact]
-        public async Task CCResultPopup_WhenCall_RetrunStringResult()
-        {
-            //Arrange
-            const string custId = "Any";
-            const string lang = "en-US";
-            const string gameTypeId = "gameTypeId";
-            const string transId3rd = "transId3rd";
-            const string fakeResult = "Any result data";
-            string result = null;
-            _betListApiClient.Setup(
-                x => x.PostAsyncString(
-                "/CardClubResultPopup/Index",
-                It.IsAny<object>(),
-                It.IsAny<string>()))
-            .Returns(Task.FromResult(fakeResult));
-
-            //Action
-            using (var controller = new ResultReportController(_betListApiClient.Object))
-            {
-                controller.ControllerContext = _controllerContext.Object;
-                result = await controller.CCResultPopup(custId, gameTypeId, transId3rd, lang).ConfigureAwait(false);
             }
 
             //Assert
@@ -295,38 +188,6 @@ namespace Fanex.Athena.ExtService.BetList.UnitTests.Controllers
             Assert.Equal(title, Title);
             Assert.Equal(viewModel.Lang, lang);
             Assert.Equal(viewModel.AccessToken, AccessToken);
-        }
-
-        [Fact]
-        public async Task SportsLotteryResult_WhenCall_RetrunCorrectViewModelAsync()
-        {
-            //Arrange
-            const string custId = "Any";
-            const string transId3rd = "Any";
-            const string platform = "Any";
-            const string lang = "en-US";
-
-            const string fakeResult = "Any result data{rootUrl}/";
-            const string fakeRootUrl = "RootURL";
-            string result = null;
-            _betListApiClient.Setup(x => x.PostAsyncString(
-                "/SportsLotteryResultPopup/Index", It.IsAny<object>(),
-                It.IsAny<string>()))
-                .Returns(Task.FromResult(fakeResult));
-            var mockUrl = new Mock<IUrlHelper>();
-            mockUrl.Setup(x => x.Content(It.IsAny<string>())).Returns(fakeRootUrl);
-
-            //Action
-            using (var controller = new ResultReportController(_betListApiClient.Object))
-            {
-                controller.ControllerContext = _controllerContext.Object;
-                controller.Url = mockUrl.Object;
-                result = await controller.SportsLotteryResult(custId, transId3rd, platform, lang).ConfigureAwait(false);
-            }
-
-            //Assert
-            var viewResult = Assert.IsType<string>(result);
-            Assert.Equal(fakeResult, viewResult);
         }
 
         [Fact]
