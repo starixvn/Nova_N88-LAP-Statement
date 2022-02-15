@@ -58,7 +58,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ShowRngCasinoSingleWalletResult([FromBody]dynamic data)
+        public async Task<IActionResult> ShowRngCasinoSingleWalletResult([FromBody] dynamic data)
         {
             var result = await _betListApiClient.PostAsyncString(
                 "/ResultReport/ShowRngCasinoSingleWalletResult",
@@ -68,46 +68,6 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
                 .ConfigureAwait(false);
 
             return Content(result, "application/json");
-        }
-
-        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gamePlayId" })]
-        [HttpGet]
-        public async Task<string> VoidbridgeResult(string custId, string gamePlayId, string lang)
-        {
-            var model = new
-            {
-                custId,
-                gamePlayId,
-                languageCode = lang
-            };
-            return await _betListApiClient.PostAsyncString("/VoidbridgeResultPopup/Index",
-                model, lang).ConfigureAwait(false);
-        }
-
-        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gamePlayId" })]
-        [HttpGet]
-        public async Task<string> PPResultPopup(string custId, string gamePlayId, string lang)
-        {
-            var model = new
-            {
-                custId,
-                gamePlayId,
-                languageCode = lang
-            };
-            return await _betListApiClient.PostAsyncString("/PPResultPopup/Index", model, lang).ConfigureAwait(false);
-        }
-
-        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gamePlayId" })]
-        [HttpGet]
-        public async Task<string> SGResultPopup(string custId, string gamePlayId, string lang)
-        {
-            var model = new
-            {
-                custId,
-                gamePlayId,
-                languageCode = lang
-            };
-            return await _betListApiClient.PostAsyncString("/SGResultPopup/Index", model, lang).ConfigureAwait(false);
         }
 
         [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gameId", "gameRoundId" })]
@@ -123,20 +83,6 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
                 languageCode = lang
             };
             return await _betListApiClient.PostAsyncString("/SabaClubResultPopup/Index", model, lang).ConfigureAwait(false);
-        }
-
-        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gameTypeId", "transId3rd" })]
-        [HttpGet]
-        public async Task<string> CCResultPopup(string custId, string gameTypeId, string transId3rd, string lang)
-        {
-            var model = new
-            {
-                custId,
-                gameTypeId,
-                transId3rd,
-                languageCode = lang
-            };
-            return await _betListApiClient.PostAsyncString("/CardClubResultPopup/Index", model, lang).ConfigureAwait(false);
         }
 
         [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "transDesc", "lang", "betCheck", "betType" })]
@@ -200,21 +146,6 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
             return View("~/Views/ResultReport/AllBetResult.cshtml", viewModel);
         }
 
-        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "transId3rd", "platform" })]
-        [HttpGet]
-        public async Task<string> SportsLotteryResult(string custId, string transId3rd, string platform, string lang)
-        {
-            var model = new
-            {
-                custId,
-                transId3rd,
-                platform,
-                languageCode = lang
-            };
-
-            return await _betListApiClient.PostAsyncString("/SportsLotteryResultPopup/Index", model, lang).ConfigureAwait(false);
-        }
-
         [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "gameId", "gameRoundId" })]
         [HttpGet]
         public async Task<string> VGamingResultPopup(string custId, string gameId, string gameRoundId, int sportType, string siteId, string currencyName, string lang)
@@ -232,19 +163,32 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
             return await _betListApiClient.PostAsyncString("/VGamingResultPopup/Index", model, lang).ConfigureAwait(false);
         }
 
-        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "lang", "transId3rd", "platform" })]
+        [ResponseCache(Duration = SystemConstants.ThirtySecond, VaryByQueryKeys = new[] { "custId", "transId3rd", "gameId3rd", "currencyId", "siteId", "betTypeId", "productPath", "lang" })]
         [HttpGet]
-        public async Task<string> Happy5LinkedGamesResultPopup(string custId, string transId3rd, string platform, string lang)
+#pragma warning disable S107 // Methods should not have too many parameters
+        public async Task<string> ThirdPartyProduct(
+            string custId,
+            string transId3rd,
+            string gameId3rd,
+            string currencyId,
+            string siteId,
+            string betTypeId,
+            string productPath,
+            string lang)
+#pragma warning restore S107 // Methods should not have too many parameters
         {
             var model = new
             {
                 custId,
                 transId3rd,
-                platform,
+                gameId3rd,
+                currencyId,
+                siteId,
+                betTypeId,
                 languageCode = lang
             };
 
-            return await _betListApiClient.PostAsyncString("/Happy5LinkedGamesResultPopup/Index", model, lang).ConfigureAwait(false);
+            return await _betListApiClient.PostAsyncString($"/{productPath}ResultPopup/Index", model, lang).ConfigureAwait(false);
         }
     }
 }
