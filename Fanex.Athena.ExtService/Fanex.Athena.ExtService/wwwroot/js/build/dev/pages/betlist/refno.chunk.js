@@ -611,7 +611,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 Site.blockUI();
                 $.get(url, function (result) {
                     if (result !== '') {
-                        showResultPopUp(result, { width: DetailsWidth, height: 380, title: title });
+                        showResultPopUp(result, { width: 800, height: 380, title: title });
                         Site.unBlockUI();
                     }
                 });
