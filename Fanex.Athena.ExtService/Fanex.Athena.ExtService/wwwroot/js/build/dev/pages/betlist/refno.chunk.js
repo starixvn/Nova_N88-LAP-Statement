@@ -428,6 +428,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
         const SPORT_SPORTSLOTTERY = 169;
         const SPORT_VGA = 171;
         const SPORT_VGA_FreeBets = 173;
+        const SPORT_VS3 = 231;
 
         let _sortColumnName, _sortOrder;
 
@@ -636,6 +637,19 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 });
             },
 
+            viewVS3Result: function (transdecs, sporttype, title) {
+                const param = 'transDesc=' + transdecs +
+                    '&sporttype=' + sporttype +
+                    '&lang=' + $("#lang").val() +
+                    '&access_token=' + $("#access_token").val();
+
+                let url = Site.resolveClientUrl('ResultReport/ResultPopup?' + param);
+
+                Site.blockUI();
+                showResultPopUp(url, { width: 800, height: 380, title: title });
+                Site.unBlockUI();
+            },
+
             viewResult: function (matchid, raceNo, bettype, sporttype, refno,
                 currency, winlostdate, refnoMixParlay, league, isOutright, extension1, extension2, custid, transdecs, siteId) {
                 const title = Site.getSingleResource('Result');
@@ -679,6 +693,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 }
                 else if (sporttype === SPORT_VGA || sporttype === SPORT_VGA_FreeBets) {
                     _me.viewVGamingResult(custid, bettype, extension2, transdecs, title, sporttype, currency);
+                }
+                else if (sporttype === SPORT_VS3) {
+                    _me.viewVS3Result(transdecs, sporttype, title);
                 }
                 else {
                     const numberBettype = Number(bettype);
@@ -1140,6 +1157,17 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
 
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
+
+            showDetail: function (id) {
+                var e = document.getElementById(id);
+                if (e.style.display == 'block') {
+                    e.style.display = 'none';
+                }
+                else {
+                    e.style.display = 'block';
+                }
+            },
+
             registerBetListGlobalFunctions: function () {
                 window.ViewResult = _me.viewResult;
                 // showMP and showCombMP are only for old tickets
@@ -1175,6 +1203,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 window.showSabaClubJackpotWonDetails = _me.showSabaClubJackpotWonDetails;
                 window.showVGamingDetails = _me.showVGamingDetails;
                 window.showVGamingJackpotWonDetails = _me.showVGamingJackpotWonDetails;
+                window.showDetail = _me.showDetail;
 
                 const betList = {
                     ViewCasinoHandHistory: _me.ViewCasinoHandHistory

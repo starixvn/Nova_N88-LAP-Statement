@@ -10965,6 +10965,7 @@ module.exports = g;
     ProductSBC: "Saba.club",
     ProductSLT: "Sports Lottery",
     ProductVGA: "Vgaming",
+    ProductVS3: "Virtual Sports 3",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",
