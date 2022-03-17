@@ -379,4 +379,7 @@
   <data name="ProductVGA" xml:space="preserve">
     <value>Vgaming</value>
   </data>
+  <data name="ProductVS3" xml:space="preserve">
+    <value>Virtual Sports 3</value>
+  </data>
 </root>

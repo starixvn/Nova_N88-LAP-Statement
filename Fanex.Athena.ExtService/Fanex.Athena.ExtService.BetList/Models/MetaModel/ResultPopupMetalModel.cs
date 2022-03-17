@@ -10,6 +10,7 @@ namespace Fanex.Athena.ExtService.BetList.Models.MetaModel
             get;
             set;
         }
+
         public string Lang { get; set; }
 
         public int Bettype { get; set; }
@@ -33,5 +34,7 @@ namespace Fanex.Athena.ExtService.BetList.Models.MetaModel
         public int Handicap1 { get; set; }
 
         public int Handicap2 { get; set; }
+
+        public string TransDesc { get; set; }
     }
 }
