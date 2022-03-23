@@ -408,6 +408,15 @@ table tbody tr.row-group-level1 td {
     .sort-icon-desc.light {
       border-top-color: #fff; }
 
+.players-choice {
+  color: #000000;
+  font-weight: bold !important;
+  word-break: break-word;
+  white-space: normal; }
+
+.table.fn-rs .cl-result.home .match-info {
+  color: #000000; }
+
 .allbet-bet-id {
   color: #bbb; }
 

@@ -498,6 +498,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 }
                 else {
                     url = QueryString.setParam(url, 'betid', extension1);
+                    url = QueryString.setParam(url, 'transdesc', extension2);
                 }
 
                 return url;
