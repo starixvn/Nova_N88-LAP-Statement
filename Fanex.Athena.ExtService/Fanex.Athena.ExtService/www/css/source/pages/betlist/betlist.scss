@@ -1,6 +1,17 @@
 ﻿@import "../../scss/abstracts/_variables.scss";
 @import '../../components/sortableheader/sortableheader';
 
+.players-choice {
+    color: #000000;
+    font-weight: bold !important;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.table.fn-rs .cl-result.home .match-info {
+    color: #000000;
+}
+
 .allbet-bet-id {
     color: #bbb;
 }
