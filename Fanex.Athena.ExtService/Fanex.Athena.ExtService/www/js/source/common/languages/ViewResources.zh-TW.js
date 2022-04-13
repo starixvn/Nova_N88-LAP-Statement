@@ -22,5 +22,11 @@
     ProductCC: "樂卡迪亞",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied",
-    JackpotWonDetails: "積寶頭獎詳情"
+    JackpotWonDetails: "積寶頭獎詳情",
+    CashOutHistory: "即時兌現歷史記錄",
+    CashOutCancelled: "取消即時兌現",
+    CashOutRecovered: "恢復即時兌現",
+    NetworkLatency: "由於網絡延遲，無法使用信息，請稍等幾分鐘後再次嘗試。",
+    DateTime: "日期/時間",
+    Activity: "活動",
 };

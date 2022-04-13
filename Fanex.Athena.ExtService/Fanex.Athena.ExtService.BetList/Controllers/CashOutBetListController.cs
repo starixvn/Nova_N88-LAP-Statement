@@ -8,6 +8,7 @@ using Fanex.Athena.ExtService.BetList.Models.ViewModel;
 using Fanex.Athena.ExtService.Common;
 using Fanex.Athena.ExtService.Common.Models.DataDomain;
 using Fanex.Athena.ExtService.Common.Services;
+using Fanex.Athena.ExtService.Resources;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
     {
         private readonly ICommonService _commonService;
         private readonly IBetListApiClient _betListApiClient;
+
         public CashOutBetListController(ICommonService commonService, IBetListApiClient betListApiClient)
         {
             _commonService = commonService;
@@ -39,6 +41,24 @@ namespace Fanex.Athena.ExtService.BetList.Controllers
             AssignCommonViewModelData(metaModel, viewModel);
             ViewBag.Title = "Cash Out BetList";
             return View(viewModel);
+        }
+
+        [HttpGet]
+        [ResponseCache(Duration = SystemConstants.ThirtySecond)]
+        public async Task<IActionResult> NewDetail(NewCashOutBetListDetailMetaModel metaModel)
+        {
+            var licenseeInfo = await _commonService.GetLicenseeInfoAsync(HttpContext.User.Identity.Name);
+            metaModel.CurrencyId = licenseeInfo.Currencies.FirstOrDefault(_ => _.CurrencyName == metaModel.Currency).CurrencyId;
+
+            AssignCommonMetaModelValue(metaModel, licenseeInfo);
+
+            var viewModel = await _betListApiClient.PostAsync<NewCashOutBetListDetailViewModel>("/CashOutBetList/History",
+                metaModel, metaModel.Lang).ConfigureAwait(false);
+            viewModel.Info = licenseeInfo;
+
+            AssignCommonViewModelData(metaModel, viewModel);
+            ViewBag.Title = ViewResources.CashOutHistory;
+            return View($"~/Views/NewCashOutBetList/Detail.cshtml", viewModel);
         }
     }
 }

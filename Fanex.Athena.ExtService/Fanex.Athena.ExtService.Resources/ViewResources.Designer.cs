@@ -61,6 +61,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activity .
+        /// </summary>
+        public static string Activity {
+            get {
+                return ResourceManager.GetString("Activity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AG Casino.
         /// </summary>
         public static string AGCasino {
@@ -160,6 +169,33 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cash Out Cancelled .
+        /// </summary>
+        public static string CashOutCancelled {
+            get {
+                return ResourceManager.GetString("CashOutCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Out History.
+        /// </summary>
+        public static string CashOutHistory {
+            get {
+                return ResourceManager.GetString("CashOutHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Out Recovered .
+        /// </summary>
+        public static string CashOutRecovered {
+            get {
+                return ResourceManager.GetString("CashOutRecovered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cash Out Stake.
         /// </summary>
         public static string CashOutStake {
@@ -232,6 +268,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date/Time .
+        /// </summary>
+        public static string DateTime {
+            get {
+                return ResourceManager.GetString("DateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to External ID.
         /// </summary>
         public static string ExternalId {
@@ -282,6 +327,15 @@ namespace Fanex.Athena.ExtService.Resources {
         public static string Live {
             get {
                 return ResourceManager.GetString("Live", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information is not available due to network latency. Please wait a few minutes and try again. .
+        /// </summary>
+        public static string NetworkLatency {
+            get {
+                return ResourceManager.GetString("NetworkLatency", resourceCulture);
             }
         }
         
@@ -750,6 +804,15 @@ namespace Fanex.Athena.ExtService.Resources {
         public static string Turnover {
             get {
                 return ResourceManager.GetString("Turnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View in {0}.
+        /// </summary>
+        public static string ViewIn {
+            get {
+                return ResourceManager.GetString("ViewIn", resourceCulture);
             }
         }
         
