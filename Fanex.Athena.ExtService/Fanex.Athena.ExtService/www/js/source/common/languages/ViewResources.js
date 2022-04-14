@@ -23,5 +23,12 @@
     Result: "Results",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied",
-    JackpotWonDetails: "Jackpot Won Details"
+    JackpotWonDetails: "Jackpot Won Details",
+    CashOutHistory: "Cash Out History",
+    CashOutCancelled: "Cash Out Cancelled",
+    CashOutRecovered: "Cash Out Recovered",
+    NetworkLatency: "Information is not available due to network latency. Please wait a few minutes and try again.",
+    DateTime: "Date/Time",
+    Activity: "Activity",
+    ViewIn: "View in {0}"
 };

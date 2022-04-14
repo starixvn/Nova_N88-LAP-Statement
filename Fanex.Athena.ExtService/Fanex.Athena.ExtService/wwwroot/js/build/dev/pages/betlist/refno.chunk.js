@@ -1104,6 +1104,24 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
             },
 
+            ViewNewCashOutHistory: function (transId, custId, winlostDate, currency) {
+                const baseCurrency = $('#baseCurrency').val();
+
+                let url = Site.resolveClientUrl('CashOutBetList/NewDetail');
+                url = QueryString.setParam(url, 'transId', transId);
+                url = QueryString.setParam(url, 'custId', custId);
+                url = QueryString.setParam(url, 'date', winlostDate);
+                url = QueryString.setParam(url, 'currency', currency);
+                url = QueryString.setParam(url, 'baseCurrency', baseCurrency);
+                url = QueryString.setParam(url, 'access_token', $("#access_token").val());
+                url = QueryString.setParam(url, 'lang', $("#lang").val());
+
+                const popH = Math.min($(window).height() - 100, 550);
+                const title = Site.getSingleResource('CashOutHistory');
+
+                showDetailPopUp(url, { width: 890, height: popH + 50, title: title });
+            },
+
             showBonusDetails: function (refCode, transId) {
                 const baseCurrency = $('#baseCurrency').val();
 
@@ -1204,6 +1222,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿!(__WEBPACK_A
                 window.showSabaClubJackpotWonDetails = _me.showSabaClubJackpotWonDetails;
                 window.showVGamingDetails = _me.showVGamingDetails;
                 window.showVGamingJackpotWonDetails = _me.showVGamingJackpotWonDetails;
+                window.ViewNewCashOutHistory = _me.ViewNewCashOutHistory;
                 window.showDetail = _me.showDetail;
 
                 const betList = {

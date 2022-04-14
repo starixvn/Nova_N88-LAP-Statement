@@ -290,4 +290,25 @@
   <data name="ProductVGA" xml:space="preserve">
     <value>Vgaming</value>
   </data>
+  <data name="Activity" xml:space="preserve">
+    <value>活动 </value>
+  </data>
+  <data name="CashOutCancelled" xml:space="preserve">
+    <value>取消实时兑现 </value>
+  </data>
+  <data name="CashOutHistory" xml:space="preserve">
+    <value>实时兑现历史记录 </value>
+  </data>
+  <data name="CashOutRecovered" xml:space="preserve">
+    <value>恢复实时兑现 </value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>日期/时间 </value>
+  </data>
+  <data name="NetworkLatency" xml:space="preserve">
+    <value>由于网络延迟，无法使用信息，请稍等几分钟后再次尝试。 </value>
+  </data>
+  <data name="ViewIn" xml:space="preserve">
+    <value>以 {0} 查看</value>
+  </data>
 </root>

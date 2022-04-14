@@ -1,0 +1,63 @@
+﻿@using Microsoft.Extensions.Configuration
+@using Fanex.Athena.ExtService.Common.Models.DTO
+@inject IConfiguration Configuration
+@using Fanex.Athena.ExtService.Resources
+@{
+
+    var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+    var langCode = System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag;
+    var env = appSettings.Environment.Equals("PROD") ? "pro" : "dev";
+
+}
+
+@section pagecss{
+    <link href="@Url.Content($"~/css/build/{env}/pages/betlist/cashouthistory.css")" rel="stylesheet" type="text/css" />
+
+}
+
+@model Fanex.Athena.ExtService.BetList.Models.ViewModel.NewCashOutBetListDetailViewModel
+
+<div class="page-results betlist-container">
+    <div class="table-content">
+        <div class="content-title">
+            @ViewResources.RefNo: @Html.Raw(Model.TransId) - <span class="base-currency">
+                @(string.IsNullOrEmpty(Model.BaseCurrency) ? string.Format(ViewResources.ViewIn, Model.Currency) : string.Format(ViewResources.ViewIn, Model.BaseCurrency.ToUpper()))
+            </span>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col-transtime">@ViewResources.DateTime</th>
+                    <th class="col-transtime">@ViewResources.CashOutAmount</th>
+                    <th class="">@ViewResources.Activity</th>
+                </tr>
+            </thead>
+            @if (Model == null || !Model.DetailHistory.Any())
+            {
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="text-center">@ViewResources.NetworkLatency</td>
+                    </tr>
+                </tbody>
+            }
+            else
+            {
+                foreach (var item in Model.DetailHistory)
+                {
+                    <tr>
+                        <td class="right-align">
+                            @Html.Raw(item.ChangeTimeText)
+                        </td>
+                        <td class="right-align">
+                            @Html.Raw(item.CashoutAmountText)
+                        </td>
+                        <td>
+                            <div class="text-left">@Html.Raw(item.ActionName)</div>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>

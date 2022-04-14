@@ -382,4 +382,25 @@
   <data name="ProductVS3" xml:space="preserve">
     <value>Virtual Sports 3</value>
   </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Activity </value>
+  </data>
+  <data name="CashOutCancelled" xml:space="preserve">
+    <value>Cash Out Cancelled </value>
+  </data>
+  <data name="CashOutHistory" xml:space="preserve">
+    <value>Cash Out History</value>
+  </data>
+  <data name="CashOutRecovered" xml:space="preserve">
+    <value>Cash Out Recovered </value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Date/Time </value>
+  </data>
+  <data name="NetworkLatency" xml:space="preserve">
+    <value>Information is not available due to network latency. Please wait a few minutes and try again. </value>
+  </data>
+  <data name="ViewIn" xml:space="preserve">
+    <value>View in {0}</value>
+  </data>
 </root>

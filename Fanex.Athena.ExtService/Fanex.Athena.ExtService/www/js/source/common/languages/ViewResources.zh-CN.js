@@ -22,5 +22,12 @@
     ProductCC: "乐卡迪亚",
     InvalidRequestMsg: "Request is not valid",
     HttpError_403: "Access denied",
-    JackpotWonDetails: "积宝头奖详情"
+    JackpotWonDetails: "积宝头奖详情",
+    CashOutHistory: "实时兑现历史记录",
+    CashOutCancelled: "取消实时兑现",
+    CashOutRecovered: "恢复实时兑现",
+    NetworkLatency: "由于网络延迟，无法使用信息，请稍等几分钟后再次尝试。",
+    DateTime: "日期/时间",
+    Activity: "活动",
+    Viewin: "以 {0} 查看"
 };
