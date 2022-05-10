@@ -4,7 +4,7 @@
     TicketDetailOf: "Ticket detail of {0}",
     DetailedBetlist: "Detailed Bet list",
     ProductVB: "Macau Games",
-    ProductCS: "RNG Casino",
+    ProductCS: "Saba Casino",
     ProductAB: "AllBet",
     AGCasino: "AG Casino",
     ProductFW: "Fishing World",
