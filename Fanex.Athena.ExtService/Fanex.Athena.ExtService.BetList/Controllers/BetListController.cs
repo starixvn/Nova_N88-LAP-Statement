@@ -152,7 +152,7 @@
 
         private static string GetSubProductCode(string ProductCode)
         {
-            var subProductList = new List<string> { Product.SLT };
+            var subProductList = new List<string> { Product.SLT, Product.BTC };
 
             return ProductCode.Contains(Product.SB, StringComparison.OrdinalIgnoreCase) ? ProductCode + "," + string.Join(',', subProductList) : ProductCode;
         }

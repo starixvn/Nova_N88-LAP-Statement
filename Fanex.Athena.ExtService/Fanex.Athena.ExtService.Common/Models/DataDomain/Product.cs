@@ -5,5 +5,7 @@
         public const string SB = "SB";
 
         public const string SLT = "SLT";
+
+        public const string BTC = "BTC";
     }
 }
