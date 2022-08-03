@@ -538,6 +538,10 @@ table tbody tr.row-group-level1 td {
     .sort-icon-desc.light {
       border-top-color: #fff; }
 
+.licenseeTxid {
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 .players-choice {
   color: #000000;
   font-weight: bold !important;
