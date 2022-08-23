@@ -20,7 +20,6 @@
     {
     <script src="@Url.Content($"~/js/build/{env}/pages/betlist/refno.chunk.js")"></script>
     <script type="text/javascript">
-
     </script>
 }
 @model Fanex.Athena.ExtService.BetList.Models.ViewModel.RunningBetListByViewModel
@@ -35,7 +34,7 @@
                                 <thead>
                                     <tr class="first-row">
                                         <td style="width:39px;"></td>
-                                        <td></td>
+                                        <td style="width:160px;"></td>
                                         <td></td>
                                         <td style="width:350px"></td>
                                         <td></td>
@@ -65,8 +64,7 @@
                                 <tbody>
                                     <tr class="first-row">
                                         <td style="width:39px;"></td>
-
-                                        <td></td>
+                                        <td style="width:160px;"></td>
                                         <td></td>
                                         <td style="width:350px"></td>
                                         <td></td>
@@ -92,7 +90,6 @@
                                             <td class="center-align">@Html.Raw(item.Live)</td>
                                         </tr>
                                     }
-
                                 </tbody>
                             </table>
                         </div>

@@ -18,7 +18,6 @@
     {
     <script src="@Url.Content($"~/js/build/{env}/pages/betlist/refno.chunk.js")"></script>
     <script type="text/javascript">
-
     </script>
 }
 
@@ -36,7 +35,7 @@
                                 <thead>
                                     <tr class="first-row">
                                         <td style="width:39px;"></td>
-                                        <td></td>
+                                        <td style="width:150px"></td>
                                         <td style="width:350px"></td>
                                         <td></td>
                                         <td></td>
@@ -63,7 +62,6 @@
                                             <th>@ViewResources.LicenseeWL/@ViewResources.Comm</th>
                                         }
                                         <th>@ViewResources.Status</th>
-
                                     </tr>
                                 </thead>
                             </table>
@@ -75,7 +73,7 @@
                                 <tbody>
                                     <tr class="first-row">
                                         <td style="width:39px;"></td>
-                                        <td></td>
+                                        <td style="width:150px"></td>
                                         <td style="width:350px"></td>
                                         <td></td>
                                         <td></td>
@@ -85,7 +83,6 @@
                                         }
                                         <td></td>
                                         <td></td>
-
                                     </tr>
                                     @foreach (var item in Model.Main)
                                     {
@@ -105,7 +102,6 @@
                                             <td class="center-align">@Html.Raw(item.Status)</td>
                                         </tr>
                                     }
-
                                 </tbody>
                             </table>
                         </div>
@@ -135,7 +131,6 @@
                                                 @Model.Total.SumLicenseeWl
                                             }
                                             <td class="right-align"></td>
-
                                         </tr>
                                     </tbody>
                                 </table>

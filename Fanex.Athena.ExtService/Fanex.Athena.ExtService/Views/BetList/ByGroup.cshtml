@@ -20,16 +20,15 @@
 {
     <script src="@Url.Content($"~/js/build/{env}/pages/betlist/refno.chunk.js")"></script>
     <script type="text/javascript">
-
     </script>
 }
 @model Fanex.Athena.ExtService.BetList.Models.ViewModel.BetListByProductViewModel
 <div id="container" class="container-fluid">
     <div>
-        @if(ViewBag.ShowBreadCrumb)
+        @if (ViewBag.ShowBreadCrumb)
         {
             var breadcrumbItems = new List<SelectListItem>
-            {
+{
                 new SelectListItem { Text = ViewResources.Statement, Value = Url.Action("Summary", "Statement", new {
                             cid=Model.CustId,
                             fd=ViewBag.FromDate.ToString("MM/dd/yyyy"),
@@ -76,8 +75,7 @@
                                 <thead>
                                     <tr class="first-row">
                                         <td style="width:39px;"></td>
-
-                                        <td></td>
+                                        <td style="width:160px;"></td>
                                         <td></td>
                                         <td style="width:350px"></td>
                                         <td></td>
@@ -118,8 +116,7 @@
                                 <tbody>
                                     <tr class="first-row">
                                         <td style="width:39px;"></td>
-
-                                        <td></td>
+                                        <td style="width:160px;"></td>
                                         <td></td>
                                         <td style="width:350px"></td>
                                         <td></td>
@@ -131,25 +128,24 @@
                                     </tr>
                                     @foreach (var item in Model.Data)
                                     {
-                                    <tr>
-                                        <td title="@item.Index" class="center-align">
-                                            @item.Index
-                                        </td>
+                                        <tr>
+                                            <td title="@item.Index" class="center-align">
+                                                @item.Index
+                                            </td>
 
-                                        <td class="center-align">@Html.Raw(item.RefNo)</td>
-                                        <td class="center-align">@Html.Raw(item.TransTime)</td>
-                                        <td class="right-align">@Html.Raw(item.Choice)</td>
-                                        <td class="right-align">@Html.Raw(item.Odds)</td>
-                                        <td class="right-align">@Html.Raw(item.OddsType)</td>
-                                        <td class="right-align"> @Html.Raw(item.Stake)</td>
-                                        <td class="right-align">@Html.Raw(item.WinLoss)</td>
-                                        <td class="right-align">@Html.Raw(item.LicenseeWL)</td>
-                                        <td class="center-align">@Html.Raw(item.Status)</td>
-                                        <td class="center-align">@Html.Raw(item.Platform)</td>
-                                        <td class="center-align">@Html.Raw(item.Live)</td>
-                                    </tr>
+                                            <td class="center-align">@Html.Raw(item.RefNo)</td>
+                                            <td class="center-align">@Html.Raw(item.TransTime)</td>
+                                            <td class="right-align">@Html.Raw(item.Choice)</td>
+                                            <td class="right-align">@Html.Raw(item.Odds)</td>
+                                            <td class="right-align">@Html.Raw(item.OddsType)</td>
+                                            <td class="right-align"> @Html.Raw(item.Stake)</td>
+                                            <td class="right-align">@Html.Raw(item.WinLoss)</td>
+                                            <td class="right-align">@Html.Raw(item.LicenseeWL)</td>
+                                            <td class="center-align">@Html.Raw(item.Status)</td>
+                                            <td class="center-align">@Html.Raw(item.Platform)</td>
+                                            <td class="center-align">@Html.Raw(item.Live)</td>
+                                        </tr>
                                     }
-
                                 </tbody>
                             </table>
                         </div>
@@ -157,7 +153,7 @@
                 </div>
             </div>
         </div>
-        
+
         <pager page-index="@Model.PageIndex"
                page-size="@Model.PageSize"
                total-items="@Model.TotalRows"
