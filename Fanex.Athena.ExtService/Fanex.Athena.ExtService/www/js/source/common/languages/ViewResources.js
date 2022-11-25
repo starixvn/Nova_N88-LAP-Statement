@@ -18,6 +18,7 @@
     ProductSLT: "Sports Lottery",
     ProductVGA: "Vgaming",
     ProductVS3: "Virtual Sports 3",
+    ProductTIP: "Player Tips",
     TransactionDetail: "",
     ErrorProcessingMsg: "Sorry, an error occurred while processing your request.",
     Result: "Results",

@@ -403,4 +403,7 @@
   <data name="ViewIn" xml:space="preserve">
     <value>View in {0}</value>
   </data>
+  <data name="ProductTIP" xml:space="preserve">
+    <value>Player Tips</value>
+  </data>
 </root>
