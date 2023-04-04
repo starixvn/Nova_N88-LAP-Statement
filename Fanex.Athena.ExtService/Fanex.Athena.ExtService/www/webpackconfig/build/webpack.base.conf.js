@@ -18,14 +18,10 @@ function generateConfig(environment) {
             modules: [
                 path.join(__dirname, "www"),
                 "node_modules"
-           ]
+            ]
         },
         entry: {
-
             [`${jsPath}/language`]: pathConfig.scriptPaths.language,
-            [`${jsPath}/language-zh-CN`]: pathConfig.scriptPaths.languageCN,
-            [`${jsPath}/language-zh-TW`]: pathConfig.scriptPaths.languageTW,
-            [`${jsPath}/language-zh-Hans`]: pathConfig.scriptPaths.languageHans,
             [`${jsPath}/pages/betlist/refno`]: [pathConfig.scriptPaths.betlist_refno],
 
             [`${cssPath}/main`]: pathConfig.cssPaths.main,
@@ -35,8 +31,7 @@ function generateConfig(environment) {
             [`${cssPath}/pages/betlist/betlistRefno`]: pathConfig.cssPaths.betlistRefno,
             [`${cssPath}/pages/betlist/systemparlaydetail`]: pathConfig.cssPaths.systemparlaydetail,
             [`${cssPath}/pages/betlist/cashouthistory`]: pathConfig.cssPaths.cashouthistory,
-            [`${cssPath}/pages/betlist/betlistResult`]: pathConfig.cssPaths.betlistResult,
-            [`${cssPath}/pages/betlist/colossusbetdetail`]: pathConfig.cssPaths.colossusbetdetail
+            [`${cssPath}/pages/betlist/betlistResult`]: pathConfig.cssPaths.betlistResult
         },
         output: {
             path: pathConfig.projectRoot,
@@ -58,7 +53,7 @@ function generateConfig(environment) {
         },
         optimization: {
             minimizer: [
-             new UglifyJsPlugin({
+                new UglifyJsPlugin({
                     sourceMap: true
                 })
             ],
@@ -76,12 +71,11 @@ function generateConfig(environment) {
                     default: false,
                     vendors: false,
                     common: {
-                       name: `${jsPath}/pages/lib/common`,
-                       test: /(node_modules|www[\\/]js[\\/]source[\\/]vendors|www[\\/]js[\\/]source[\\/]common)/,
-                       minChunks: 1,
-                       priority: -10
+                        name: `${jsPath}/pages/lib/common`,
+                        test: /(node_modules|www[\\/]js[\\/]source[\\/]vendors|www[\\/]js[\\/]source[\\/]common)/,
+                        minChunks: 1,
+                        priority: -10
                     }
-                   
                 }
             }
         }

@@ -66,6 +66,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Content\Fanex.Result\" />
     <Folder Include="wwwroot\js\build\dev\" />
     <Folder Include="wwwroot\lib\" />
     <Folder Include="www\js\source\vendors\" />
