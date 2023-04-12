@@ -403,24 +403,6 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AllBet.
-        /// </summary>
-        public static string ProductAB {
-            get {
-                return ResourceManager.GetString("ProductAB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AG Casino.
-        /// </summary>
-        public static string ProductAGC {
-            get {
-                return ResourceManager.GetString("ProductAGC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to BA.
         /// </summary>
         public static string ProductBA {
@@ -430,29 +412,11 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bet Trade.
-        /// </summary>
-        public static string ProductBT {
-            get {
-                return ResourceManager.GetString("ProductBT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Exchange.
         /// </summary>
         public static string ProductBX {
             get {
                 return ResourceManager.GetString("ProductBX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Colossus Bets.
-        /// </summary>
-        public static string ProductCB {
-            get {
-                return ResourceManager.GetString("ProductCB", resourceCulture);
             }
         }
         
@@ -484,24 +448,6 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fishing World.
-        /// </summary>
-        public static string ProductFW {
-            get {
-                return ResourceManager.GetString("ProductFW", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gold Deluxe.
-        /// </summary>
-        public static string ProductGD {
-            get {
-                return ResourceManager.GetString("ProductGD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Togel 4D.
         /// </summary>
         public static string ProductI4D {
@@ -516,15 +462,6 @@ namespace Fanex.Athena.ExtService.Resources {
         public static string ProductKN {
             get {
                 return ResourceManager.GetString("ProductKN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Live Casino.
-        /// </summary>
-        public static string ProductLC {
-            get {
-                return ResourceManager.GetString("ProductLC", resourceCulture);
             }
         }
         
@@ -556,38 +493,11 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Playtech Casino.
-        /// </summary>
-        public static string ProductPTCS {
-            get {
-                return ResourceManager.GetString("ProductPTCS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Sportsbook.
         /// </summary>
         public static string ProductSB {
             get {
                 return ResourceManager.GetString("ProductSB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Saba.club.
-        /// </summary>
-        public static string ProductSBC {
-            get {
-                return ResourceManager.GetString("ProductSBC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SG.
-        /// </summary>
-        public static string ProductSG {
-            get {
-                return ResourceManager.GetString("ProductSG", resourceCulture);
             }
         }
         
@@ -610,15 +520,6 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AE Sexy.
-        /// </summary>
-        public static string ProductSXG {
-            get {
-                return ResourceManager.GetString("ProductSXG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Table Game.
         /// </summary>
         public static string ProductTG {
@@ -633,24 +534,6 @@ namespace Fanex.Athena.ExtService.Resources {
         public static string ProductTIP {
             get {
                 return ResourceManager.GetString("ProductTIP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Macau Games.
-        /// </summary>
-        public static string ProductVB {
-            get {
-                return ResourceManager.GetString("ProductVB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Macau.
-        /// </summary>
-        public static string ProductVG {
-            get {
-                return ResourceManager.GetString("ProductVG", resourceCulture);
             }
         }
         

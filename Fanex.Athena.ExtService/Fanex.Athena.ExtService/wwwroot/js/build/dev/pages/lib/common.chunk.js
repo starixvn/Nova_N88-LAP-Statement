@@ -10951,18 +10951,11 @@ module.exports = g;
     BoughtDetails: "Bought Details",
     TicketDetailOf: "Ticket detail of {0}",
     DetailedBetlist: "Detailed Bet list",
-    ProductVB: "Macau Games",
     ProductCS: "Saba Casino",
-    ProductAB: "AllBet",
-    AGCasino: "AG Casino",
-    ProductFW: "Fishing World",
     ProductCC: "Arcadia Gaming",
     ProductPP: "PP",
-    ProductSG: "SG",
     ProductTG: "Table game",
     ProductVRG: "Virtual Games",
-    ProductSXG: "AE Sexy",
-    ProductSBC: "Saba.club",
     ProductSLT: "Sports Lottery",
     ProductVGA: "Vgaming",
     ProductVS3: "Virtual Sports 3",
@@ -10980,133 +10973,6 @@ module.exports = g;
     DateTime: "Date/Time",
     Activity: "Activity",
     ViewIn: "View in {0}"
-};
-
-/***/ }),
-
-/***/ "./www/js/source/common/languages/ViewResources.zh-CN.js":
-/*!***************************************************************!*\
-  !*** ./www/js/source/common/languages/ViewResources.zh-CN.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-﻿window._language_zh_CN = {
-    CashOutDetails: "即时兑现详情",
-    BoughtDetails: "买入详情",
-    TicketDetailOf: "Ticket detail of {0}",
-    DetailedBetlist: "投注明细历史",
-    ProductVB: "Macau Games",
-    ProductCS: "娱乐城",
-    ProductAB: "AllBet",
-    AGCasino: "AG Casino",
-    ProductFW: "Fishing World",
-    ProductPP: "PP",
-    ProductSG: "SG",
-    ProductTG: "桌面游戏	",
-    ProductVRG: "虚拟娱乐城",
-    ProductI4D: "Togel 4D",
-    ProductSXG: "AE性感真人",
-    ProductSBC: "Saba.club",
-    ProductVGA: "Vgaming",
-    TransactionDetail: "Transaction Detail",
-    ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
-    Result: "赛果",
-    ProductCC: "乐卡迪亚",
-    InvalidRequestMsg: "Request is not valid",
-    HttpError_403: "Access denied",
-    JackpotWonDetails: "积宝头奖详情",
-    CashOutHistory: "实时兑现历史记录",
-    CashOutCancelled: "取消实时兑现",
-    CashOutRecovered: "恢复实时兑现",
-    NetworkLatency: "由于网络延迟，无法使用信息，请稍等几分钟后再次尝试。",
-    DateTime: "日期/时间",
-    Activity: "活动",
-    Viewin: "以 {0} 查看"
-};
-
-/***/ }),
-
-/***/ "./www/js/source/common/languages/ViewResources.zh-Hans.js":
-/*!*****************************************************************!*\
-  !*** ./www/js/source/common/languages/ViewResources.zh-Hans.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-﻿window._language_zh_Hans = {
-    CashOutDetails: "即时兑现详情",
-    BoughtDetails: "买入详情",
-    TicketDetailOf: "Ticket detail of {0}",
-    DetailedBetlist: "Detailed Bet list",
-    ProductVB: "Macau Games",
-    ProductCS: "娱乐城",
-    ProductAB: "AllBet",
-    AGCasino: "AG Casino",
-    ProductFW: "Fishing World",
-    ProductPP: "PP",
-    ProductSG: "SG",
-    ProductSBC: "Saba.club",
-    ProductVRG: "虚拟娱乐城",
-    ProductI4D: "Togel 4D",
-    ProductSXG: "AE性感真人",
-    ProductVGA: "Vgaming",
-    TransactionDetail: "Transaction Detail",
-    ErrorProcessingMsg: "对不起, 处理您的请求时有错误发生。",
-    Result: "赛果",
-    ProductCC: "乐卡迪亚",
-    InvalidRequestMsg: "Request is not valid",
-    HttpError_403: "Access denied",
-    JackpotWonDetails: "积宝头奖详情",
-    CashOutHistory: "实时兑现历史记录",
-    CashOutCancelled: "取消实时兑现",
-    CashOutRecovered: "恢复实时兑现",
-    NetworkLatency: "由于网络延迟，无法使用信息，请稍等几分钟后再次尝试。",
-    DateTime: "日期/时间",
-    Activity: "活动",
-    Viewin: "以 {0} 查看"
-};
-
-/***/ }),
-
-/***/ "./www/js/source/common/languages/ViewResources.zh-TW.js":
-/*!***************************************************************!*\
-  !*** ./www/js/source/common/languages/ViewResources.zh-TW.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-﻿window._language_zh_TW = {
-    CashOutDetails: "即時兌現詳情",
-    BoughtDetails: "買入詳情",
-    TicketDetailOf: "Ticket detail of {0}",
-    DetailedBetlist: "Detailed Bet list",
-    ProductVB: "Macau Games",
-    ProductCS: "娛樂城",
-    ProductAB: "AllBet",
-    AGCasino: "AG Casino",
-    ProductFW: "Fishing World",
-    ProductPP: "PP",
-    ProductSG: "SG",
-    ProductTG: "桌面遊戲",
-    ProductVRG: "虛擬娛樂城",
-    ProductI4D: "Togel 4D",
-    ProductSXG: "AE Casino",
-    ProductSBC: "Saba.club",
-    ProductVGA: "Vgaming",
-    TransactionDetail: "Transaction Detail",
-    ErrorProcessingMsg: "對不起，處理您的請求時有錯誤發生。",
-    Result: "賽果",
-    ProductCC: "樂卡迪亞",
-    InvalidRequestMsg: "Request is not valid",
-    HttpError_403: "Access denied",
-    JackpotWonDetails: "積寶頭獎詳情",
-    CashOutHistory: "即時兌現歷史記錄",
-    CashOutCancelled: "取消即時兌現",
-    CashOutRecovered: "恢復即時兌現",
-    NetworkLatency: "由於網絡延遲，無法使用信息，請稍等幾分鐘後再次嘗試。",
-    DateTime: "日期/時間",
-    Activity: "活動",
 };
 
 /***/ }),

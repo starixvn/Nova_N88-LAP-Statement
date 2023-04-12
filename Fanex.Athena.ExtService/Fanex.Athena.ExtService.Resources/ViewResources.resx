@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AGCasino" xml:space="preserve">
-    <value>AG Casino</value>
-  </data>
   <data name="BaseCurrency" xml:space="preserve">
     <value>Base Currency</value>
     <comment>84932</comment>
@@ -252,29 +249,13 @@
   <data name="Void_CancelledBet" xml:space="preserve">
     <value>Void/Cancelled Bet</value>
   </data>
-  <data name="ProductAB" xml:space="preserve">
-    <value>AllBet</value>
-    <comment>#61066</comment>
-  </data>
-  <data name="ProductAGC" xml:space="preserve">
-    <value>AG Casino</value>
-    <comment>#19458, #49196</comment>
-  </data>
   <data name="ProductBA" xml:space="preserve">
     <value>BA</value>
-    <comment>#49196</comment>
-  </data>
-  <data name="ProductBT" xml:space="preserve">
-    <value>Bet Trade</value>
     <comment>#49196</comment>
   </data>
   <data name="ProductBX" xml:space="preserve">
     <value>Exchange</value>
     <comment>88192</comment>
-  </data>
-  <data name="ProductCB" xml:space="preserve">
-    <value>Colossus Bets</value>
-    <comment>#63785</comment>
   </data>
   <data name="ProductCC" xml:space="preserve">
     <value>Arcadia Gaming</value>
@@ -287,21 +268,9 @@
     <value>Saba Casino</value>
     <comment>#49196</comment>
   </data>
-  <data name="ProductFW" xml:space="preserve">
-    <value>Fishing World</value>
-    <comment>#66737</comment>
-  </data>
-  <data name="ProductGD" xml:space="preserve">
-    <value>Gold Deluxe</value>
-    <comment>#49196</comment>
-  </data>
   <data name="ProductKN" xml:space="preserve">
     <value>RNG Keno</value>
     <comment>#49196</comment>
-  </data>
-  <data name="ProductLC" xml:space="preserve">
-    <value>Live Casino</value>
-    <comment>117900</comment>
   </data>
   <data name="ProductLT" xml:space="preserve">
     <value>Lottery</value>
@@ -315,20 +284,8 @@
     <value>PP</value>
     <comment>92318</comment>
   </data>
-  <data name="ProductPTCS" xml:space="preserve">
-    <value>Playtech Casino</value>
-    <comment>14488, #49196</comment>
-  </data>
   <data name="ProductSB" xml:space="preserve">
     <value>Sportsbook</value>
-    <comment>#49196</comment>
-  </data>
-  <data name="ProductVB" xml:space="preserve">
-    <value>Macau Games</value>
-    <comment>#55057</comment>
-  </data>
-  <data name="ProductVG" xml:space="preserve">
-    <value>Macau</value>
     <comment>#49196</comment>
   </data>
   <data name="ProductVS" xml:space="preserve">
@@ -347,10 +304,6 @@
     <value>Saba Promotion</value>
     <comment>124612</comment>
   </data>
-  <data name="ProductSG" xml:space="preserve">
-    <value>SG</value>
-    <comment>124103</comment>
-  </data>
   <data name="BetList" xml:space="preserve">
     <value>Bet List</value>
   </data>
@@ -362,13 +315,6 @@
   </data>
   <data name="ProductI4D" xml:space="preserve">
     <value>Togel 4D</value>
-  </data>
-  <data name="ProductSXG" xml:space="preserve">
-    <value>AE Sexy</value>
-    <comment>#141118</comment>
-  </data>
-  <data name="ProductSBC" xml:space="preserve">
-    <value>Saba.club</value>
   </data>
   <data name="JackpotWonDetails" xml:space="preserve">
     <value>Jackpot Won Details</value>
@@ -405,5 +351,8 @@
   </data>
   <data name="ProductTIP" xml:space="preserve">
     <value>Player Tips</value>
+  </data>
+  <data name="AGCasino" xml:space="preserve">
+    <value>AG Casino</value>
   </data>
 </root>
