@@ -574,7 +574,7 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Virtual Sports 3.
+        ///   Looks up a localized string similar to Virtual Sports 3 ( Old).
         /// </summary>
         public static string ProductVS3 {
             get {
