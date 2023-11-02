@@ -19,14 +19,14 @@ namespace Fanex.Athena.ExtService.Core.Attributes
         public IPFilterAttribute(IOptions<ApplicationOptions> applicationOptionAccessor)
         {
             _applicationOptions = applicationOptionAccessor.Value;
-
         }
+
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var ipAddress = context.HttpContext.Connection.RemoteIpAddress;
             var whiteListIPList = _applicationOptions.WhiteList;
 
-            var isInWhiteListIPList = !whiteListIPList.Any() || whiteListIPList.Any(_ => IsInRangeIP(_, ipAddress));
+            var isInWhiteListIPList = whiteListIPList == null || !whiteListIPList.Any() || whiteListIPList.Any(_ => IsInRangeIP(_, ipAddress));
             if (!isInWhiteListIPList)
             {
                 var result = new ContentResult

@@ -326,7 +326,7 @@
     <value>Vgaming</value>
   </data>
   <data name="ProductVS3" xml:space="preserve">
-    <value>Virtual Sports 3</value>
+    <value>Virtual Sports 3 ( Old)</value>
   </data>
   <data name="Activity" xml:space="preserve">
     <value>Activity </value>
@@ -354,5 +354,8 @@
   </data>
   <data name="AGCasino" xml:space="preserve">
     <value>AG Casino</value>
+  </data>
+  <data name="ProductLG" xml:space="preserve">
+    <value>Virtual Sports 3</value>
   </data>
 </root>

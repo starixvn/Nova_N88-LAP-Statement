@@ -466,6 +466,15 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Virtual Sports 3.
+        /// </summary>
+        public static string ProductLG {
+            get {
+                return ResourceManager.GetString("ProductLG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lottery.
         /// </summary>
         public static string ProductLT {
@@ -574,7 +583,7 @@ namespace Fanex.Athena.ExtService.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Virtual Sports 3.
+        ///   Looks up a localized string similar to Virtual Sports 3 ( Old).
         /// </summary>
         public static string ProductVS3 {
             get {
